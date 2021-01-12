@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/waitingsong/koid/compare/v0.2.0...v0.3.0) (2021-01-12)
+
+
+### Features
+
+* **koid:** export enum KoidMsg ([d46c3b6](https://github.com/waitingsong/koid/commit/d46c3b6f6f9417fb66e943a98b673593404f3bfa))
+
+
+
+
+
 # [0.2.0](https://github.com/waitingsong/koid/compare/v0.1.0...v0.2.0) (2021-01-12)
 
 
