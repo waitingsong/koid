@@ -1,0 +1,72 @@
+import {
+  basename,
+  join,
+} from '@waiting/shared-core'
+import * as assert from 'power-assert'
+
+import { ConfigDc, ConfigId, KoidFactory } from '../src/index'
+
+import { config1, config4, config2 } from './config.test'
+
+
+const filename = basename(__filename)
+
+describe(filename, () => {
+
+  describe('should works', () => {
+    it('normal', () => {
+      const inst = KoidFactory({
+        id: 0,
+      })
+      const buf = inst.next
+      const id = buf.readBigInt64BE()
+      assert(id > 0)
+    })
+
+    it('generate one', () => {
+      const inst = KoidFactory({
+        id: 0,
+        epoch: Date.now() - config1[0].time,
+      })
+      const buf = inst.next
+      const idHex = buf.toString('hex')
+      assert(`0x${idHex}` === config1[0].idStr)
+    })
+
+    it('generate two', () => {
+      const len = config2.length
+      const ret = new Array<Buffer>(len * 8)
+      const inst = KoidFactory({
+        id: (config2[0].dataCenter << 5) + config2[0].worker,
+        epoch: Date.now() - config2[0].time,
+      })
+
+      for (let i = 0; i < len; i = i + 8) {
+        ret[i] = inst.next
+      }
+      ret.forEach((buf, index) => {
+        const idHex = buf.toString('hex')
+        assert(`0x${idHex}` === config2[index].idStr)
+      })
+    })
+
+    it.skip('generate four', () => {
+      const len = config4.length
+      const ret = new Array<Buffer>(len * 8)
+      const inst = KoidFactory({
+        id: (config4[0].dataCenter << 5) + config4[0].worker,
+        epoch: Date.now() - config4[0].time,
+      })
+
+      for (let i = 0; i < len; i = i + 8) {
+        ret[i] = inst.next
+      }
+      ret.forEach((buf, index) => {
+        const idHex = buf.toString('hex')
+        assert(`0x${idHex}` === config4[index].idStr)
+      })
+    })
+  })
+
+})
+
