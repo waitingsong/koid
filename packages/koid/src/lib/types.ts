@@ -8,7 +8,8 @@ export interface ConfigId {
    */
   id: number
   /**
-   * Number used to reduce value of a generated timestamp
+   * Number used to reduce value of a generated timestamp,
+   * Default: 0
    */
   epoch?: number
 }
@@ -23,7 +24,8 @@ export interface ConfigDc {
    */
   worker: number
   /**
-   * Number used to reduce value of a generated timestamp
+   * Number used to reduce value of a generated timestamp,
+   * Default: 0
    */
   epoch?: number
 }
