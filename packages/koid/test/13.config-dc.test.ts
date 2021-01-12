@@ -6,7 +6,7 @@ import * as assert from 'power-assert'
 
 import { KoidFactory } from '../src/index'
 
-import { configArr1, config4, config2 } from './config.test'
+import { config1, config4, config2 } from './config.test'
 
 
 const filename = basename(__filename)
@@ -14,15 +14,25 @@ const filename = basename(__filename)
 describe(filename, () => {
 
   describe('should works', () => {
+    it('normal', () => {
+      const inst = KoidFactory({
+        dataCenter: 0,
+        worker: 0,
+      })
+      const buf = inst.next
+      const id = buf.readBigInt64BE()
+      assert(id > 0)
+    })
+
     it('generate one', () => {
       const inst = KoidFactory({
         dataCenter: 0,
         worker: 0,
-        epoch: Date.now() - configArr1[0].time,
+        epoch: Date.now() - config1[0].time,
       })
       const buf = inst.next
       const idHex = buf.toString('hex')
-      assert(`0x${idHex}` === configArr1[0].idStr)
+      assert(`0x${idHex}` === config1[0].idStr)
     })
 
     it('generate two', () => {

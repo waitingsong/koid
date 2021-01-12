@@ -6,24 +6,24 @@ export interface testArr {
   idStr: string
 }
 
-export const configArr1: testArr[] = [
+export const config1: testArr[] = [
   {
-    time: 0x8c20543b0, dataCenter: 0b0000, worker: 0b00000, idStr: '0x02308150ec000000',
+    time: 0x8c20543b0, dataCenter: 0, worker: 0, idStr: '0x02308150ec000000',
   },
 ]
 
 export const config4: testArr[] = [
   {
-    time: 0x8c20543b1, dataCenter: 0b0000, worker: 0b00000, idStr: '0x02308150ec400000',
+    time: 0x8c20543b1, dataCenter: 0, worker: 0, idStr: '0x02308150ec400000',
   },
   {
-    time: 0x8c20543b1, dataCenter: 0b0000, worker: 0b00000, idStr: '0x02308150ec400001',
+    time: 0x8c20543b1, dataCenter: 0, worker: 0, idStr: '0x02308150ec400001',
   },
   {
-    time: 0x8c20543b1, dataCenter: 0b00000, worker: 0b00000, idStr: '0x02308150ec400002',
+    time: 0x8c20543b1, dataCenter: 0, worker: 0, idStr: '0x02308150ec400002',
   },
   {
-    time: 0x8c20543b1, dataCenter: 0b00000, worker: 0b00000, idStr: '0x02308150ec400003',
+    time: 0x8c20543b1, dataCenter: 0, worker: 0, idStr: '0x02308150ec400003',
   },
 ]
 
