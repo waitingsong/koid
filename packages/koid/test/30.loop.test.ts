@@ -6,7 +6,7 @@ import {
 } from '@waiting/shared-core'
 import * as assert from 'power-assert'
 
-import { KoidFactory } from '../src'
+import { KoidFactory, KoidMsg } from '../src'
 import { parseConfig } from '../src/lib/helper'
 import { Koid } from '../src/lib/koid'
 
@@ -27,7 +27,7 @@ describe(filename, () => {
       testLoop(koid, 5000)
     })
 
-    it('error when 90k', () => {
+    it('error when 9M', () => {
       const dataCenter = 2
       const worker = 3
       const config = {
@@ -36,9 +36,10 @@ describe(filename, () => {
       }
       const koid = KoidFactory(config)
       try {
-        testLoop(koid, 90000)
+        testLoop(koid, 9000000)
       }
       catch (ex) {
+        assert(ex && (ex as Error).message.includes(KoidMsg.SeqExceed))
         return
       }
       assert(false, 'Should throw error, but not')

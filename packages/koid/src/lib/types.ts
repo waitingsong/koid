@@ -37,3 +37,8 @@ export interface Options {
   worker: number
 }
 
+export enum KoidMsg {
+  SeqExceed = 'Sequence exceeded its maximum value'
+
+}
+

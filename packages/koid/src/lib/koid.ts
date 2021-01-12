@@ -1,6 +1,6 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
-import { Options } from './types'
+import { KoidMsg, Options } from './types'
 
 
 export class Koid {
@@ -43,7 +43,7 @@ export class Koid {
       // sequence counter exceeded its max value (4095)
       /* istanbul ignore else */
       if (this.seq === 0) {
-        throw new Error('Sequence exceeded its maximum value.')
+        throw new Error(KoidMsg.SeqExceed)
       }
     }
     else {
