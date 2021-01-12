@@ -39,7 +39,7 @@ function parseConfigDc(config: ConfigDc): Options {
 
 function parseConfigId(config: ConfigId): Options {
   const dataCenter = config.id >> 5
-  const worker = config.id & 0x3FF
+  const worker = config.id & 0x1F
   const opts = {
     genId: (config.id & 0x3FF) << 12,
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,

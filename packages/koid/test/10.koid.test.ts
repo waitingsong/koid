@@ -19,7 +19,7 @@ describe(filename, () => {
       assert(id > 0)
     })
 
-    it('config getter', () => {
+    it('config getter with dc', () => {
       const dataCenter = 9
       const worker = 7
       const inst = KoidFactory({ dataCenter, worker })
@@ -28,6 +28,25 @@ describe(filename, () => {
       assert(config.dataCenter === dataCenter)
       assert(config.worker === worker)
       assert(config.epoch === 0)
+    })
+
+    it('config getter with id', () => {
+      const arr: [number, number, number][] = [
+        [0, 0, 0],
+        [1, 0, 1],
+        [31, 0, 31],
+        [32, 1, 0],
+        [33, 1, 1],
+        [1023, 31, 31],
+      ]
+      arr.forEach(([id, dc, wk]) => {
+        const inst = KoidFactory({ id })
+
+        const { config } = inst
+        assert(config.dataCenter === dc)
+        assert(config.worker === wk)
+        assert(config.epoch === 0)
+      })
     })
   })
 
