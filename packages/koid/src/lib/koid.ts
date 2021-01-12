@@ -19,8 +19,7 @@ export class Koid {
 
   private seq: number
 
-
-  constructor(public options: Options) {
+  constructor(private readonly options: Options) {
     this.genId = options.genId
     this.epoch = options.epoch
     this.seqMask = 0xFFF
@@ -58,6 +57,14 @@ export class Koid {
     id.writeUInt16BE(Math.floor(time / this.POW26) & 0xFFFF, 0)
 
     return id
+  }
+
+
+  get config(): Readonly<Options> {
+    const ret = {
+      ...this.options,
+    }
+    return ret
   }
 
 }

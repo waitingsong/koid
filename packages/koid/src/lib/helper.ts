@@ -30,15 +30,21 @@ function parseConfigDc(config: ConfigDc): Options {
   const opts = {
     genId: (dataCenter << 5 | worker) << 12,
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,
+    dataCenter,
+    worker,
   }
 
   return opts
 }
 
 function parseConfigId(config: ConfigId): Options {
+  const dataCenter = config.id >> 5
+  const worker = config.id & 0x3FF
   const opts = {
     genId: (config.id & 0x3FF) << 12,
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,
+    dataCenter,
+    worker,
   }
 
   return opts

@@ -18,6 +18,17 @@ describe(filename, () => {
       const id = buf.readBigInt64BE()
       assert(id > 0)
     })
+
+    it('config getter', () => {
+      const dataCenter = 9
+      const worker = 7
+      const inst = KoidFactory({ dataCenter, worker })
+
+      const { config } = inst
+      assert(config.dataCenter === dataCenter)
+      assert(config.worker === worker)
+      assert(config.epoch === 0)
+    })
   })
 
 })

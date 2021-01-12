@@ -33,5 +33,7 @@ export interface ConfigDc {
 export interface Options {
   epoch: number
   genId: number
+  dataCenter: number
+  worker: number
 }
 
