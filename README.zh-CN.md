@@ -1,7 +1,8 @@
 # Koid
 
-Flake ID generator yields k-ordered, conflict-free ids in a distributed environment, 
-based on [flake-idgen](https://github.com/T-PWK/flake-idgen)
+
+适用于分布式环境的偏排序（K-ordered）雪花（SnowFlake）序列号生成器，
+基于项目 [flake-idgen](https://github.com/T-PWK/flake-idgen)
 
 
 [![GitHub tag](https://img.shields.io/github/tag/waitingsong/koid.svg)]()
@@ -13,27 +14,27 @@ based on [flake-idgen](https://github.com/T-PWK/flake-idgen)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 
-## Initialization
+## 初始化项目
 
 ```sh
 npm run repo:init
 ```
 
 
-## Update
+## 更新依赖
 
 ```sh
 npm run bootstrap
 ```
 
 
-## Test
+## 测试
 
 - Use `npm run lint` to check code style.
 - Use `npm run test` to run unit test.
 
 
-## Note
+## 注意
 
 - Run `npm run clean` before `npm run build`, if any file under typescript outDir folder was deleted manually.
 - Default publish registry is `NPM`, configurated in file `lerna.json`
