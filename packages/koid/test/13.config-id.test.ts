@@ -24,6 +24,8 @@ describe(filename, () => {
     })
 
     it('generate one', () => {
+      const dataCenter = 0
+      const worker = 0
       const inst = KoidFactory({
         id: 0,
         epoch: Date.now() - config1[0].time,
@@ -31,13 +33,19 @@ describe(filename, () => {
       const buf = inst.next
       const idHex = buf.toString('hex')
       assert(`0x${idHex}` === config1[0].idStr)
+
+      const { config } = inst
+      assert(config.dataCenter === dataCenter)
+      assert(config.worker === worker)
     })
 
     it('generate two', () => {
+      const dataCenter = config2[0].dataCenter
+      const worker = config2[0].worker
       const len = config2.length
       const ret = new Array<Buffer>(len * 8)
       const inst = KoidFactory({
-        id: (config2[0].dataCenter << 5) + config2[0].worker,
+        id: (dataCenter << 5) + worker,
         epoch: Date.now() - config2[0].time,
       })
 
@@ -47,14 +55,20 @@ describe(filename, () => {
       ret.forEach((buf, index) => {
         const idHex = buf.toString('hex')
         assert(`0x${idHex}` === config2[index].idStr)
+
+        const { config } = inst
+        assert(config.dataCenter === dataCenter)
+        assert(config.worker === worker)
       })
     })
 
-    it.skip('generate four', () => {
+    it('generate four', () => {
+      const dataCenter = config4[0].dataCenter
+      const worker = config4[0].worker
       const len = config4.length
       const ret = new Array<Buffer>(len * 8)
       const inst = KoidFactory({
-        id: (config4[0].dataCenter << 5) + config4[0].worker,
+        id: (dataCenter << 5) + worker,
         epoch: Date.now() - config4[0].time,
       })
 
@@ -64,6 +78,10 @@ describe(filename, () => {
       ret.forEach((buf, index) => {
         const idHex = buf.toString('hex')
         assert(`0x${idHex}` === config4[index].idStr)
+
+        const { config } = inst
+        assert(config.dataCenter === dataCenter)
+        assert(config.worker === worker)
       })
     })
   })

@@ -17,6 +17,9 @@ describe(filename, () => {
       const buf = inst.next
       const id = buf.readBigInt64BE()
       assert(id > 0)
+      console.log('buf value:', buf)
+      console.log('bigInt id value:', id)
+      console.log('hex id value:', buf.toString('hex'))
     })
 
     it('config getter with dc', () => {
@@ -37,6 +40,7 @@ describe(filename, () => {
         [31, 0, 31],
         [32, 1, 0],
         [33, 1, 1],
+        [34, 1, 2],
         [1023, 31, 31],
       ]
       arr.forEach(([id, dc, wk]) => {
