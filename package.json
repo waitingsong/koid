@@ -1,0 +1,91 @@
+{
+  "name": "npm-mono-base",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "11",
+    "@commitlint/config-conventional": "11",
+    "@rollup/plugin-commonjs": "17",
+    "@rollup/plugin-node-resolve": "11",
+    "@types/mocha": "8",
+    "@types/node": "14",
+    "@types/power-assert": "1",
+    "@types/rewire": "2",
+    "@types/rimraf": "3",
+    "@types/yargs": "15",
+    "@waiting/eslint-config": "6",
+    "coveralls": "3",
+    "debug": "^4.1.0",
+    "eslint": "7",
+    "espower-typescript": "9",
+    "intelli-espower-loader": "1",
+    "lerna": "3",
+    "mocha": "8",
+    "mocha-lcov-reporter": "1",
+    "nyc": "15",
+    "power-assert": "1",
+    "rewire": "5",
+    "rimraf": "3",
+    "rollup": "2",
+    "rollup-plugin-terser": "7",
+    "rxjs": "6",
+    "rxrunscript": "5",
+    "ts-node": "9",
+    "typescript": "4",
+    "yargs": "16"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "scripts": {
+    "bp:add": "git remote add bp https://github.com/waitingsong/npm-mono-base",
+    "bp:sync": "git fetch --all -v && git merge bp/master -m \"Merge remote-tracking branch 'bp/master'\"",
+    "bootstrap": "lerna bootstrap --loglevel notice",
+    "build": "sh .scripts/build.sh",
+    "ci": "npm run build && npm run cov",
+    "clean": "lerna clean --loglevel error --yes && lerna run clean && npm run clean:lock && npm run clean:cache",
+    "clean:cache": "rm packages/*/.eslintcache -f",
+    "clean:lock": "rm packages/*/package-lock.json -f",
+    "cov": "lerna run cov --concurrency=1",
+    "doc": "node .githooks/doc.js",
+    "lint": "sh .scripts/lint.sh",
+    "lint:nofix": "sh .scripts/lint-no-fix.sh",
+    "pub": "sh .scripts/publish.sh --conventional-commits --create-release github",
+    "pub:canary": "sh .scripts/publish.sh --canary",
+    "pub:beta": "sh .scripts/publish.sh --dist-tag beta --force-publish=*",
+    "pub:next": "sh .scripts/publish.sh --dist-tag next",
+    "purge": "lerna clean --loglevel error --yes && lerna run purge && rm node_modules -rf",
+    "repo:init": "sh .githooks/init-repo.sh",
+    "reset": "npm run purge && npm i && npm run ci",
+    "test": "lerna run test",
+    "ptest": "sh .scripts/test.sh"
+  },
+  "nyc": {
+    "include": [
+      "packages/*/src/*.ts",
+      "packages/*/src/**/*.ts"
+    ],
+    "exclude": [
+      ".githooks",
+      "node_modules*",
+      "**/src/bin",
+      "**/src/domain.ts",
+      "**/src/interface.ts",
+      "**/dist",
+      "**/node_modules*",
+      "**/test",
+      "**/test*",
+      "**/*.d.ts",
+      "**/*.js"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "json",
+      "html"
+    ],
+    "all": true
+  }
+}
