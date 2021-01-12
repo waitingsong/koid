@@ -3,21 +3,12 @@
 import { ConfigDc, ConfigId, Options } from './types'
 
 
-export function parseOptions(config: ConfigId | ConfigDc): Options {
-  return 'id' in config
-    ? parseConfigId(config)
-    : parseConfigDc(config)
+export function parseOptions(config: ConfigDc | ConfigId): Options {
+  return 'dataCenter' in config
+    ? parseConfigDc(config)
+    : parseConfigId(config)
 }
 
-
-function parseConfigId(config: ConfigId): Options {
-  const opts = {
-    genId: (config.id & 0x3FF) << 12,
-    epoch: typeof config.epoch === 'number' ? config.epoch : 0,
-  }
-
-  return opts
-}
 
 function parseConfigDc(config: ConfigDc): Options {
   const dataCenter = config.dataCenter & 0x1F
@@ -25,6 +16,15 @@ function parseConfigDc(config: ConfigDc): Options {
 
   const opts = {
     genId: (dataCenter << 5 | worker) << 12,
+    epoch: typeof config.epoch === 'number' ? config.epoch : 0,
+  }
+
+  return opts
+}
+
+function parseConfigId(config: ConfigId): Options {
+  const opts = {
+    genId: (config.id & 0x3FF) << 12,
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,
   }
 
