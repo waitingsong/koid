@@ -44,6 +44,25 @@ describe(filename, () => {
       }
       assert(false, 'Should throw error, but not')
     })
+
+
+    it('Clock backwards', () => {
+      const dataCenter = 2
+      const worker = 3
+      const config = {
+        dataCenter,
+        worker,
+      }
+      const koid = KoidFactory(config)
+      try {
+        testLoopClock(koid, 10000000)
+      }
+      catch (ex) {
+        assert(ex && (ex as Error).message.includes(KoidMsg.ClockBack))
+        return
+      }
+      assert(false, 'Should throw error, but not')
+    })
   })
 
 })
@@ -52,6 +71,26 @@ describe(filename, () => {
 function testLoop(generator: Koid, howMany: number): void {
   for (let i = 0; i < howMany; i++) {
     generator.next
+  }
+}
+
+
+function testLoopClock(generator: Koid, howMany: number): void {
+  const { epoch } = generator.config
+  for (let i = 0; i < howMany; i++) {
+    if (i > 10) {
+      // @ts-expect-error
+      generator.epoch = epoch + 1000000
+    }
+    try {
+      generator.next
+    }
+    catch (ex) {
+      if (ex && (ex as Error).message.includes(KoidMsg.SeqExceed)) {
+        continue
+      }
+      throw ex
+    }
   }
 }
 
