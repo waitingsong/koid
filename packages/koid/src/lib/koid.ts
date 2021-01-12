@@ -33,7 +33,8 @@ export class Koid {
 
     // Generates id in the same millisecond as the previous id
     if (time < this.lastTime) {
-      throw new Error(`Clock moved backwards. Refusing to generate id for ${this.lastTime - time} milliseconds`)
+      const msg = KoidMsg.ClockBack + `. Refusing to generate id for ${this.lastTime - time} milliseconds`
+      throw new Error(msg)
     }
     else if (time === this.lastTime) {
       this.seq = this.seq + 1 & this.seqMask

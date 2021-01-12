@@ -38,7 +38,7 @@ export interface Options {
 }
 
 export enum KoidMsg {
-  SeqExceed = 'Sequence exceeded its maximum value'
-
+  SeqExceed = 'Sequence exceeded its maximum value',
+  ClockBack = 'Clock moved backwards'
 }
 
