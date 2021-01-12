@@ -5,7 +5,7 @@ import {
 import * as assert from 'power-assert'
 
 import { ConfigDc, ConfigId } from '../src/index'
-import { parseOptions } from '../src/lib/helper'
+import { parseConfig } from '../src/lib/helper'
 
 
 const filename = basename(__filename)
@@ -21,7 +21,7 @@ describe(filename, () => {
         dataCenter,
         worker,
       }
-      const ret = parseOptions(config)
+      const ret = parseConfig(config)
       assert(ret.epoch === 0)
       const genId = (dataCenter << 5) + worker
       assert(ret.genId === genId << 12)

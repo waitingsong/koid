@@ -3,7 +3,7 @@
 import { ConfigDc, ConfigId, Options } from './types'
 
 
-export function parseOptions(config: ConfigDc | ConfigId): Options {
+export function parseConfig(config: ConfigDc | ConfigId): Options {
   return 'dataCenter' in config
     ? parseConfigDc(config)
     : parseConfigId(config)
