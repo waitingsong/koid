@@ -7,6 +7,7 @@ import * as assert from 'power-assert'
 import { KoidFactory } from '../src/index'
 
 import { config1, config4, config2 } from './config.test'
+import { IdsEqualIgnoreThreeMs } from './util'
 
 
 const filename = basename(__filename)
@@ -41,12 +42,21 @@ describe(filename, () => {
         epoch: Date.now() - config1[0].time,
       })
       const buf = inst.next
-      const idHex = buf.toString('hex')
-      assert(`0x${idHex}` === config1[0].idStr)
 
       const { config } = inst
       assert(config.dataCenter === dataCenter)
       assert(config.worker === worker)
+
+      try {
+        const idHex = buf.toString('hex')
+        assert(`0x${idHex}` === config1[0].idStr)
+      }
+      catch (ex) {
+        if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+          return
+        }
+        throw ex
+      }
     })
 
     it('generate two', () => {
@@ -65,12 +75,20 @@ describe(filename, () => {
         ret[i] = inst.next
       }
       ret.forEach((buf, index) => {
-        const idHex = buf.toString('hex')
-        assert(`0x${idHex}` === config2[index].idStr)
-
         const { config } = inst
         assert(config.dataCenter === dataCenter)
         assert(config.worker === worker)
+
+        try {
+          const idHex = buf.toString('hex')
+          assert(`0x${idHex}` === config2[index].idStr)
+        }
+        catch (ex) {
+          if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+            return
+          }
+          throw ex
+        }
       })
     })
 
@@ -90,12 +108,20 @@ describe(filename, () => {
         ret[i] = inst.next
       }
       ret.forEach((buf, index) => {
-        const idHex = buf.toString('hex')
-        assert(`0x${idHex}` === config4[index].idStr)
-
         const { config } = inst
         assert(config.dataCenter === dataCenter)
         assert(config.worker === worker)
+
+        try {
+          const idHex = buf.toString('hex')
+          assert(`0x${idHex}` === config4[index].idStr)
+        }
+        catch (ex) {
+          if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+            return
+          }
+          throw ex
+        }
       })
     })
   })
