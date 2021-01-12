@@ -9,7 +9,7 @@ export function IdsEqualIgnoreThreeMs(result: Buffer, hex: string): boolean {
   const diff = (id - baseId).toString()
   const ret = diff === '1' || diff === '2' || diff === '3'
   if (! ret) {
-    console.info('diff:', ret)
+    console.info('diff:', diff)
   }
   return ret
 }
