@@ -16,6 +16,24 @@ const filename = basename(__filename)
 describe(filename, () => {
 
   describe('should works', () => {
+    it('Clock backwards', () => {
+      const dataCenter = 2
+      const worker = 3
+      const config = {
+        dataCenter,
+        worker,
+      }
+      const koid = KoidFactory(config)
+      try {
+        testLoopClock(koid, 10000000)
+      }
+      catch (ex) {
+        assert(ex && (ex as Error).message.includes(KoidMsg.ClockBack))
+        return
+      }
+      assert(false, 'Should throw error, but not')
+    })
+
     it('unique ids when 5k', () => {
       const dataCenter = 2
       const worker = 3
@@ -40,25 +58,6 @@ describe(filename, () => {
       }
       catch (ex) {
         assert(ex && (ex as Error).message.includes(KoidMsg.SeqExceed))
-        return
-      }
-      assert(false, 'Should throw error, but not')
-    })
-
-
-    it('Clock backwards', () => {
-      const dataCenter = 2
-      const worker = 3
-      const config = {
-        dataCenter,
-        worker,
-      }
-      const koid = KoidFactory(config)
-      try {
-        testLoopClock(koid, 10000000)
-      }
-      catch (ex) {
-        assert(ex && (ex as Error).message.includes(KoidMsg.ClockBack))
         return
       }
       assert(false, 'Should throw error, but not')

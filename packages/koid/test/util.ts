@@ -7,7 +7,8 @@ export function IdsEqualIgnoreThreeMs(result: Buffer, hex: string): boolean {
   const baseId = baseBuf.readBigInt64BE()
 
   const diff = (id - baseId).toString()
-  const ret = diff === '1' || diff === '2' || diff === '3'
+  const diff2 = diff.slice(0, -22)
+  const ret = diff2 === '1' || diff2 === '2' || diff2 === '3'
   if (! ret) {
     console.info('diff:', diff)
   }
