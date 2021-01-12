@@ -27,7 +27,7 @@ describe(filename, () => {
       testLoop(koid, 5000)
     })
 
-    it('error when 9M', () => {
+    it('error when 10M', () => {
       const dataCenter = 2
       const worker = 3
       const config = {
@@ -36,7 +36,7 @@ describe(filename, () => {
       }
       const koid = KoidFactory(config)
       try {
-        testLoop(koid, 9000000)
+        testLoop(koid, 10000000)
       }
       catch (ex) {
         assert(ex && (ex as Error).message.includes(KoidMsg.SeqExceed))
