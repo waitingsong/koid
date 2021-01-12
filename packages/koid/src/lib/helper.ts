@@ -3,10 +3,23 @@
 import { ConfigDc, ConfigId, Options } from './types'
 
 
-export function parseConfig(config: ConfigDc | ConfigId): Options {
+export function parseConfig(config?: ConfigDc | ConfigId): Options {
+  /* istanbul ignore else */
+  if (typeof config === 'undefined') {
+    return genConfigRandom()
+  }
   return 'dataCenter' in config
     ? parseConfigDc(config)
     : parseConfigId(config)
+}
+
+/**
+ * Generate random id
+ */
+export function genConfigRandom(): Options {
+  const id = Date.now() & 0x3FF
+  const config = parseConfigId({ id })
+  return config
 }
 
 

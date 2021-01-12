@@ -12,8 +12,8 @@ const filename = basename(__filename)
 describe(filename, () => {
 
   describe('should works', () => {
-    it('generate', () => {
-      const inst = KoidFactory({ id: 1 })
+    it('generate w/o passing config', () => {
+      const inst = KoidFactory()
       const buf = inst.next
       const id = buf.readBigInt64BE()
       assert(id > 0)

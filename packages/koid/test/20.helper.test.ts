@@ -5,7 +5,7 @@ import {
 import * as assert from 'power-assert'
 
 import { ConfigDc, ConfigId } from '../src/index'
-import { parseConfig } from '../src/lib/helper'
+import { parseConfig, genConfigRandom } from '../src/lib/helper'
 
 
 const filename = basename(__filename)
@@ -25,6 +25,12 @@ describe(filename, () => {
       assert(ret.epoch === 0)
       const genId = (dataCenter << 5) + worker
       assert(ret.genId === genId << 12)
+    })
+
+    it('genConfigRandom()', () => {
+      const ret = genConfigRandom()
+      assert(ret.genId > 0)
+      assert(ret.epoch === 0)
     })
   })
 
