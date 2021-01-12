@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/waitingsong/koid/compare/v0.3.0...v0.4.0) (2021-01-12)
+
+
+### Features
+
+* **koid:** add KoidMsg.ClockBack ([e121e0c](https://github.com/waitingsong/koid/commit/e121e0ccf1b1de3bc56ce18b7f3ff16dc7ea3b07))
+
+
+
+
+
 # [0.3.0](https://github.com/waitingsong/koid/compare/v0.2.0...v0.3.0) (2021-01-12)
 
 

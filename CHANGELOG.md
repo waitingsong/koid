@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](/compare/v0.3.0...v0.4.0) (2021-01-12)
+
+
+### Features
+
+* **koid:** add KoidMsg.ClockBack e121e0c
+
+
+
+
+
 # [0.3.0](/compare/v0.2.0...v0.3.0) (2021-01-12)
 
 
