@@ -177,9 +177,10 @@ npm run bootstrap
 
 ## Packages
 
-| Package  | Version                | Dependencies                 | DevDependencies                |
-| -------- | ---------------------- | ---------------------------- | ------------------------------ |
-| [`koid`] | [![main-svg]][main-ch] | [![main-d-svg]][main-d-link] | [![main-dd-svg]][main-dd-link] |
+| Package      | Version                | Dependencies                 | DevDependencies                |
+| ------------ | ---------------------- | ---------------------------- | ------------------------------ |
+| [`koid`]     | [![main-svg]][main-ch] | [![main-d-svg]][main-d-link] | [![main-dd-svg]][main-dd-link] |
+| [`egg-koid`] | [![egg-svg]][egg-ch]   | [![egg-d-svg]][egg-d-link]   | [![egg-dd-svg]][egg-dd-link]   |
 
 
 ## License
@@ -198,4 +199,12 @@ npm run bootstrap
 [main-d-link]: https://david-dm.org/waitingsong/koid.svg?path=packages/koid
 [main-dd-svg]: https://david-dm.org/waitingsong/koid/dev-status.svg?path=packages/koid
 [main-dd-link]: https://david-dm.org/waitingsong/koid?path=packages/koid#info=devDependencies
+
+[`egg-koid`]: https://github.com/waitingsong/koid/tree/master/packages/egg-koid
+[egg-svg]: https://img.shields.io/npm/v/egg-koid.svg?cacheSeconds=86400
+[egg-ch]: https://github.com/waitingsong/koid/tree/master/packages/egg-koid/CHANGELOG.md
+[egg-d-svg]: https://david-dm.org/waitingsong/koid.svg?path=packages/egg-koid
+[egg-d-link]: https://david-dm.org/waitingsong/koid.svg?path=packages/egg-koid
+[egg-dd-svg]: https://david-dm.org/waitingsong/koid/dev-status.svg?path=packages/egg-koid
+[egg-dd-link]: https://david-dm.org/waitingsong/koid?path=packages/egg-koid#info=devDependencies
 
