@@ -1,16 +1,22 @@
 
-export function IdsEqualIgnoreThreeMs(result: Buffer, hex: string): boolean {
-  // 100011000010000001010100001110110000 0000000000 000000000000
-  // 100011000010000001010100001110110001 0000000000 000000000000
-  const id = result.readBigInt64BE()
-  const baseBuf = Buffer.from(hex.slice(2), 'hex')
-  const baseId = baseBuf.readBigInt64BE()
+export function IdsEqualIgnoreMs(b: Buffer, hex: string, permit = 1): boolean {
+  // 00000010001100001000000101010000111011 0001 0000000000 000000000000
+  // 00000010001100001000000101010000111011 0000 0000000000 000000000000
+  const bb = Buffer.from(hex.slice(2), 'hex')
 
-  const diff = (id - baseId).toString()
-  const diff2 = diff.slice(0, -22)
-  const ret = diff2 === '1' || diff2 === '2' || diff2 === '3'
+  const int1 = b[5]
+  const int2 = bb[5]
+  const intDiff = (int1 >> 6) - (int2 >> 6)
+
+  const ret = intDiff <= permit
   if (! ret) {
-    console.info('diff:', diff)
+    console.info(
+      'int1: %d, int2: %d intDiff: %d, hex: %s',
+      int1,
+      int2,
+      intDiff,
+      hex,
+    )
   }
   return ret
 }

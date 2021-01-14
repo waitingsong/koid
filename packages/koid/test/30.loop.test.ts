@@ -25,7 +25,7 @@ describe(filename, () => {
       }
       const koid = KoidFactory(config)
       try {
-        testLoopClock(koid, 10000000)
+        testLoopClock(koid, 100)
       }
       catch (ex) {
         assert(ex && (ex as Error).message.includes(KoidMsg.ClockBack))
@@ -34,7 +34,7 @@ describe(filename, () => {
       assert(false, 'Should throw error, but not')
     })
 
-    it('unique ids when 5k', () => {
+    it('unique ids when 1k', () => {
       const dataCenter = 2
       const worker = 3
       const config = {
@@ -42,10 +42,10 @@ describe(filename, () => {
         worker,
       }
       const koid = KoidFactory(config)
-      testLoop(koid, 5000)
+      testLoop(koid, 1000)
     })
 
-    it('error when 10M', () => {
+    it('error', () => {
       const dataCenter = 2
       const worker = 3
       const config = {
@@ -54,7 +54,7 @@ describe(filename, () => {
       }
       const koid = KoidFactory(config)
       try {
-        testLoop(koid, 10000000)
+        testLoopMock(koid, 20000)
       }
       catch (ex) {
         assert(ex && (ex as Error).message.includes(KoidMsg.SeqExceed))
@@ -73,11 +73,32 @@ function testLoop(generator: Koid, howMany: number): void {
   }
 }
 
+function testLoopMock(generator: Koid, howMany: number): void {
+  const { epoch } = generator.config
+
+  for (let i = 0; i < howMany; i++) {
+    try {
+      // @ts-expect-error
+      generator.lastTime = Date.now() - epoch
+      generator.next
+    }
+    catch (ex) {
+      if ((ex as Error).message.includes(KoidMsg.ClockBack)) {
+        console.info('clock')
+        continue
+      }
+      console.info('error loop:', i)
+      // assert(i === 4096)
+      throw ex
+    }
+  }
+}
+
 
 function testLoopClock(generator: Koid, howMany: number): void {
   const { epoch } = generator.config
   for (let i = 0; i < howMany; i++) {
-    if (i > 10) {
+    if (i > 1) {
       // @ts-expect-error
       generator.epoch = epoch + 1000000
     }

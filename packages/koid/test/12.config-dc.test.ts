@@ -7,7 +7,7 @@ import * as assert from 'power-assert'
 import { KoidFactory } from '../src/index'
 
 import { config1, config4, config2 } from './config.test'
-import { IdsEqualIgnoreThreeMs } from './util'
+import { IdsEqualIgnoreMs } from './util'
 
 
 const filename = basename(__filename)
@@ -52,7 +52,7 @@ describe(filename, () => {
         assert(`0x${idHex}` === config1[0].idStr)
       }
       catch (ex) {
-        if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+        if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
           return
         }
         throw ex
@@ -84,7 +84,7 @@ describe(filename, () => {
           assert(`0x${idHex}` === config2[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
             return
           }
           throw ex
@@ -112,12 +112,14 @@ describe(filename, () => {
         assert(config.dataCenter === dataCenter)
         assert(config.worker === worker)
 
+        IdsEqualIgnoreMs(buf, config4[0].idStr)
+
         try {
           const idHex = buf.toString('hex')
           assert(`0x${idHex}` === config4[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, config4[0].idStr)) {
             return
           }
           throw ex

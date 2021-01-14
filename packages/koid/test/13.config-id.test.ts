@@ -7,7 +7,7 @@ import * as assert from 'power-assert'
 import { ConfigDc, ConfigId, KoidFactory } from '../src/index'
 
 import { config1, config4, config2 } from './config.test'
-import { IdsEqualIgnoreThreeMs } from './util'
+import { IdsEqualIgnoreMs } from './util'
 
 
 const filename = basename(__filename)
@@ -42,7 +42,7 @@ describe(filename, () => {
         assert(`0x${idHex}` === config1[0].idStr)
       }
       catch (ex) {
-        if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+        if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
           return
         }
         throw ex
@@ -73,7 +73,7 @@ describe(filename, () => {
           assert(`0x${idHex}` === config2[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
             return
           }
           throw ex
@@ -104,7 +104,7 @@ describe(filename, () => {
           assert(`0x${idHex}` === config4[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreThreeMs(buf, config1[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
             return
           }
           throw ex
