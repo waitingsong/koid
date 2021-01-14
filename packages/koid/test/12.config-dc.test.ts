@@ -6,7 +6,7 @@ import * as assert from 'power-assert'
 
 import { KoidFactory } from '../src/index'
 
-import { config1, config4, config2 } from './config.test'
+import { config1, config2, config4 } from './config.test'
 import { IdsEqualIgnoreMs } from './util'
 
 
@@ -33,13 +33,14 @@ describe(filename, () => {
     })
 
     it('generate one', () => {
+      const tconfig = config1
       const dataCenter = 0
       const worker = 0
 
       const inst = KoidFactory({
         dataCenter,
         worker,
-        epoch: Date.now() - config1[0].time,
+        epoch: Date.now() - tconfig[0].time,
       })
       const buf = inst.next
 
@@ -49,10 +50,10 @@ describe(filename, () => {
 
       try {
         const idHex = buf.toString('hex')
-        assert(`0x${idHex}` === config1[0].idStr)
+        assert(`0x${idHex}` === tconfig[0].idStr)
       }
       catch (ex) {
-        if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
+        if (IdsEqualIgnoreMs(buf, tconfig[0].idStr)) {
           return
         }
         throw ex
@@ -60,15 +61,16 @@ describe(filename, () => {
     })
 
     it('generate two', () => {
-      const dataCenter = config2[0].dataCenter
-      const worker = config2[0].worker
-      const len = config2.length
+      const tconfig = config2
+      const dataCenter = tconfig[0].dataCenter
+      const worker = tconfig[0].worker
+      const len = tconfig.length
       const ret = new Array<Buffer>(len * 8)
 
       const inst = KoidFactory({
         dataCenter,
         worker,
-        epoch: Date.now() - config2[0].time,
+        epoch: Date.now() - tconfig[0].time,
       })
 
       for (let i = 0; i < len; i = i + 8) {
@@ -81,10 +83,10 @@ describe(filename, () => {
 
         try {
           const idHex = buf.toString('hex')
-          assert(`0x${idHex}` === config2[index].idStr)
+          assert(`0x${idHex}` === tconfig[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, tconfig[0].idStr)) {
             return
           }
           throw ex
@@ -93,15 +95,16 @@ describe(filename, () => {
     })
 
     it('generate four', () => {
-      const dataCenter = config4[0].dataCenter
-      const worker = config4[0].worker
-      const len = config4.length
+      const tconfig = config4
+      const dataCenter = tconfig[0].dataCenter
+      const worker = tconfig[0].worker
+      const len = tconfig.length
       const ret = new Array<Buffer>(len * 8)
 
       const inst = KoidFactory({
-        dataCenter: config4[0].dataCenter,
-        worker: config4[0].worker,
-        epoch: Date.now() - config4[0].time,
+        dataCenter: tconfig[0].dataCenter,
+        worker: tconfig[0].worker,
+        epoch: Date.now() - tconfig[0].time,
       })
 
       for (let i = 0; i < len; i = i + 8) {
@@ -112,14 +115,14 @@ describe(filename, () => {
         assert(config.dataCenter === dataCenter)
         assert(config.worker === worker)
 
-        IdsEqualIgnoreMs(buf, config4[0].idStr)
+        IdsEqualIgnoreMs(buf, tconfig[0].idStr)
 
         try {
           const idHex = buf.toString('hex')
-          assert(`0x${idHex}` === config4[index].idStr)
+          assert(`0x${idHex}` === tconfig[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreMs(buf, config4[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, tconfig[0].idStr)) {
             return
           }
           throw ex
