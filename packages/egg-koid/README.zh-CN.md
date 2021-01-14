@@ -3,10 +3,11 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/waitingsong/koid.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![](https://img.shields.io/badge/lang-TypeScript-blue.svg)
-[![Node CI](https://github.com/waitingsong/egg-plugin-base/workflows/ci/badge.svg)](https://github.com/waitingsong/egg-plugin-base/actions?query=workflow%3A%22ci%22)
-[![codecov](https://codecov.io/gh/waitingsong/egg-plugin-base/branch/master/graph/badge.svg?token=9hyVmq1GwC)](https://codecov.io/gh/waitingsong/egg-plugin-base)
+[![](https://img.shields.io/badge/lang-TypeScript-blue.svg)]()
+[![ci](https://github.com/waitingsong/koid/workflows/ci/badge.svg)](https://github.com/waitingsong/koid/actions?query=workflow%3A%22ci%22)
+[![codecov](https://codecov.io/gh/waitingsong/koid/branch/master/graph/badge.svg?token=xaYSfbo3Xw)](https://codecov.io/gh/waitingsong/koid)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 
 ## 安装
@@ -58,7 +59,7 @@ export const koid: KoidEggConfig = {
 
 ```ts
 import { Plugin, Provide } from '@midwayjs/decorator'
-import { Koid } from 'egg-koid'
+import type { Koid } from 'egg-koid'  // note: import **type**
 
 @Provide()
 export class UserService {

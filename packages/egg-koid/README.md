@@ -60,7 +60,7 @@ export const koid: KoidEggConfig = {
 
 ```ts
 import { Plugin, Provide } from '@midwayjs/decorator'
-import { Koid } from 'egg-koid'
+import type { Koid } from 'egg-koid'  // note: import **type**
 
 @Provide()
 export class UserService {
