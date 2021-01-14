@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 
 export { KoidFactory } from './lib/index'
-export type { Koid } from './lib/koid'
+export { Koid } from './lib/koid'
 export {
   ConfigId, ConfigDc, KoidMsg,
 } from './lib/types'
