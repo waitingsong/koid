@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 
 export { KoidFactory } from './lib/index'
 export type { Koid } from './lib/koid'

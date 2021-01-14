@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import * as assert from 'assert'
 
 // eslint-disable-next-line import/no-extraneous-dependencies
