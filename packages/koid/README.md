@@ -43,11 +43,11 @@ As you can see, each Koid is 64 bits long, consisting of:
 Breakdown of bits for an id e.g. `5828128208445124608` (counter is `0`, dataCenter is `7` and worker `3`) is as follows:
 ```
  010100001110000110101011101110100001000111 00111 00011 000000000000
-                                                       |------------| 12 bit counter
-                                                 |-----|               5 bit worker
+                                                       | ------------ | 12 bit counter |
+                                                       | ------------ |5 bit worker
                                            |-----|                     5 bit datacenter
-                                           |----- -----|              10 bit generator identifier
-|------------------------------------------|                          42 bit timestamp
+                                           | ----- ----- | 10 bit generator identifier |
+                                           | ----------- |42 bit timestamp
 ```
 
 
@@ -147,8 +147,32 @@ It would give something like:
 50dddcbfb5c00001  // hex string
 ```
 
-
 <br>
+
+## Initialization
+
+```sh
+npm run repo:init
+```
+
+
+## Update
+
+```sh
+npm run bootstrap
+```
+
+
+## Test
+
+- Use `npm run lint` to check code style.
+- Use `npm run test` to run unit test.
+
+
+## Note
+
+- Run `npm run clean` before `npm run build`, if any file under typescript outDir folder was deleted manually.
+- Default publish registry is `NPM`, configurated in file `lerna.json`
 
 
 ## Packages
