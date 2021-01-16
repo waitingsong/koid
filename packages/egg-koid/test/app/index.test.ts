@@ -57,6 +57,13 @@ describe(filename, () => {
     assert(buf.length === 8)
   })
 
+  it('should nextBigint works', () => {
+    const inst: Koid = app[pluginName]
+    assert(inst && inst.nextBigint)
+    const id = inst.nextBigint
+    assert(id > 0)
+  })
+
 
   it('should get a ctx', () => {
     const ctx = app.mockContext()
