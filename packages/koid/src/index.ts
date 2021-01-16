@@ -5,4 +5,5 @@ export {
   ConfigId, ConfigDc, KoidMsg,
 } from './lib/types'
 export { genConfigRandom } from './lib/helper'
+export { retrieveFromId } from './lib/util'
 

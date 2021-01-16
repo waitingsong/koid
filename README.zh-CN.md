@@ -144,8 +144,9 @@ const hexId = buf.toString('hex')
 
 It would give something like:
 ```ts
-5827056208820830208n // bigint
-50dddcbfb5c00001  // hex string
+<Buffer 5d c2 cd d1 f4 fd 30 00>
+6756188692651257856n // bigint
+5dc2cdd1f4fd3000 // hex string
 ```
 
 <br>

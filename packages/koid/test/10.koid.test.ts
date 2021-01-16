@@ -22,6 +22,19 @@ describe(filename, () => {
       console.log('hex id value:', buf.toString('hex'))
     })
 
+    it('generate with passing config', () => {
+      const inst = KoidFactory({
+        dataCenter: 0,
+        worker: 0,
+      })
+      const buf = inst.next
+      const id = buf.readBigInt64BE()
+      assert(id > 0)
+      console.log('buf value:', buf)
+      console.log('bigInt id value:', id)
+      console.log('hex id value:', buf.toString('hex'))
+    })
+
     it('config getter with dc', () => {
       const dataCenter = 9
       const worker = 7

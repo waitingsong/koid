@@ -42,3 +42,11 @@ export enum KoidMsg {
   ClockBack = 'Clock moved backwards'
 }
 
+
+export interface IdInfo {
+  dataCenter: Options['dataCenter']
+  worker: Options['worker']
+  timestamp: number
+  sequence: number
+}
+

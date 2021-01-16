@@ -1,13 +1,14 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
 import { KoidMsg, Options } from './types'
+import { POW10, POW26 } from './util'
 
 
 export class Koid {
 
-  private readonly POW10 = Math.pow(2, 10)
+  private readonly POW10 = POW10
 
-  private readonly POW26 = Math.pow(2, 26)
+  private readonly POW26 = POW26
 
   private readonly epoch: number
 
