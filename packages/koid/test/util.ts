@@ -6,7 +6,7 @@ export function IdsEqualIgnoreMs(b: Buffer, hex: string, permit = 1): boolean {
 
   const int1 = b[5]
   const int2 = bb[5]
-  const intDiff = (int1 >> 6) - (int2 >> 6)
+  const intDiff = Math.abs((int1 >> 6) - (int2 >> 6))
 
   const ret = intDiff <= permit
   if (! ret) {
