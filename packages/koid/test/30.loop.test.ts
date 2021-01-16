@@ -34,17 +34,6 @@ describe(filename, () => {
       assert(false, 'Should throw error, but not')
     })
 
-    it('unique ids when 1k', () => {
-      const dataCenter = 2
-      const worker = 3
-      const config = {
-        dataCenter,
-        worker,
-      }
-      const koid = KoidFactory(config)
-      testLoop(koid, 1000)
-    })
-
     it('error', () => {
       const dataCenter = 2
       const worker = 3
@@ -66,12 +55,6 @@ describe(filename, () => {
 
 })
 
-
-function testLoop(generator: Koid, howMany: number): void {
-  for (let i = 0; i < howMany; i++) {
-    generator.next
-  }
-}
 
 function testLoopMock(generator: Koid, howMany: number): void {
   const { epoch } = generator.config
