@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/waitingsong/koid/compare/v1.1.0...v1.2.0) (2021-01-16)
+
+
+### Features
+
+* **koid:** generate bitint with koid.nextBigint ([7da4954](https://github.com/waitingsong/koid/commit/7da4954bce749e2b16f9f2a530f4ede76afad43c))
+
+
+
+
+
 # [1.1.0](https://github.com/waitingsong/koid/compare/v1.0.0...v1.1.0) (2021-01-16)
 
 
