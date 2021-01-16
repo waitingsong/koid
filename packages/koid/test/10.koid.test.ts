@@ -12,7 +12,7 @@ const filename = basename(__filename)
 describe(filename, () => {
 
   describe('should works', () => {
-    it('generate w/o passing config', () => {
+    it('next w/o passing config', () => {
       const inst = KoidFactory()
       const buf = inst.next
       const id = buf.readBigInt64BE()
@@ -22,7 +22,7 @@ describe(filename, () => {
       console.log('hex id value:', buf.toString('hex'))
     })
 
-    it('generate with passing config', () => {
+    it('next with passing config', () => {
       const inst = KoidFactory({
         dataCenter: 0,
         worker: 0,
@@ -33,6 +33,21 @@ describe(filename, () => {
       console.log('buf value:', buf)
       console.log('bigInt id value:', id)
       console.log('hex id value:', buf.toString('hex'))
+    })
+
+    it('nextBigint w/o passing config', () => {
+      const inst = KoidFactory()
+      const id = inst.nextBigint
+      assert(id > 0)
+    })
+
+    it('nextBigint with passing config', () => {
+      const inst = KoidFactory({
+        dataCenter: 0,
+        worker: 0,
+      })
+      const id = inst.nextBigint
+      assert(id > 0)
     })
 
     it('config getter with dc', () => {

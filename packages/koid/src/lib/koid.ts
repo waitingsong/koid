@@ -28,6 +28,9 @@ export class Koid {
     this.seq = 0
   }
 
+  /**
+   * Generate an id, type of Buffer
+   */
   get next(): Buffer {
     const id = Buffer.alloc(8)
     const time = Date.now() - this.epoch
@@ -60,6 +63,14 @@ export class Koid {
     id.writeUInt16BE(Math.floor(time / this.POW26) & 0xFFFF, 0)
 
     return id
+  }
+
+
+  /**
+   * Generate an id, type of bigint
+   */
+  get nextBigint(): bigint {
+    return this.next.readBigInt64BE()
   }
 
 
