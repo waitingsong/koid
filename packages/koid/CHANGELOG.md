@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/waitingsong/koid/compare/v1.0.0...v1.1.0) (2021-01-16)
+
+
+### Features
+
+* **koid:** add retrieveFromId() ([b9e607d](https://github.com/waitingsong/koid/commit/b9e607da85f531db6af3f4800858a5df626a4740))
+
+
+
+
+
 # [1.0.0](https://github.com/waitingsong/koid/compare/v0.5.0...v1.0.0) (2021-01-14)
 
 **Note:** Version bump only for package koid
