@@ -1,14 +1,16 @@
-import { lookup } from 'dns'
-
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable node/no-extraneous-require */
 import {
   basename,
   join,
 } from '@waiting/shared-core'
-import * as assert from 'power-assert'
 
 import { KoidFactory, KoidMsg } from '../src'
 import { parseConfig } from '../src/lib/helper'
 import { Koid } from '../src/lib/koid'
+
+
+const assert = require('power-assert')
 
 
 const filename = basename(__filename)

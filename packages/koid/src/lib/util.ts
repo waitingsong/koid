@@ -1,5 +1,5 @@
 /* eslint-disable no-bitwise */
-import * as assert from 'assert'
+import assert from 'assert'
 
 import { IdInfo, KoidMsg } from './types'
 

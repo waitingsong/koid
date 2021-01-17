@@ -1,13 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable node/no-extraneous-require */
 import {
   basename,
   join,
 } from '@waiting/shared-core'
-import * as assert from 'power-assert'
 
 import { KoidFactory } from '../src/index'
 
 import { config1, config2, config4 } from './config.test'
 import { IdsEqualIgnoreMs } from './util'
+
+
+const assert = require('power-assert')
 
 
 const filename = basename(__filename)

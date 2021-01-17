@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable node/no-extraneous-require */
 import {
   basename,
   join,
 } from '@waiting/shared-core'
-import * as assert from 'power-assert'
 
 import { ConfigDc, ConfigId, genConfigRandom } from '../src/index'
 import { parseConfig } from '../src/lib/helper'
+
+
+const assert = require('power-assert')
 
 
 const filename = basename(__filename)
