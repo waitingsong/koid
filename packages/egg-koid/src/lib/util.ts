@@ -55,6 +55,7 @@ export function parseOptions(client?: ClientOptions): ClientOptions {
 
   if (client) {
     opts.debug = !! client.debug
+    opts.koidConfig = client.koidConfig
   }
   else {
     opts.debug = initialClientOptions.debug
