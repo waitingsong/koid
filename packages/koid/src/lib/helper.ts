@@ -26,9 +26,10 @@ export function genConfigRandom(): Options {
 function parseConfigDc(config: ConfigDc): Options {
   const dataCenter = config.dataCenter & 0x1F
   const worker = config.worker & 0x1F
+  const id = (dataCenter << 5 | worker) & 0x3FF
 
   const opts = {
-    genId: (dataCenter << 5 | worker) << 12,
+    genId: id << 12,
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,
     dataCenter,
     worker,
@@ -38,10 +39,12 @@ function parseConfigDc(config: ConfigDc): Options {
 }
 
 function parseConfigId(config: ConfigId): Options {
-  const dataCenter = config.id >> 5
-  const worker = config.id & 0x1F
+  const id = config.id & 0x3FF
+  const dataCenter = id >> 5
+  const worker = id & 0x1F
+
   const opts = {
-    genId: (config.id & 0x3FF) << 12,
+    genId: id << 12,
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,
     dataCenter,
     worker,
