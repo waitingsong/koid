@@ -6,7 +6,8 @@ import { ConfigDc, ConfigId, Options } from './types'
 export function parseConfig(config?: ConfigDc | ConfigId): Options {
   /* istanbul ignore else */
   if (typeof config === 'undefined') {
-    return genConfigRandom()
+    const dc = genConfigRandom()
+    return parseConfigDc(dc)
   }
   return 'dataCenter' in config
     ? parseConfigDc(config)
@@ -16,10 +17,15 @@ export function parseConfig(config?: ConfigDc | ConfigId): Options {
 /**
  * Generate random id
  */
-export function genConfigRandom(): Options {
+export function genConfigRandom(): Required<ConfigDc> {
   const id = Date.now() & 0x3FF
   const config = parseConfigId({ id })
-  return config
+  const ret: Required<ConfigDc> = {
+    dataCenter: config.dataCenter,
+    worker: config.worker,
+    epoch: 0,
+  }
+  return ret
 }
 
 

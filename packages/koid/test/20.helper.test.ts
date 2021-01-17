@@ -80,9 +80,10 @@ describe(filename, () => {
     })
 
     it('genConfigRandom()', () => {
-      const ret = genConfigRandom()
-      assert(ret.genId > 0)
-      assert(ret.epoch === 0)
+      const { dataCenter, worker, epoch } = genConfigRandom()
+      assert(dataCenter >= 0 && dataCenter <= 0x1F)
+      assert(worker >= 0 && worker <= 0x1F)
+      assert(epoch === 0)
     })
   })
 
