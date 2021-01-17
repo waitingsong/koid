@@ -5,7 +5,7 @@ import {
   join,
 } from '@waiting/shared-core'
 
-import { ConfigDc, KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
+import { ConfigDc, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
 import { isValidBigintStr, isValidHexString } from '../src/lib/util'
 
 
@@ -75,6 +75,23 @@ describe(filename, () => {
           return
         }
         assert(false, `Should throw error, but not, with length: ${input}`)
+      })
+    })
+
+    it('specify', () => {
+      const arr = ['6755455236955799552']
+      const expects: IdInfo[] = [
+        {
+          dataCenter: 6, worker: 24, timestamp: 1610626038779, sequence: 0,
+        },
+      ]
+
+      arr.forEach((id, index) => {
+        // 10111011100000000110010101111101111111011 00110 11000 000000000000
+        const info = retrieveFromId(id)
+        const expect = expects[index]
+        assert(info.dataCenter === expect.dataCenter)
+        assert(info.worker === expect.worker)
       })
     })
   })
