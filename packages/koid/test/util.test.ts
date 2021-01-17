@@ -82,7 +82,7 @@ describe(filename, () => {
       const arr = ['6755455236955799552']
       const expects: IdInfo[] = [
         {
-          dataCenter: 6, worker: 24, timestamp: 1610626038779, sequence: 0,
+          dataCenter: 6, worker: 24, timestamp: 1610626038779, sequence: 0, hex: '5dc032befecd8000',
         },
       ]
 

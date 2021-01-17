@@ -52,5 +52,7 @@ export interface IdInfo {
   worker: Options['worker']
   timestamp: number
   sequence: number
+  /** hex id */
+  hex: string
 }
 

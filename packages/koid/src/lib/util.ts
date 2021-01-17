@@ -123,8 +123,10 @@ function retrieveFromBuffer(id: Readonly<Buffer>): IdInfo {
   const p7 = id.readUInt8(7)
   const sequence = (p6 << 8) + p7 & 0x1F
 
+  const hex = id.toString('hex')
+
   const ret: IdInfo = {
-    dataCenter, worker, timestamp, sequence,
+    dataCenter, worker, timestamp, sequence, hex,
   }
   return ret
 }
