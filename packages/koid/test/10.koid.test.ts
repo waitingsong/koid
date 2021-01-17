@@ -4,7 +4,7 @@ import {
 } from '@waiting/shared-core'
 import * as assert from 'power-assert'
 
-import { KoidFactory } from '../src/index'
+import { ConfigDc, KoidFactory } from '../src/index'
 
 
 const filename = basename(__filename)
@@ -78,6 +78,49 @@ describe(filename, () => {
         assert(config.dataCenter === dc)
         assert(config.worker === wk)
         assert(config.epoch === 0)
+      })
+    })
+  })
+
+
+  describe('should koid.retrieveFromId() works', () => {
+    it('normal', () => {
+      const config1: ConfigDc = {
+        dataCenter: 0,
+        worker: 0,
+      }
+      const config2: ConfigDc = {
+        dataCenter: 7,
+        worker: 30,
+      }
+      const config3: ConfigDc = {
+        dataCenter: 31,
+        worker: 31,
+      };
+
+      [config1, config2, config3].forEach((config) => {
+        const koid = KoidFactory(config)
+
+        const time = Date.now()
+        const id = koid.next
+        const int = id.readBigInt64BE()
+        const intStr = id.readBigInt64BE().toString()
+        const hex = id.toString('hex')
+
+        const infoBuf = koid.retrieveFromId(id)
+        const infoInt = koid.retrieveFromId(int)
+        const infoStr = koid.retrieveFromId(intStr)
+        const infoHex = koid.retrieveFromId(hex)
+        const infoHexPreifx = koid.retrieveFromId('0x' + hex)
+
+        console.info({
+          id, int, hex, time, infoBuf,
+        });
+        [infoBuf, infoInt, infoHex, infoStr, infoHexPreifx].forEach((info) => {
+          assert(info.dataCenter === config.dataCenter, new Date(info.timestamp).toString())
+          assert(info.worker === config.worker)
+          assert(info.timestamp === time || info.timestamp === time + 1)
+        })
       })
     })
   })

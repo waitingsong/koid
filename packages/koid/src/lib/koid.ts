@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
-import { KoidMsg, Options } from './types'
-import { POW10, POW26 } from './util'
+import { IdInfo, KoidMsg, Options } from './types'
+import { POW10, POW26, retrieveFromId } from './util'
 
 
 export class Koid {
@@ -79,6 +79,10 @@ export class Koid {
       ...this.options,
     }
     return ret
+  }
+
+  retrieveFromId(id: bigint | string | Readonly<Buffer>): IdInfo {
+    return retrieveFromId(id)
   }
 
 }
