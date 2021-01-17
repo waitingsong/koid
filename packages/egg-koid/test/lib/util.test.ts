@@ -1,9 +1,12 @@
+/* eslint-disable node/no-extraneous-require */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { basename } from '@waiting/shared-core'
-import * as assert from 'power-assert'
 
-import { parseConfig, initialConfig, pluginName, KoidEggConfig as PluginConfig, Koid } from '../../src/index'
+import { parseConfig, initialConfig, KoidEggConfig as PluginConfig } from '../../src/index'
+
+
+const assert = require('power-assert')
 
 
 const filename = basename(__filename)

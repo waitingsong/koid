@@ -1,12 +1,15 @@
+/* eslint-disable node/no-extraneous-require */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { basename } from '@waiting/shared-core'
 import * as mm from 'egg-mock'
-import * as assert from 'power-assert'
 import * as request from 'supertest'
 
 import { initialConfig, pluginName, KoidEggConfig as PluginConfig, Koid } from '../../src/index'
 import { koid as testConfig } from '../fixtures/test-2/config/config.default'
+
+
+const assert = require('power-assert')
 
 
 const filename = basename(__filename)
