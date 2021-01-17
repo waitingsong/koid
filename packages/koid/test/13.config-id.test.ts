@@ -75,7 +75,7 @@ describe(filename, () => {
           assert(`0x${idHex}` === tconfig[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, tconfig[index].idStr)) {
             return
           }
           throw ex
@@ -107,7 +107,7 @@ describe(filename, () => {
           assert(`0x${idHex}` === tconfig[index].idStr)
         }
         catch (ex) {
-          if (IdsEqualIgnoreMs(buf, config1[0].idStr)) {
+          if (IdsEqualIgnoreMs(buf, tconfig[index].idStr)) {
             return
           }
           throw ex
