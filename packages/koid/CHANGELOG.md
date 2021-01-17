@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/waitingsong/koid/compare/v2.0.0...v2.1.0) (2021-01-17)
+
+
+### Features
+
+* **koid:** add 'hex' property of ReturnType<retrieveFromId()> ([31bb032](https://github.com/waitingsong/koid/commit/31bb03200b17068292f5e71498ddb57a0a416fda))
+
+
+
+
+
 # [2.0.0](https://github.com/waitingsong/koid/compare/v1.4.0...v2.0.0) (2021-01-17)
 
 **Note:** Version bump only for package koid
