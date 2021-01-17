@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/waitingsong/koid/compare/v2.1.0...v2.1.1) (2021-01-17)
+
+
+### Bug Fixes
+
+* **koid:** parse overflow of dataCenter and worker ([99c4635](https://github.com/waitingsong/koid/commit/99c463537910d115fe93c6c3bd2317d44b698caf))
+
+
+
+
+
 # [2.1.0](https://github.com/waitingsong/koid/compare/v2.0.0...v2.1.0) (2021-01-17)
 
 
