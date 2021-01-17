@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](/compare/v2.1.2...v3.0.0) (2021-01-17)
+
+
+### Features
+
+* **koid:** breaking change return type of genConfigRandom() 84c2541
+
+
+
+
+
 ## [2.1.2](/compare/v2.1.1...v2.1.2) (2021-01-17)
 
 
