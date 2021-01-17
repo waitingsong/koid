@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/waitingsong/koid/compare/v1.2.0...v1.3.0) (2021-01-17)
+
+
+### Features
+
+* **koid:** retrieveFromId() accept bigint string like "6755455236955799552" ([f7147c3](https://github.com/waitingsong/koid/commit/f7147c33145ccaacb36c04673d9e7547543d5560))
+
+
+
+
+
 # [1.2.0](https://github.com/waitingsong/koid/compare/v1.1.0...v1.2.0) (2021-01-16)
 
 
