@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](/compare/v1.3.0...v1.4.0) (2021-01-17)
+
+
+### Features
+
+* **koid:** add koid:retrieveFromId() 4c1e3ee
+
+
+
+
+
 # [1.3.0](/compare/v1.2.0...v1.3.0) (2021-01-17)
 
 
