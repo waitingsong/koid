@@ -1,26 +1,40 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
-import { ConfigDc, ConfigId, Options } from './types'
+import { Config, ConfigDc, ConfigNode, Options } from './types'
 
 
-export function parseConfig(config?: ConfigDc | ConfigId): Options {
+export function parseConfig(config?: Config): Options {
   /* istanbul ignore else */
   if (typeof config === 'undefined') {
     const dc = genConfigRandom()
     return parseConfigDc(dc)
   }
-  return 'dataCenter' in config
-    ? parseConfigDc(config)
-    : parseConfigId(config)
+
+  if (typeof config.node === 'number') {
+    const configNode: ConfigNode = {
+      node: (config as ConfigNode).node,
+      epoch: config.epoch,
+    }
+    return parseConfigNode(configNode)
+  }
+  else {
+    const conf = config as ConfigDc
+    const configDc: ConfigDc = {
+      dataCenter: conf.dataCenter,
+      worker: conf.worker,
+      epoch: conf.epoch,
+    }
+    return parseConfigDc(configDc)
+  }
 }
 
 /**
  * Generate random id
  */
-export function genConfigRandom(): Required<ConfigDc> {
+export function genConfigRandom(): ConfigDc {
   const id = Date.now() & 0x3FF
-  const config = parseConfigId({ id })
-  const ret: Required<ConfigDc> = {
+  const config = parseConfigNode({ node: id })
+  const ret: ConfigDc = {
     dataCenter: config.dataCenter,
     worker: config.worker,
     epoch: 0,
@@ -44,8 +58,8 @@ function parseConfigDc(config: ConfigDc): Options {
   return opts
 }
 
-function parseConfigId(config: ConfigId): Options {
-  const id = config.id & 0x3FF
+function parseConfigNode(config: ConfigNode): Options {
+  const id = config.node & 0x3FF
   const dataCenter = id >> 5
   const worker = id & 0x1F
 

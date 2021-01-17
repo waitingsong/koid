@@ -5,7 +5,7 @@ import {
   join,
 } from '@waiting/shared-core'
 
-import { ConfigDc, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
+import { Config, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
 import { isValidBigintStr, isValidHexString } from '../src/lib/util'
 
 
@@ -17,15 +17,15 @@ const filename = basename(__filename)
 describe(filename, () => {
   describe('should retrieveFromId() works', () => {
     it('normal', () => {
-      const config1: ConfigDc = {
+      const config1: Config = {
         dataCenter: 0,
         worker: 0,
       }
-      const config2: ConfigDc = {
+      const config2: Config = {
         dataCenter: 7,
         worker: 30,
       }
-      const config3: ConfigDc = {
+      const config3: Config = {
         dataCenter: 31,
         worker: 31,
       };

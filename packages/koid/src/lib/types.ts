@@ -1,17 +1,21 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
 
-export interface ConfigId {
+export type Config = ConfigDc | ConfigNode
+
+export interface ConfigNode {
   /**
    * Generator identifier. Values from 0 to 1023 (10 bit).
    * It can be provided instead of datacenter and worker identifiers.
    */
-  id: number
+  node: number
   /**
    * Number used to reduce value of a generated timestamp,
    * Default: 0
    */
   epoch?: number
+  dataCenter?: never
+  worker?: never
 }
 
 export interface ConfigDc {
@@ -28,6 +32,7 @@ export interface ConfigDc {
    * Default: 0
    */
   epoch?: number
+  node?: never
 }
 
 export interface Options {

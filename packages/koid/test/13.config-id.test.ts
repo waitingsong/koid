@@ -21,7 +21,7 @@ describe(filename, () => {
   describe('should works', () => {
     it('normal', () => {
       const inst = KoidFactory({
-        id: 0,
+        node: 0,
       })
       const buf = inst.next
       const id = buf.readBigInt64BE()
@@ -33,7 +33,7 @@ describe(filename, () => {
       const dataCenter = 0
       const worker = 0
       const inst = KoidFactory({
-        id: 0,
+        node: 0,
         epoch: Date.now() - tconfig[0].time,
       })
       const buf = inst.next
@@ -62,7 +62,7 @@ describe(filename, () => {
       const len = tconfig.length
       const ret = new Array<Buffer>(len * 8)
       const inst = KoidFactory({
-        id: (dataCenter << 5) + worker,
+        node: (dataCenter << 5) + worker,
         epoch: Date.now() - tconfig[0].time,
       })
 
@@ -94,7 +94,7 @@ describe(filename, () => {
       const len = tconfig.length
       const ret = new Array<Buffer>(len * 8)
       const inst = KoidFactory({
-        id: (dataCenter << 5) + worker,
+        node: (dataCenter << 5) + worker,
         epoch: Date.now() - tconfig[0].time,
       })
 

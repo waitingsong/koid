@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Context } from 'egg'
-import type { ConfigDc, ConfigId } from 'koid'
+import type { Config } from 'koid'
 
 
 export interface KoidEggConfig {
@@ -17,7 +17,7 @@ export interface KoidEggConfig {
 
 export interface ClientOptions {
   debug?: boolean
-  koidConfig: ConfigDc | ConfigId | undefined
+  koidConfig: Config | undefined
 }
 
 

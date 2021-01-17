@@ -5,7 +5,7 @@ import {
   join,
 } from '@waiting/shared-core'
 
-import { ConfigDc, ConfigId, genConfigRandom } from '../src/index'
+import { Config, genConfigRandom } from '../src/index'
 import { parseConfig } from '../src/lib/helper'
 
 
@@ -17,24 +17,26 @@ const filename = basename(__filename)
 describe(filename, () => {
 
   describe('should parseConfig() works', () => {
-    it('perfer using ConfigDc', () => {
+    it('perfer using node instead of dataCenter', () => {
       const dataCenter = 2
       const worker = 3
-      const config: ConfigDc | ConfigId = {
-        id: 1,
+      const node = 1
+      // @ts-expect-error
+      const config: Config = {
+        node,
         dataCenter,
         worker,
       }
       const ret = parseConfig(config)
       assert(ret.epoch === 0)
-      const genId = (dataCenter << 5) + worker
-      assert(ret.genId === genId << 12)
+      const genId = node << 12
+      assert(ret.genId === genId)
     })
 
     it('dataCenter overflow', () => {
       const dataCenter = 132
       const worker = 0
-      const config: ConfigDc = {
+      const config: Config = {
         dataCenter,
         worker,
       }
@@ -50,7 +52,7 @@ describe(filename, () => {
     it('worker overflow', () => {
       const dataCenter = 0
       const worker = 132
-      const config: ConfigDc = {
+      const config: Config = {
         dataCenter,
         worker,
       }
@@ -66,7 +68,7 @@ describe(filename, () => {
     it('dataCenter and worker overflow', () => {
       const dataCenter = 123
       const worker = 132
-      const config: ConfigDc = {
+      const config: Config = {
         dataCenter,
         worker,
       }
