@@ -1,7 +1,7 @@
 {
   "name": "egg-koid",
   "author": "waiting",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "k-ordered, conflict-free ids generator in a distributed environment for egg.js and midway.js",
   "eggPlugin": {
     "name": "koid"
