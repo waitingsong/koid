@@ -5,7 +5,7 @@ import {
   join,
 } from '@waiting/shared-core'
 
-import { Config, KoidFactory } from '../src/index'
+import { Config, KoidFactory, retrieveFromId } from '../src/index'
 
 
 const assert = require('power-assert')
@@ -126,6 +126,37 @@ describe(filename, () => {
           assert(info.timestamp === time || info.timestamp === time + 1)
         })
       })
+    })
+
+    it('with epoch', () => {
+      // '2000-01-01T00:00:00Z'
+      const epoch = 946684800000
+      const centerMax = 33
+      const workerMax = 33
+
+      for (let i = 0; i < centerMax; i += 1) {
+        for (let j = 0; j < workerMax; j += 1) {
+          const inst = KoidFactory({
+            dataCenter: i,
+            worker: j,
+            epoch,
+          })
+          const now = Date.now()
+          const buf = inst.next
+
+          const info = inst.retrieveFromId(buf)
+          const info2 = retrieveFromId(buf, epoch)
+          assert(info.timestamp === info2.timestamp)
+          assert(info.dataCenter === info2.dataCenter)
+          assert(info.worker === info2.worker)
+          assert(info.sequence === info2.sequence)
+
+          // console.log('info:', info)
+          // console.log('time:', new Date(info.timestamp).toISOString())
+          const diff = info.timestamp - now
+          assert(diff < 4)
+        }
+      }
     })
   })
 

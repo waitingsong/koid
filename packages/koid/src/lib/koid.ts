@@ -82,7 +82,7 @@ export class Koid {
   }
 
   retrieveFromId(id: bigint | string | Readonly<Buffer>): IdInfo {
-    return retrieveFromId(id)
+    return retrieveFromId(id, this.epoch)
   }
 
 }

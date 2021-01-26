@@ -12,18 +12,18 @@ export const maxBigintId = BigInt('9223372036854775807')
  * Retrieve Id info from hex, bigint string, Buffer.
  * like '50dddcbfb5c00001' or '0x50dddcbfb5c00001' or "6755455236955799552"
  */
-export function retrieveFromId(id: bigint | string | Readonly<Buffer>): IdInfo {
+export function retrieveFromId(id: bigint | string | Readonly<Buffer>, epoch = 0): IdInfo {
   /* istanbul ignore else */
   if (! id) {
     throw new TypeError(KoidMsg.NotValidIdFormat)
   }
   switch (typeof id) {
     case 'bigint':
-      return retrieveFromBigint(id)
+      return retrieveFromBigint(id, epoch)
     case 'string':
-      return retrieveFromStr(id)
+      return retrieveFromStr(id, epoch)
     default:
-      return retrieveFromBuffer(id)
+      return retrieveFromBuffer(id, epoch)
   }
 }
 
@@ -32,11 +32,11 @@ export function retrieveFromId(id: bigint | string | Readonly<Buffer>): IdInfo {
  * Retrieve Id info from hex and bigint string
  * like '50dddcbfb5c00001' or '0x50dddcbfb5c00001' or "6755455236955799552"
  */
-function retrieveFromStr(id: string): IdInfo {
+function retrieveFromStr(id: string, epoch: number): IdInfo {
   const int8 = isValidBigintStr(id)
   return int8
-    ? retrieveFromBigint(int8)
-    : retrieveFromHex(id)
+    ? retrieveFromBigint(int8, epoch)
+    : retrieveFromHex(id, epoch)
 }
 
 /**
@@ -83,25 +83,25 @@ export function isValidHexString(id: string): Buffer | false {
  * Retrieve Id info from hex,
  * like '50dddcbfb5c00001' or '0x50dddcbfb5c00001'
  */
-function retrieveFromHex(id: string): IdInfo {
+function retrieveFromHex(id: string, epoch: number): IdInfo {
   const buf = isValidHexString(id)
   /* istanbul ignore else */
   if (! buf) {
     throw new TypeError(KoidMsg.NotValidHexString + `: "${id}"`)
   }
 
-  return retrieveFromBuffer(buf)
+  return retrieveFromBuffer(buf, epoch)
 }
 
 
-function retrieveFromBigint(id: bigint): IdInfo {
+function retrieveFromBigint(id: bigint, epoch: number): IdInfo {
   const buf = Buffer.alloc(8)
   buf.writeBigUInt64BE(id)
-  return retrieveFromBuffer(buf)
+  return retrieveFromBuffer(buf, epoch)
 }
 
 
-function retrieveFromBuffer(id: Readonly<Buffer>): IdInfo {
+function retrieveFromBuffer(id: Readonly<Buffer>, epoch: number): IdInfo {
   assert(id.length === 8)
   // 00000010 00110000 10000001 01010000 11101100 00.000000 00000000 00000000
   // 5d c2 d8 27 be 7f f0 00
@@ -113,7 +113,7 @@ function retrieveFromBuffer(id: Readonly<Buffer>): IdInfo {
   const p4 = id.readUInt8(4)
   const p5 = id.readUInt8(5)
   // eslint-disable-next-line no-mixed-operators
-  const timestamp = p0 * POW10 + (p4 << 2) + (p5 >> 6)
+  const timestamp = p0 * POW10 + (p4 << 2) + (p5 >> 6) + epoch
   // eslint-disable-next-line no-mixed-operators
   const dataCenter = (p5 & 0x3F) >> 1 & 0x1F
 
