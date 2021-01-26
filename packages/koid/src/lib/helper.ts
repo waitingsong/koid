@@ -73,3 +73,20 @@ function parseConfigNode(config: ConfigNode): Options {
   return opts
 }
 
+
+export function waitTillNextMillisecond(time: number, maxLoopTimes = 1024000): number {
+  /* istanbul ignore next */
+  if (maxLoopTimes <= 0) {
+    return 0
+  }
+
+  for (let i = 0; i < Math.abs(maxLoopTimes); i += 1) {
+    let now = Date.now()
+    /* istanbul ignore next */
+    if (now > time && i > 0) {
+      return i
+    }
+    now = Number.MAX_SAFE_INTEGER * now
+  }
+  return 0
+}

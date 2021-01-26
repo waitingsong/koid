@@ -6,7 +6,7 @@ import {
 } from '@waiting/shared-core'
 
 import { Config, genConfigRandom } from '../src/index'
-import { parseConfig } from '../src/lib/helper'
+import { parseConfig, waitTillNextMillisecond } from '../src/lib/helper'
 
 
 const assert = require('power-assert')
@@ -89,5 +89,23 @@ describe(filename, () => {
     })
   })
 
+
+  describe('should waitTillNextMillisecond() works', () => {
+    it('normal', () => {
+      const start = Date.now()
+      const times = waitTillNextMillisecond(start)
+      assert(times > 0)
+      console.log('loop times', times)
+    })
+
+    it('return zero', () => {
+      const start = Date.now()
+      let times = waitTillNextMillisecond(start, 0)
+      assert(times === 0)
+
+      times = waitTillNextMillisecond(start, -1)
+      assert(times === 0)
+    })
+  })
 })
 
