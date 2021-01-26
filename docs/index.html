@@ -167,9 +167,9 @@
 <span class="hljs-built_in">console</span>.log(koid.next)
 <span class="hljs-built_in">console</span>.log(koid.next)</code></pre>
 				<p>It would give something like:</p>
-				<pre><code>&lt;Buffer <span class="hljs-number">50</span> dd d5 <span class="hljs-number">99</span> <span class="hljs-number">01</span> c0 <span class="hljs-number">00</span> <span class="hljs-number">00</span>&gt;
-&lt;Buffer <span class="hljs-number">50</span> dd d5 <span class="hljs-number">99</span> <span class="hljs-number">02</span> <span class="hljs-number">80</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>&gt;
-&lt;Buffer <span class="hljs-number">50</span> dd d5 <span class="hljs-number">99</span> <span class="hljs-number">02</span> <span class="hljs-number">80</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span>&gt;</code></pre>
+				<pre><code>&lt;Buffer<span class="hljs-number"> 50 </span>dd d5<span class="hljs-number"> 99 </span>01 c0<span class="hljs-number"> 00 </span>00&gt;
+&lt;Buffer<span class="hljs-number"> 50 </span>dd d5<span class="hljs-number"> 99 </span>02<span class="hljs-number"> 80 </span>00 00&gt;
+&lt;Buffer<span class="hljs-number"> 50 </span>dd d5<span class="hljs-number"> 99 </span>02<span class="hljs-number"> 80 </span>00 01&gt;</code></pre>
 				<a href="#counter-overflow" id="counter-overflow" style="color: inherit; text-decoration: none;">
 					<h3>Counter overflow</h3>
 				</a>
@@ -188,13 +188,13 @@
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { KoidFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;koid&#x27;</span>
 
 <span class="hljs-keyword">const</span> koid = KoidFactory()
-<span class="hljs-keyword">const</span> koid2 = KoidFactory({ dataCenter: <span class="hljs-number">9</span>, worker: <span class="hljs-number">7</span> })
+<span class="hljs-keyword">const</span> koid2 = KoidFactory({ <span class="hljs-attr">dataCenter</span>: <span class="hljs-number">9</span>, <span class="hljs-attr">worker</span>: <span class="hljs-number">7</span> })
 
 <span class="hljs-built_in">console</span>.info(koid.next);
 <span class="hljs-built_in">console</span>.info(koid2.next);</code></pre>
 				<p>It would give something like:</p>
-				<pre><code>&lt;Buffer <span class="hljs-number">50</span> dd da <span class="hljs-number">8f</span> <span class="hljs-number">43</span> <span class="hljs-number">40</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>&gt;
-&lt;Buffer <span class="hljs-number">50</span> dd da <span class="hljs-number">8f</span> <span class="hljs-number">43</span> d2 <span class="hljs-number">70</span> <span class="hljs-number">00</span>&gt;</code></pre>
+				<pre><code>&lt;Buffer<span class="hljs-number"> 50 </span>dd da 8f<span class="hljs-number"> 43 </span>40<span class="hljs-number"> 00 </span>00&gt;
+&lt;Buffer<span class="hljs-number"> 50 </span>dd da 8f<span class="hljs-number"> 43 </span>d2<span class="hljs-number"> 70 </span>00&gt;</code></pre>
 				<a href="#properties" id="properties" style="color: inherit; text-decoration: none;">
 					<h3>Properties</h3>
 				</a>
@@ -205,7 +205,7 @@
 				</ul>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { KoidFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;koid&#x27;</span>
 
-<span class="hljs-keyword">const</span> koid = KoidFactory({ id: <span class="hljs-number">34</span> })
+<span class="hljs-keyword">const</span> koid = KoidFactory({ <span class="hljs-attr">id</span>: <span class="hljs-number">34</span> })
 
 <span class="hljs-built_in">console</span>.info(koid.dataCenter);   <span class="hljs-comment">// 1</span>
 <span class="hljs-built_in">console</span>.info(koid.worker);       <span class="hljs-comment">// 2</span></code></pre>
@@ -230,9 +230,9 @@
 <span class="hljs-keyword">const</span> hexId = buf.toString(<span class="hljs-string">&#x27;hex&#x27;</span>)
 </code></pre>
 				<p>It would give something like:</p>
-				<pre><code class="language-ts">&lt;Buffer <span class="hljs-number">5</span>d c2 cd d1 f4 fd <span class="hljs-number">30</span> <span class="hljs-number">00</span>&gt;
+				<pre><code class="language-ts">&lt;Buffer 5d c2 cd d1 f4 fd <span class="hljs-number">30</span> <span class="hljs-number">00</span>&gt;
 <span class="hljs-number">6756188692651257856n</span> <span class="hljs-comment">// bigint</span>
-<span class="hljs-number">5</span>dc2cdd1f4fd3000 <span class="hljs-comment">// hex string</span></code></pre>
+5dc2cdd1f4fd3000 <span class="hljs-comment">// hex string</span></code></pre>
 				<br>
 				<a href="#initialization" id="initialization" style="color: inherit; text-decoration: none;">
 					<h2>Initialization</h2>
