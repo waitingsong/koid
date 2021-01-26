@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](/compare/v3.0.0...v3.1.0) (2021-01-26)
+
+
+### Features
+
+* **koid:** add epoch parameter of retrieveFromId(id, epoch = 0) 8efabca
+
+
+
+
+
 # [3.0.0](/compare/v2.1.2...v3.0.0) (2021-01-17)
 
 

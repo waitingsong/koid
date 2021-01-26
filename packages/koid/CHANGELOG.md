@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/waitingsong/koid/compare/v3.0.0...v3.1.0) (2021-01-26)
+
+
+### Features
+
+* **koid:** add epoch parameter of retrieveFromId(id, epoch = 0) ([8efabca](https://github.com/waitingsong/koid/commit/8efabca2c7e2422b5932574fa13700b0ed14807e))
+
+
+
+
+
 # [3.0.0](https://github.com/waitingsong/koid/compare/v2.1.2...v3.0.0) (2021-01-17)
 
 
