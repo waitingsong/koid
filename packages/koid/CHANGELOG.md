@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/waitingsong/koid/compare/v3.1.0...v3.2.0) (2021-01-28)
+
+
+### Features
+
+* **koid:** add waitTillNextMillisecond() ([f5dfd7f](https://github.com/waitingsong/koid/commit/f5dfd7fc730a914ccbf44223dd589544f3930856))
+
+
+
+
+
 # [3.1.0](https://github.com/waitingsong/koid/compare/v3.0.0...v3.1.0) (2021-01-26)
 
 

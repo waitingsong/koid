@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](/compare/v3.1.0...v3.2.0) (2021-01-28)
+
+
+### Features
+
+* **koid:** add waitTillNextMillisecond() f5dfd7f
+
+
+
+
+
 # [3.1.0](/compare/v3.0.0...v3.1.0) (2021-01-26)
 
 
