@@ -16,6 +16,8 @@ export {
   ConfigDc, ConfigNode,
   KoidMsg, IdInfo,
 } from './types'
-export { genConfigRandom } from './helper'
+export {
+  genConfigRandom, waitTillNextMillisecond,
+} from './helper'
 export { retrieveFromId } from './util'
 
