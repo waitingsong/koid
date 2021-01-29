@@ -10,7 +10,7 @@ import { ClientOptions } from './types'
 import { parseOptions } from './util'
 
 
-export function bindJwtOnAppOrAgent(app: Application | Agent): void {
+export function bindOnAppOrAgent(app: Application | Agent): void {
   app.addSingleton(pluginName, createOneClient)
 }
 

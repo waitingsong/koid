@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Agent } from 'egg'
 
-import { bindJwtOnAppOrAgent } from './lib/bind'
+import { bindOnAppOrAgent } from './lib/bind'
 import { pluginName } from './lib/config'
 import { KoidEggConfig } from './lib/types'
 import { parseConfig } from './lib/util'
@@ -14,7 +14,7 @@ export default (agent: Agent): void => {
   agent.config[pluginName].agent = config.agent
 
   if (config.agent) {
-    bindJwtOnAppOrAgent(agent)
+    bindOnAppOrAgent(agent)
   }
 }
 

@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Application } from 'egg'
 
-import { bindJwtOnAppOrAgent } from './lib/bind'
+import { bindOnAppOrAgent } from './lib/bind'
 import { pluginName } from './lib/config'
 import { KoidEggConfig } from './lib/types'
 import { parseConfig } from './lib/util'
@@ -15,7 +15,7 @@ export default (app: Application): void => {
 
   /* istanbul ignore else */
   if (config.appWork) {
-    bindJwtOnAppOrAgent(app)
+    bindOnAppOrAgent(app)
   }
 }
 
