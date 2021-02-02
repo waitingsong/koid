@@ -67,6 +67,7 @@ const koid = KoidFactory()
 console.log(koid.next)
 console.log(koid.next)
 console.log(koid.next)
+console.log(koid.nextBigint)
 ```
 
 It would give something like:
@@ -74,6 +75,7 @@ It would give something like:
 <Buffer 50 dd d5 99 01 c0 00 00>
 <Buffer 50 dd d5 99 02 80 00 00>
 <Buffer 50 dd d5 99 02 80 00 01>
+5827048346035945474n
 ```
 
 
@@ -137,7 +139,7 @@ import { KoidFactory } from 'koid'
 const koid = KoidFactory()
 
 const buf: Buffer = koid.next
-const id = buf.readBigInt64BE()
+const id = buf.readBigInt64BE() // also koid.nextBigint
 const hexId = buf.toString('hex')
 
 ```
