@@ -165,11 +165,13 @@
 
 <span class="hljs-built_in">console</span>.log(koid.next)
 <span class="hljs-built_in">console</span>.log(koid.next)
-<span class="hljs-built_in">console</span>.log(koid.next)</code></pre>
+<span class="hljs-built_in">console</span>.log(koid.next)
+<span class="hljs-built_in">console</span>.log(koid.nextBigint)</code></pre>
 				<p>It would give something like:</p>
 				<pre><code>&lt;Buffer<span class="hljs-number"> 50 </span>dd d5<span class="hljs-number"> 99 </span>01 c0<span class="hljs-number"> 00 </span>00&gt;
 &lt;Buffer<span class="hljs-number"> 50 </span>dd d5<span class="hljs-number"> 99 </span>02<span class="hljs-number"> 80 </span>00 00&gt;
-&lt;Buffer<span class="hljs-number"> 50 </span>dd d5<span class="hljs-number"> 99 </span>02<span class="hljs-number"> 80 </span>00 01&gt;</code></pre>
+&lt;Buffer<span class="hljs-number"> 50 </span>dd d5<span class="hljs-number"> 99 </span>02<span class="hljs-number"> 80 </span>00 01&gt;
+5827048346035945474n</code></pre>
 				<a href="#counter-overflow" id="counter-overflow" style="color: inherit; text-decoration: none;">
 					<h3>Counter overflow</h3>
 				</a>
@@ -226,7 +228,7 @@
 <span class="hljs-keyword">const</span> koid = KoidFactory()
 
 <span class="hljs-keyword">const</span> buf: Buffer = koid.next
-<span class="hljs-keyword">const</span> id = buf.readBigInt64BE()
+<span class="hljs-keyword">const</span> id = buf.readBigInt64BE() <span class="hljs-comment">// also koid.nextBigint</span>
 <span class="hljs-keyword">const</span> hexId = buf.toString(<span class="hljs-string">&#x27;hex&#x27;</span>)
 </code></pre>
 				<p>It would give something like:</p>
