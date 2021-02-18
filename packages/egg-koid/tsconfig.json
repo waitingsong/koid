@@ -15,6 +15,7 @@
     "outDir": "dist",
     "pretty": true,
     "skipLibCheck": true,
+    "sourceMap": false,
     "strict": true,
     "target": "ES2019",
     "tsBuildInfoFile": ".vscode/.tsbuildinfo",

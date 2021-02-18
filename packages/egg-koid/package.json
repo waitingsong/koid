@@ -38,12 +38,13 @@
     "koid": "^3.2.1"
   },
   "devDependencies": {
-    "autod": "^3.0.0",
-    "autod-egg": "^1.0.0",
+    "autod": "3",
+    "autod-egg": "1",
     "cross-env": "7",
     "egg": "2",
-    "egg-bin": "^4.15.0",
-    "egg-mock": "^4.0.0"
+    "egg-bin": "4",
+    "egg-core": "4",
+    "egg-mock": "4"
   },
   "engines": {
     "node": ">=12.13.0"
