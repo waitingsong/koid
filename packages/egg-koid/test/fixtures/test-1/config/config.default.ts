@@ -1,4 +1,5 @@
 /* eslint-disable node/no-unpublished-import */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { KoidEggConfig, genConfigRandom } from '../../../../dist/index'
 
 
