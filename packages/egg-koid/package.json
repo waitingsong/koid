@@ -23,7 +23,7 @@
   "bin": {},
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./src/index.ts",
   "bugs": {
     "url": "https://github.com/waitingsong/koid/issues"
   },
@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@waiting/shared-types": "6",
+    "@waiting/shared-types": "8",
     "koid": "^3.3.0"
   },
   "devDependencies": {
@@ -50,15 +50,19 @@
     "node": ">=12.13.0"
   },
   "files": [
+    "tsconfig.json",
+    "rollup.config.js",
+    "src/**/*.ts",
+    "bin/*.js",
+    "dist",
     "agent.js",
     "app.js",
     "app",
     "config",
-    "dist",
     "*.d.ts"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "scripts": {
     "build": "npm run tsc && npm run rp",

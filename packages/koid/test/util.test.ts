@@ -89,7 +89,7 @@ describe(filename, () => {
       arr.forEach((id, index) => {
         // 10111011100000000110010101111101111111011 00110 11000 000000000000
         const info = retrieveFromId(id)
-        const expect = expects[index]
+        const expect = expects[index] as IdInfo
         assert(info.dataCenter === expect.dataCenter)
         assert(info.worker === expect.worker)
       })
