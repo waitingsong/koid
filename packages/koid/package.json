@@ -17,7 +17,7 @@
   "es2015": "",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
-  "types": "./src/index.ts",
+  "types": "./dist/index.d.ts",
   "bugs": {
     "url": "https://github.com/waitingsong/koid/issues"
   },
