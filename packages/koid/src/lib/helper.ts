@@ -33,13 +33,13 @@ export function parseConfig(config?: Config): Options {
 /**
  * Generate random id
  */
-export function genConfigRandom(): ConfigDc {
-  const id = Date.now() & 0x3FF
+export function genConfigRandom(epoch = 0): ConfigDc {
+  const id = Date.now() + epoch & 0x3FF
   const config = parseConfigNode({ node: id })
   const ret: ConfigDc = {
     dataCenter: config.dataCenter,
     worker: config.worker,
-    epoch: 0,
+    epoch,
     noWait: false,
   }
   return ret
