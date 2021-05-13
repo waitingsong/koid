@@ -5,8 +5,7 @@ import {
   join,
 } from '@waiting/shared-core'
 
-import { KoidFactory, KoidMsg } from '../src'
-import { parseConfig } from '../src/lib/helper'
+import { Config, KoidFactory, KoidMsg } from '../src'
 import { Koid } from '../src/lib/koid'
 
 
@@ -18,12 +17,13 @@ const filename = basename(__filename)
 describe(filename, () => {
 
   describe('should works', () => {
-    it('Clock backwards', () => {
+    it('Clock backwards no wait', () => {
       const dataCenter = 2
       const worker = 3
-      const config = {
+      const config: Config = {
         dataCenter,
         worker,
+        noWait: true,
       }
       const koid = KoidFactory(config)
       try {
@@ -36,12 +36,24 @@ describe(filename, () => {
       assert(false, 'Should throw error, but not')
     })
 
-    it('error', () => {
+    it('Clock backwards wait', () => {
       const dataCenter = 2
       const worker = 3
       const config = {
         dataCenter,
         worker,
+        noWait: false,
+      }
+      KoidFactory(config)
+    })
+
+    it('error nowait', () => {
+      const dataCenter = 2
+      const worker = 3
+      const config: Config = {
+        dataCenter,
+        worker,
+        noWait: true,
       }
       const koid = KoidFactory(config)
       try {
@@ -52,6 +64,17 @@ describe(filename, () => {
         return
       }
       assert(false, 'Should throw error, but not')
+    })
+
+    it('error wait', () => {
+      const dataCenter = 2
+      const worker = 3
+      const config = {
+        dataCenter,
+        worker,
+        noWait: false,
+      }
+      KoidFactory(config)
     })
   })
 

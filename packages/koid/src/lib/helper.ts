@@ -14,6 +14,7 @@ export function parseConfig(config?: Config): Options {
     const configNode: ConfigNode = {
       node: (config as ConfigNode).node,
       epoch: config.epoch,
+      noWait: !! config.noWait,
     }
     return parseConfigNode(configNode)
   }
@@ -23,6 +24,7 @@ export function parseConfig(config?: Config): Options {
       dataCenter: conf.dataCenter,
       worker: conf.worker,
       epoch: conf.epoch,
+      noWait: !! config.noWait,
     }
     return parseConfigDc(configDc)
   }
@@ -38,6 +40,7 @@ export function genConfigRandom(): ConfigDc {
     dataCenter: config.dataCenter,
     worker: config.worker,
     epoch: 0,
+    noWait: false,
   }
   return ret
 }
@@ -48,11 +51,12 @@ function parseConfigDc(config: ConfigDc): Options {
   const worker = config.worker & 0x1F
   const id = (dataCenter << 5 | worker) & 0x3FF
 
-  const opts = {
+  const opts: Options = {
     genId: id << 12,
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,
     dataCenter,
     worker,
+    noWait: !! config.noWait,
   }
 
   return opts
@@ -68,13 +72,14 @@ function parseConfigNode(config: ConfigNode): Options {
     epoch: typeof config.epoch === 'number' ? config.epoch : 0,
     dataCenter,
     worker,
+    noWait: !! config.noWait,
   }
 
   return opts
 }
 
 
-export function waitTillNextMillisecond(time: number, maxLoopTimes = 1024000): number {
+export function waitTillNextMillisecond(time: number, maxLoopTimes = 10240000): number {
   /* istanbul ignore next */
   if (maxLoopTimes <= 0) {
     return 0

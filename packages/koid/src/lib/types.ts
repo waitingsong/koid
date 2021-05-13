@@ -16,6 +16,11 @@ export interface ConfigNode {
   epoch?: number
   dataCenter?: never
   worker?: never
+  /**
+   * @default false
+   * @description wait until next available id if true when conflict
+   */
+  noWait?: boolean
 }
 
 export interface ConfigDc {
@@ -33,6 +38,11 @@ export interface ConfigDc {
    */
   epoch?: number
   node?: never
+  /**
+   * @default false
+   * @description wait until next available id if true when conflict
+   */
+  noWait?: boolean
 }
 
 export interface Options {
@@ -40,6 +50,11 @@ export interface Options {
   genId: number
   dataCenter: number
   worker: number
+  /**
+   * @default false
+   * @description wait until next available id if true when conflict
+   */
+  noWait: boolean
 }
 
 export enum KoidMsg {
