@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.1.1 (2021-05-13)
+
+
+### Bug Fixes
+
+* **koid:** next() time assignment ([8768206](https://github.com/waitingsong/koid/commit/8768206c175335cc9e045564428c784618e19ed1))
+
+
+
+
+
 # 4.1.0 (2021-05-13)
 
 
