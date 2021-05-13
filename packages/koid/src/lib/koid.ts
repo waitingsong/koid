@@ -37,10 +37,8 @@ export class Koid {
    */
   get next(): Buffer {
     const id = Buffer.alloc(8)
-    const time = Date.now() - this.epoch
-
-    const time2 = this.updateSeqWithTime(time, this.noWait)
-    this.lastTime = time2
+    const time = this.updateSeqWithTime(Date.now() - this.epoch, this.noWait)
+    this.lastTime = time
 
     id.writeUInt32BE((time & 0x3) << 22 | this.genId | this.seq, 4)
     id.writeUInt8(Math.floor(time / 4) & 0xFF, 4)
