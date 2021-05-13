@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.1.0 (2021-05-13)
+
+
+### Features
+
+* **koid:** add optional parameter of genConfigRandom(epoch) ([649296f](https://github.com/waitingsong/npm-mono-base/commit/649296f151a56e5edf92d1dcf318c5d7b3fbb998))
+
+
+
+
+
 # 4.0.0 (2021-05-13)
 
 
