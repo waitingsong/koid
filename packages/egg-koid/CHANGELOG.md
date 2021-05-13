@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.0.0 (2021-05-13)
+
+
+### Features
+
+* **koid:** wait until next available id as default ([dcb5ef1](https://github.com/waitingsong/koid/commit/dcb5ef1e2d30d77bc76258347183a96b3e152fcf))
+
+
+
+
+
 # 3.4.0 (2021-04-28)
 
 **Note:** Version bump only for package egg-koid
