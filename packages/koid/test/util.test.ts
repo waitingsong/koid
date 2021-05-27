@@ -6,7 +6,7 @@ import {
 } from '@waiting/shared-core'
 
 import { Config, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
-import { isValidBigintStr, isValidHexString } from '../src/lib/util'
+import { isValidBigintStr, isValidHexString, validEpoch } from '../src/lib/util'
 
 
 const assert = require('power-assert')
@@ -143,5 +143,19 @@ describe(filename, () => {
       })
     })
   })
+
+
+  describe('should validEpoch() works', () => {
+    it('normal', () => {
+      try {
+        validEpoch(Date.now())
+      }
+      catch (ex) {
+        return
+      }
+      assert(false, 'Should throw TypeError, but not')
+    })
+  })
+
 })
 

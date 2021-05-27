@@ -131,3 +131,10 @@ function retrieveFromBuffer(id: Readonly<Buffer>, epoch: number): IdInfo {
   return ret
 }
 
+
+export function validEpoch(epoch: number): void {
+  const now = Date.now()
+  if (now <= epoch) {
+    throw new TypeError(`${KoidMsg.NotValidEpoch}, input: "${epoch}", now: "${now}"`)
+  }
+}

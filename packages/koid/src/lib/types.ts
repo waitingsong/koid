@@ -60,6 +60,7 @@ export interface Options {
 export enum KoidMsg {
   SeqExceed = 'Sequence exceeded its maximum value',
   ClockBack = 'Clock moved backwards',
+  NotValidEpoch = 'Not an valid epoch value, value should older than now',
   NotValidBigintId = 'Not an valid bigint id. Should gross then 0 and less equal then 9223372036854775807n',
   NotValidBigintString = 'Not an valid bigint string',
   NotValidHexString = 'Not an valid hex string',
