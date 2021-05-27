@@ -98,6 +98,15 @@ describe(filename, () => {
 
 
   describe('should isValidBigintStr() works', () => {
+    it('normal', () => {
+      const arr = ['185601803268653056']
+      arr.forEach((str) => {
+        const num = BigInt(str)
+        const ret = isValidBigintStr(str)
+        assert(ret === num)
+      })
+    })
+
     it('ex', () => {
       const arr = [
         '9223372036854775808',

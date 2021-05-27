@@ -45,7 +45,7 @@ function retrieveFromStr(id: string, epoch: number): IdInfo {
 export function isValidBigintStr(id: string): bigint | false {
   const str = id.toLowerCase().trim()
 
-  if (/^[1-9]\d{18}$/u.test(str)) {
+  if (/^[1-9]\d{17,18}$/u.test(str)) {
     const int8 = BigInt(str)
     if (isValidBigintId(int8)) {
       return int8
