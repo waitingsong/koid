@@ -5,7 +5,7 @@ import {
   join,
 } from '@waiting/shared-core'
 
-import { Config, genConfigRandom } from '../src/index'
+import { Config, genConfigRandom, KoidMsg } from '../src/index'
 import { parseConfig, waitTillNextMillisecond } from '../src/lib/helper'
 
 
@@ -16,7 +16,7 @@ const filename = basename(__filename)
 
 describe(filename, () => {
 
-  describe('should parseConfig() works', () => {
+  describe('should parseConfig() work', () => {
     it('perfer using node instead of dataCenter', () => {
       const dataCenter = 2
       const worker = 3
@@ -87,10 +87,28 @@ describe(filename, () => {
       assert(worker >= 0 && worker <= 0x1F)
       assert(epoch === 0)
     })
+
+
+    it('throw Error with invalid epoch', () => {
+      const dataCenter = 132
+      const worker = 0
+      const config: Config = {
+        dataCenter,
+        worker,
+        epoch: Date.now(),
+      }
+      try {
+        parseConfig(config)
+      }
+      catch (ex) {
+        assert(ex instanceof TypeError)
+        assert((ex as Error).message.includes(KoidMsg.NotValidEpoch))
+      }
+    })
   })
 
 
-  describe('should waitTillNextMillisecond() works', () => {
+  describe('should waitTillNextMillisecond() work', () => {
     it('normal', () => {
       const start = Date.now()
       const times = waitTillNextMillisecond(start)

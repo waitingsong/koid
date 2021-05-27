@@ -151,6 +151,8 @@ describe(filename, () => {
         validEpoch(Date.now())
       }
       catch (ex) {
+        assert(ex instanceof TypeError)
+        assert((ex as Error).message.includes(KoidMsg.NotValidEpoch))
         return
       }
       assert(false, 'Should throw TypeError, but not')

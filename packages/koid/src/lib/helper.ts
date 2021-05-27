@@ -1,6 +1,7 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
 import { Config, ConfigDc, ConfigNode, Options } from './types'
+import { validEpoch } from './util'
 
 
 export function parseConfig(config?: Config): Options {
@@ -8,6 +9,10 @@ export function parseConfig(config?: Config): Options {
   if (typeof config === 'undefined') {
     const dc = genConfigRandom()
     return parseConfigDc(dc)
+  }
+
+  if (typeof config.epoch !== 'undefined') {
+    validEpoch(config.epoch)
   }
 
   if (typeof config.node === 'number') {
