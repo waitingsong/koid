@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.1.2 (2021-05-27)
+
+
+### Bug Fixes
+
+* **koid:** isValidBigintStr() process ([9c15851](https://github.com/waitingsong/npm-mono-base/commit/9c158514a30ef15c0551ff6b3003380d06fc8140))
+
+
+
+
+
 ## 4.1.1 (2021-05-13)
 
 
