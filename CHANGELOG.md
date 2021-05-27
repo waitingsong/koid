@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.2.1 (2021-05-27)
+
+
+### Bug Fixes
+
+* **koid:** check rule within isValidBigintStr() ([d183e0d](https://github.com/waitingsong/koid/commit/d183e0d38cad7c644ac22123d0708e57e483fe74))
+
+
+
+
+
 # 4.2.0 (2021-05-27)
 
 **Note:** Version bump only for package koid
