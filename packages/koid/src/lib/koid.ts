@@ -72,6 +72,8 @@ export class Koid {
     noWait: boolean,
   ): number {
 
+    let ret: number = deltaTime
+
     // Generates id in the same millisecond as the previous id
     if (deltaTime < this.lastTime) {
       if (noWait) {
@@ -82,7 +84,7 @@ export class Koid {
         waitTillNextMillisecond(this.lastTime + this.epoch)
         this.updateSeqWithTime(this.lastTime, true)
         this.seq = 0
-        return Date.now() - this.epoch
+        ret = Date.now() - this.epoch
       }
     }
     else if (deltaTime === this.lastTime) {
@@ -101,7 +103,7 @@ export class Koid {
           if (cost === 0) {
             throw new Error(KoidMsg.SeqExceed)
           }
-          return Date.now() - this.epoch
+          ret = Date.now() - this.epoch
         }
       }
     }
@@ -109,10 +111,8 @@ export class Koid {
       this.seq = 0
     }
 
-    return deltaTime
+    return ret
   }
-
-
 
 
 }
