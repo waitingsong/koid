@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.4.0 (2021-05-27)
+
+
+### Features
+
+* **koid:** ensure result >= 1 of updateSeqWithTime() ([263287f](https://github.com/waitingsong/koid/commit/263287faa4536ba3487f7a19c5455ec2f7e5b12d))
+
+
+
+
+
 # 4.3.0 (2021-05-27)
 
 
