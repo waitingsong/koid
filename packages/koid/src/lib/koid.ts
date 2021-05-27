@@ -111,9 +111,8 @@ export class Koid {
       this.seq = 0
     }
 
-    return ret
+    return ret >= 1 ? ret : 1
   }
-
 
 }
 
