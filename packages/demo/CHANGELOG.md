@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.3.0 (2021-05-27)
+
+
+### Features
+
+* **koid:** validate epoch within parseConfig() ([1ba9de2](https://github.com/waitingsong/npm-mono-base/commit/1ba9de2b71d3b2b2308c7dcc1f60aea0105a2235))
+
+
+
+
+
 ## 4.2.1 (2021-05-27)
 
 
