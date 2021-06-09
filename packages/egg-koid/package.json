@@ -1,7 +1,7 @@
 {
   "name": "egg-koid",
   "author": "waiting",
-  "version": "4.6.0",
+  "version": "4.6.1",
   "description": "k-ordered, conflict-free ids generator in a distributed environment for egg.js and midway.js",
   "eggPlugin": {
     "name": "koid"
@@ -35,7 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "@waiting/shared-types": "11",
-    "koid": "^4.6.0"
+    "koid": "^4.6.1"
   },
   "devDependencies": {
     "autod": "3",
