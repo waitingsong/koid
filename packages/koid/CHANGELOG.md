@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.7.0 (2021-06-09)
+
+
+### Features
+
+* **midway-component-koid:** implementation ([e6978b6](https://github.com/waitingsong/koid/commit/e6978b66a1a74f681a705cba75e49283d9930756))
+
+
+
+
+
 ## 4.6.1 (2021-06-09)
 
 **Note:** Version bump only for package koid
