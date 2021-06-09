@@ -1,0 +1,3 @@
+
+export { KoidComponent } from './koid'
+

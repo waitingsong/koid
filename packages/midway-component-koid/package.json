@@ -1,0 +1,96 @@
+{
+  "name": "midway-component-koid",
+  "author": "waiting",
+  "version": "4.6.0",
+  "description": "",
+  "private": false,
+  "keywords": [
+    "midway",
+    "IoC",
+    "plugin",
+    "koid",
+    "id",
+    "unique",
+    "twitter",
+    "snowflake",
+    "ts"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/waitingsong/koid/issues"
+  },
+  "homepage": "https://github.com/waitingsong/koid#readme",
+  "repository": {
+    "type": "git",
+    "url": "git//github.com/waitingsong/koid.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@waiting/shared-core": "^12.0.0",
+    "@waiting/shared-types": "^12.0.0",
+    "koid": "^4.6.1"
+  },
+  "devDependencies": {
+    "@midwayjs/cli": "1",
+    "@midwayjs/core": "2",
+    "@midwayjs/decorator": "2",
+    "@midwayjs/web": "2",
+    "@types/node": "15",
+    "cross-env": "7",
+    "egg": "^2.29.0",
+    "opentracing": "*",
+    "typescript": "4"
+  },
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "midway-bin build -c",
+    "clean": "npm run clean:lock & npm run clean:cache & rm -rf dist/* -rf",
+    "clean:cache": "rm -rf .eslintcache .vscode/.tsbuildinfo .vscode/.tsbuildinfo.*",
+    "clean:lock": "rm package-lock.json -f",
+    "cov": "cross-env TS_NODE_PROJECT=test/tsconfig.json nyc mocha --parallel=false",
+    "lint": "eslint --fix --cache {src,test}/**/*.ts",
+    "lint:nofix": "eslint --cache {src,test}/**/*.ts",
+    "purge": "npm run clean && rm node_modules -rf",
+    "rp": "rollup -c rollup.config.js",
+    "test": "cross-env TS_NODE_PROJECT=test/tsconfig.json mocha",
+    "test:local": "cross-env TS_NODE_PROJECT=test/tsconfig.json ../../node_modules/.bin/mocha --parallel=false",
+    "tsc": "tsc -p tsconfig.json"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      ".githooks",
+      "dist",
+      "node_modules*",
+      "src/bin",
+      "src/domain.ts",
+      "src/interface.ts",
+      "test*",
+      "**/node_modules*",
+      "**/*.d.ts",
+      "**/*.js"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "html",
+      "json",
+      "text",
+      "text-summary"
+    ],
+    "all": true
+  }
+}
