@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@waiting/shared-types": "11",
+    "@waiting/shared-types": "^12.0.0",
     "koid": "^4.6.1"
   },
   "devDependencies": {
