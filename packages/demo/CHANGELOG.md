@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.7.3 (2021-06-10)
+
+
+### Bug Fixes
+
+* **koid:** rule of testing hex within isValidHexString() ([f7c4743](https://github.com/waitingsong/npm-mono-base/commit/f7c47432b8eb0369e8b70541460590c0b78c9d80))
+
+
+
+
+
 ## 4.7.2 (2021-06-10)
 
 
