@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.8.0 (2021-06-10)
+
+
+### Features
+
+* **midway-component-koid:** add nextHex() ([9b1612b](https://github.com/waitingsong/npm-mono-base/commit/9b1612bde9a49d43765b4a754d52e21cc619be9a))
+
+
+
+
+
 ## 4.7.4 (2021-06-10)
 
 
