@@ -154,7 +154,7 @@ describe(filename, () => {
           // console.log('info:', info)
           // console.log('time:', new Date(info.timestamp).toISOString())
           const diff = info.timestamp - now
-          assert(diff < 4)
+          assert(diff < 6)
         }
       }
     })

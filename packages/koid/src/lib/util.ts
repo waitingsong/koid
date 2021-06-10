@@ -30,7 +30,7 @@ export function retrieveFromId(id: bigint | string | Readonly<Buffer>, epoch = 0
 
 /**
  * Retrieve Id info from hex and bigint string
- * like '50dddcbfb5c00001' or '0x50dddcbfb5c00001' or "6755455236955799552"
+ * like '2a5ee1107597000', '50dddcbfb5c00001' or '0x50dddcbfb5c00001' or "6755455236955799552"
  */
 function retrieveFromStr(id: string, epoch: number): IdInfo {
   const int8 = isValidBigintStr(id)
@@ -65,8 +65,9 @@ export function isValidBigintId(id: bigint): boolean {
 export function isValidHexString(id: string): Buffer | false {
   let hex = id.toLowerCase().trim()
 
+  // '50dddcbfb5c00001' or '0x50dddcbfb5c00001', '2a5ee1107597000'
   /* istanbul ignore else */
-  if (! /^[\dxa-f]{16}/u.test(hex)) {
+  if (! /^[\dxa-f]{15,18}/u.test(hex)) {
     return false
   }
 
@@ -81,7 +82,7 @@ export function isValidHexString(id: string): Buffer | false {
 
 /**
  * Retrieve Id info from hex,
- * like '50dddcbfb5c00001' or '0x50dddcbfb5c00001'
+ * like '50dddcbfb5c00001' or '0x50dddcbfb5c00001', '2a5ee1107597000'
  */
 function retrieveFromHex(id: string, epoch: number): IdInfo {
   const buf = isValidHexString(id)
