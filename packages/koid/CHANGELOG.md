@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.7.2 (2021-06-10)
+
+
+### Bug Fixes
+
+* **midway-component-koid:** initialize via @Init() ([3df8ec4](https://github.com/waitingsong/koid/commit/3df8ec467bde12d23395c4cb37e826175ad10572))
+
+
+
+
+
 ## 4.7.1 (2021-06-10)
 
 
