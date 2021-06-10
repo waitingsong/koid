@@ -39,8 +39,9 @@ export class KoidComponent {
     return this.koid.nextBigint
   }
 
-  retrieveFromId(id: bigint | string | Readonly<Buffer>, epoch = 0): IdInfo {
-    return retrieveFromId(id, epoch)
+  retrieveFromId(id: bigint | string | Readonly<Buffer>, epoch?: number): IdInfo {
+    const epoch2 = typeof epoch === 'number' ? epoch : this.config.epoch
+    return retrieveFromId(id, epoch2)
   }
 }
 
