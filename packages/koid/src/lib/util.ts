@@ -77,7 +77,7 @@ export function isValidHexString(id: string): Buffer | false {
   }
 
   const buf = Buffer.from(hex, 'hex')
-  return buf.length === 8 ? buf : false
+  return buf.length === 7 || buf.length === 8 ? buf : false
 }
 
 /**
@@ -103,7 +103,7 @@ function retrieveFromBigint(id: bigint, epoch: number): IdInfo {
 
 
 function retrieveFromBuffer(id: Readonly<Buffer>, epoch: number): IdInfo {
-  assert(id.length === 8)
+  assert(id.length === 7 || id.length === 8)
   // 00000010 00110000 10000001 01010000 11101100 00.000000 00000000 00000000
   // 5d c2 d8 27 be 7f f0 00
   // 01011101 11000010 11011000 00100111 10111110 01.111111 1111.0000 00000000
