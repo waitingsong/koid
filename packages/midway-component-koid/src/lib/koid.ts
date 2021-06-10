@@ -30,20 +30,20 @@ export class KoidComponent {
 
   /**
    * SnowFlake id Generatoror
-   * @usage ```
-   *  const id = this.idGenerator
-   *  const strId = id.toString()
-   *  const hexId = id.toString(16)
-   *  const binId = id.toString(2)
-   * ```
+   * @description do not call id.toString(16), will got wrong hex string
    */
   get idGenerator(): bigint {
     return this.koid.nextBigint
+  }
+
+  get nextHex(): string {
+    return this.koid.next.toString('hex')
   }
 
   retrieveFromId(id: bigint | string | Readonly<Buffer>, epoch?: number): IdInfo {
     const epoch2 = typeof epoch === 'number' ? epoch : this.config.epoch
     return retrieveFromId(id, epoch2)
   }
+
 }
 
