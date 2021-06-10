@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {
   Config,
+  Init,
   Provide,
   Scope,
   ScopeEnum,
@@ -20,9 +21,10 @@ export class KoidComponent {
 
   @Config('koid') readonly config: KoidConfig
 
-  private readonly koid: Koid
+  protected koid: Koid
 
-  constructor() {
+  @Init()
+  async init(): Promise<void> {
     this.koid = KoidFactory(this.config)
   }
 
