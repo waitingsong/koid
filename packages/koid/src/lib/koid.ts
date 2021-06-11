@@ -1,3 +1,9 @@
+/* eslint-disable prefer-rest-params */
+/* eslint-disable @typescript-eslint/unbound-method */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
 import { waitTillNextMillisecond } from './helper'
@@ -53,7 +59,20 @@ export class Koid {
    * @description do not call id.toString(16), will got wrong hex string
    */
   get nextBigint(): bigint {
-    return this.next.readBigInt64BE()
+    const id = this.next
+    return id.readBigInt64BE()
+    // const proxy = new Proxy({}, {
+    //   get(_target, propKey) {
+    //     if (propKey in BigInt) {
+    //       return id[propKey].bind(id)
+    //     }
+    //     else {
+    //       throw new ReferenceError('key does not exist.')
+    //     }
+    //   },
+    // })
+
+    // return proxy as unknown as bigint
   }
 
   get nextHex(): string {
