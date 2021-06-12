@@ -50,7 +50,6 @@ export class Koid {
 
   /**
    * Generate an id, type of bigint
-   * @description do not call id.toString(16), will got wrong hex string
    */
   get nextBigint(): bigint {
     return this.next.readBigInt64BE()

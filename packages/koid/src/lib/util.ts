@@ -69,14 +69,20 @@ export function isValidHexString(id: string): Buffer | false {
 
   /* istanbul ignore else */
   if (hex.startsWith('0x')) {
-    /* istanbul ignore else */
-    if (! /^[\dxa-f]{18}/u.test(hex)) {
-      return false
-    }
     hex = hex.slice(2)
   }
-  else if (! /^[\dxa-f]{16}/u.test(hex)) {
+  /* istanbul ignore else */
+  if (hex.length % 2 !== 0) {
+    hex = '0' + hex
+  }
+
+  /* istanbul ignore else */
+  if (! /^[\da-f]{6,16}/u.test(hex)) {
     return false
+  }
+
+  if (hex.length !== 16) {
+    hex = hex.padStart(16, '0')
   }
 
   const buf = Buffer.from(hex, 'hex')

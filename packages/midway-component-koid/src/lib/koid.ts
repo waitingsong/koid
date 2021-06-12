@@ -30,7 +30,6 @@ export class KoidComponent {
 
   /**
    * SnowFlake id Generatoror
-   * @description do not call id.toString(16), will got wrong hex string
    */
   get idGenerator(): bigint {
     return this.koid.nextBigint
