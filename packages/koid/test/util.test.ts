@@ -67,7 +67,13 @@ describe(filename, () => {
       //   assert(false, `Should throw error, but not, with length: ${len}`)
       // });
 
-      ['', '-123', '3FF', 'ffffffffffffff', '50dddcbfb5c0000W'].forEach((input) => {
+      [
+        '',
+        '-123',
+        '3FF',
+        // 'ffffffffffffff',
+        '50dddcbfb5c0000W',
+      ].forEach((input) => {
         try {
           retrieveFromId(input)
         }
