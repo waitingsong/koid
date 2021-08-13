@@ -39,7 +39,7 @@ export function parseConfig(config?: Config): Options {
  * Generate random id
  */
 export function genConfigRandom(epoch = 0): ConfigDc {
-  const id = Date.now() + epoch & 0x3FF
+  const id = Math.floor(Math.random() * 2 ** 10) & 0x3FF
   const config = parseConfigNode({ node: id })
   const ret: ConfigDc = {
     dataCenter: config.dataCenter,
