@@ -1,7 +1,7 @@
 {
   "name": "@mw-components/koid",
   "author": "waiting",
-  "version": "4.10.1",
+  "version": "5.0.0",
   "description": "",
   "private": false,
   "keywords": [
@@ -29,7 +29,7 @@
   "dependencies": {
     "@waiting/shared-core": "^14.4.1",
     "@waiting/shared-types": "^14.4.1",
-    "koid": "^4.10.1"
+    "koid": "^5.0.0"
   },
   "devDependencies": {
     "@midwayjs/cli": "1",
