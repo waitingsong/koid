@@ -1,17 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable node/no-extraneous-require */
-import {
-  basename,
-  join,
-} from '@waiting/shared-core'
+import { relative } from 'path'
 
 import { KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
 
+// eslint-disable-next-line import/order
+import assert = require('power-assert')
 
-const assert = require('power-assert')
 
-
-const filename = basename(__filename)
+const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')
 
 describe(filename, () => {
 
