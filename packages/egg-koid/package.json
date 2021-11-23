@@ -35,7 +35,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@waiting/shared-types": "^14.4.1",
+    "@waiting/shared-types": "^15.1.0",
     "koid": "^5.0.0"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
     "egg-mock": "4"
   },
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=16.13.0"
   },
   "files": [
     "tsconfig.json",
