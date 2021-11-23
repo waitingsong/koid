@@ -3,6 +3,7 @@
   "author": "waiting",
   "version": "5.0.0",
   "description": "k-ordered, conflict-free ids generator in a distributed environment for egg.js and midway.js",
+  "private": true,
   "eggPlugin": {
     "name": "koid"
   },
