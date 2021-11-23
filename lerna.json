@@ -3,7 +3,7 @@
   "packages": [
     "packages/*"
   ],
-  "ignore": "demo",
+  "ignore": ["demo", "egg-koid"],
   "command": {
     "publish": {
       "ignoreChanges": [
