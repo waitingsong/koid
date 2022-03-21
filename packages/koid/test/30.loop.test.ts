@@ -1,12 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable node/no-extraneous-require */
+import assert from 'assert/strict'
 import { relative } from 'path'
 
 import { Config, KoidFactory, KoidMsg } from '../src'
 import { Koid } from '../src/lib/koid'
-
-// eslint-disable-next-line import/order
-import assert = require('power-assert')
 
 
 const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')

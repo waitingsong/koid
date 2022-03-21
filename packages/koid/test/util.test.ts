@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable node/no-extraneous-require */
+import assert from 'assert/strict'
+
 import {
   basename,
   join,
@@ -7,9 +7,6 @@ import {
 
 import { Config, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
 import { isValidBigintStr, isValidHexString, validEpoch } from '../src/lib/util'
-
-
-const assert = require('power-assert')
 
 
 const filename = basename(__filename)
