@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "incremental": true,
-    "module": "ES6",
+    "module": "ESNext",
     "moduleResolution": "node",
     "newLine": "lf",
     "noFallthroughCasesInSwitch": true,
@@ -13,11 +14,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "dist",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./test/*"]
+    },
     "pretty": true,
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
-    "target": "ES2020",
+    "strictPropertyInitialization": false,
+    "stripInternal": true,
+    "target": "ES2022",
     "tsBuildInfoFile": ".vscode/.tsbuildinfo",
     "types" : ["mocha", "node"]
   },
