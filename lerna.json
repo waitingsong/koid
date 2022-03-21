@@ -5,6 +5,7 @@
   ],
   "ignore": [
     "demo",
+    "@mw-components/demo",
     "egg-koid"
   ],
   "command": {
