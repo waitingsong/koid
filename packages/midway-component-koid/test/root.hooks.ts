@@ -1,6 +1,15 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import 'tsconfig-paths/register'
+import assert from 'assert/strict'
+import { join } from 'path'
+
+import * as WEB from '@midwayjs/koa'
+import { createApp, close, createHttpRequest } from '@midwayjs/mock'
+
+import { testConfig } from './root.config'
+import { config, mwConfig } from './test.config'
+
+import { ConfigKey } from '~/index'
+import { Application } from '~/interface'
 
 
 /**
@@ -15,17 +24,49 @@ export const mochaHooks = async () => {
   // avoid run multi times
   if (! process.env.mochaRootHookFlag) {
     process.env.mochaRootHookFlag = 'true'
-    await Promise.resolve()
   }
 
   return {
-    // beforeAll() {
-    //   void 0
-    // },
+    beforeAll: async () => {
+      const globalConfig = {
+        keys: Math.random().toString(),
+        [ConfigKey.config]: config,
+        [ConfigKey.middlewareConfig]: mwConfig,
+      }
+      const opts = {
+        imports: [WEB],
+        globalConfig,
+      }
+      const app = await createApp(join(__dirname, 'fixtures', 'base-app'), opts) as Application
+      app.addConfigObject(globalConfig)
+      testConfig.app = app
+      testConfig.httpRequest = createHttpRequest(app)
+      const { url } = testConfig.httpRequest.get('/')
+      testConfig.host = url
 
-    // afterAll() {
-    //   void 0
-    // },
+      const names = app.getMiddleware().getNames()
+      assert(names.includes(ConfigKey.middlewareName) === mwConfig.enableMiddleware)
+
+      // https://midwayjs.org/docs/testing
+    },
+
+    beforeEach: async () => {
+      return
+    },
+
+    afterEach: async () => {
+      const { app } = testConfig
+      app.addConfigObject({
+        [ConfigKey.config]: config,
+        [ConfigKey.middlewareConfig]: mwConfig,
+      })
+    },
+
+    afterAll: async () => {
+      if (testConfig.app) {
+        await close(testConfig.app)
+      }
+    },
   }
 
 }

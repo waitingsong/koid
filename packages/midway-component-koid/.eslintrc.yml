@@ -3,9 +3,5 @@ parserOptions:
   project: 'tsconfig.eslint.json'
 
 rules:
-  "@typescript-eslint/no-unused-vars": 0
-  "unicorn/filename-case": 0
-
-ignorePatterns:
-  - fixtures
+  "import/no-extraneous-dependencies": 0
 

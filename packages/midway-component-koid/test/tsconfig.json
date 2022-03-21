@@ -2,9 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "declaration": false,
-    "inlineSourceMap": false,
     "module": "commonjs",
-    "noEmit": true,
     "noImplicitAny": false,
     "noImplicitThis": false,
     "noUnusedLocals": false,

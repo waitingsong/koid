@@ -1,25 +1,27 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {
-  Config,
+  Config as _Config,
   Init,
   Provide,
   Scope,
   ScopeEnum,
 } from '@midwayjs/decorator'
+
+import { ConfigKey } from './config'
 import {
-  Config as KoidConfig,
+  Config,
   IdInfo,
   Koid,
   KoidFactory,
   retrieveFromId,
-} from 'koid'
+} from './types'
 
 
 @Provide()
 @Scope(ScopeEnum.Singleton)
 export class KoidComponent {
 
-  @Config('koid') readonly config: KoidConfig
+  @_Config(ConfigKey.config) readonly config: Config
 
   protected koid: Koid
 
