@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0](https://github.com/waitingsong/koid/compare/v6.0.0...v7.0.0) (2022-03-21)
+
+**Note:** Version bump only for package egg-koid
+
+
+
+
+
 # [6.0.0](https://github.com/waitingsong/koid/compare/v5.0.0...v6.0.0) (2021-11-23)
 
 **Note:** Version bump only for package egg-koid

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0](/compare/v6.0.0...v7.0.0) (2022-03-21)
+
+
+### Bug Fixes
+
+* **boilerplate:** devDeps version 2e29b42
+
+
+
+
+
 # [6.0.0](/compare/v5.0.0...v6.0.0) (2021-11-23)
 
 **Note:** Version bump only for package koid
