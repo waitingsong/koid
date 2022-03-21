@@ -35,7 +35,7 @@ describe(filename, () => {
 
       const hex2s = id2.toString(16)
       console.info({ hex2s })
-      assert(hex2s === '400001' || hex2s === '800001', hex2s)
+      assert(hex2s === '400001' || hex2s === '800000' || hex2s === '800001', hex2s)
       const ret2s = retrieveFromId(hex2s, epoch)
       const expect2s = hex2s.padStart(16, '0')
       console.info({ ret2s, expect2s })
