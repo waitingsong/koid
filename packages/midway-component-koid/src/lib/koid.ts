@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import {
   Config as _Config,
   Init,
@@ -6,14 +5,13 @@ import {
   Scope,
   ScopeEnum,
 } from '@midwayjs/decorator'
+import { KoidFactory, retrieveFromId } from 'koid'
 
 import { ConfigKey } from './config'
 import {
   Config,
   IdInfo,
   Koid,
-  KoidFactory,
-  retrieveFromId,
 } from './types'
 
 

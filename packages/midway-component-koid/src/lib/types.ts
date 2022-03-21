@@ -1,12 +1,12 @@
 import { MiddlewareConfig as MWConfig } from '@waiting/shared-types'
 
 
-export {
+export type {
   Config,
   IdInfo,
   Koid,
   KoidFactory,
-  retrieveFromId,
+  // retrieveFromId,
 } from 'koid'
 
 

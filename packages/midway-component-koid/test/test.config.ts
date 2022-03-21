@@ -8,8 +8,8 @@ import {
 
 
 export {
-  demoConfig as config,
-  demoMiddlewareConfig as mwConfig,
+  koidConfig as config,
+  koidMiddlewareConfig as mwConfig,
 } from '~/config/config.unittest'
 
 export const mwOptions: MiddlewareOptions = {
