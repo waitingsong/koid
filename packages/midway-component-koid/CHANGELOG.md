@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.1](git//github.com/waitingsong/koid/compare/v7.0.0...v7.0.1) (2022-03-23)
+
+**Note:** Version bump only for package @mw-components/koid
+
+
+
+
+
 # [7.0.0](git//github.com/waitingsong/koid/compare/v6.0.0...v7.0.0) (2022-03-21)
 
 **Note:** Version bump only for package @mw-components/koid
