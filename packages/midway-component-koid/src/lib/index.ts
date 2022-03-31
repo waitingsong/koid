@@ -1,5 +1,5 @@
 
 export * from './config'
 export * from './types'
-export { KoidComponent } from './koid'
+export { KoidComponent } from './koid.component'
 
