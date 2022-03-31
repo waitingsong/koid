@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.3](git//github.com/waitingsong/koid/compare/v7.0.2...v7.0.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* **midway-component-koid:** cycle dependency ([1f4fc30](git//github.com/waitingsong/koid/commits/1f4fc30d8ff12b026c1bce5aa34327adce22cbfc))
+
+
+
+
+
 ## [7.0.2](git//github.com/waitingsong/koid/compare/v7.0.1...v7.0.2) (2022-03-24)
 
 **Note:** Version bump only for package @mw-components/koid

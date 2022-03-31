@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.3](/compare/v7.0.2...v7.0.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* **boilerplate:** define enum without const c032893
+* **boilerplate:** define enum without const 37ffd10
+* **boilerplate:** devDeps version 2e29b42
+* **midway-component-koid:** cycle dependency 1f4fc30
+
+
+
+
+
 ## [7.0.2](/compare/v7.0.1...v7.0.2) (2022-03-24)
 
 
