@@ -13,11 +13,20 @@
     "ts"
   ],
   "bin": {},
-  "browser": "",
-  "es2015": "",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./index.min.js": {
+      "import": "./dist/index.min.mjs",
+      "require": "./dist/index.min.cjs"
+    },
+    "./package.json": "./package.json"
+  },
   "bugs": {
     "url": "https://github.com/waitingsong/koid/issues"
   },
@@ -58,7 +67,7 @@
     "prepublishOnly": "sh ../../.scripts/change-pkg-types-dist.sh",
     "postpublish": "sh ../../.scripts/change-pkg-types-src.sh",
     "purge": "npm run clean && rm node_modules -rf",
-    "rp": "rollup -c rollup.config.js",
+    "rp": "rollup -c rollup.config.js --context this",
     "rp:w": "npm run tsc:w | rollup -wc rollup.config.js",
     "test": "cross-env TS_NODE_PROJECT=test/tsconfig.json mocha",
     "test:local": "cross-env TS_NODE_PROJECT=test/tsconfig.json ../../node_modules/.bin/mocha --parallel=false",

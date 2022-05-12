@@ -20,7 +20,7 @@
     },
     "pretty": true,
     "skipLibCheck": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "strict": true,
     "strictPropertyInitialization": false,
     "stripInternal": true,
