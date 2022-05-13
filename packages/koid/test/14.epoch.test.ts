@@ -1,12 +1,11 @@
-import assert from 'assert/strict'
-import { relative } from 'path'
+import assert from 'node:assert/strict'
 
-import { KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
+import { KoidFactory, retrieveFromId } from '../src/index.js'
+
+import { fileShortPath } from './_helper.js'
 
 
-const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')
-
-describe(filename, () => {
+describe(fileShortPath(import.meta.url), () => {
 
   describe('should work', () => {
     it('normal', () => {

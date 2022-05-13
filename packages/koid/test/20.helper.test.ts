@@ -1,13 +1,12 @@
-import assert from 'assert/strict'
-import { relative } from 'path'
+import assert from 'node:assert/strict'
 
-import { Config, genConfigRandom, KoidMsg } from '../src/index'
-import { parseConfig, waitTillNextMillisecond } from '../src/lib/helper'
+import { Config, genConfigRandom, KoidMsg } from '../src/index.js'
+import { parseConfig, waitTillNextMillisecond } from '../src/lib/helper.js'
+
+import { fileShortPath } from './_helper.js'
 
 
-const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')
-
-describe(filename, () => {
+describe(fileShortPath(import.meta.url), () => {
 
   describe('should parseConfig() work', () => {
     it('perfer using node instead of dataCenter', () => {
