@@ -13,12 +13,11 @@
     "ts"
   ],
   "bin": {},
-  "main": "dist/index.mjs",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
   "types": "src/index.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
     "./index.min.js": {
