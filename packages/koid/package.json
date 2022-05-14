@@ -45,7 +45,6 @@
   },
   "files": [
     "tsconfig.json",
-    "rollup.config.js",
     "src/**/*.ts",
     "bin/*.js",
     "dist"
