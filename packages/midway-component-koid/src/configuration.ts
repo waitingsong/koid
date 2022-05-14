@@ -4,7 +4,7 @@ import { join } from 'path'
 
 import { Configuration } from '@midwayjs/decorator'
 
-import { ConfigKey } from './lib/index'
+import { ConfigKey } from './lib/config'
 
 
 @Configuration({
