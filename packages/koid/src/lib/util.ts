@@ -1,7 +1,7 @@
 /* eslint-disable no-bitwise */
-import assert from 'assert'
+import assert from 'node:assert'
 
-import { IdInfo, KoidMsg } from './types'
+import { IdInfo, KoidMsg } from './types.js'
 
 
 export const POW10 = Math.pow(2, 10)

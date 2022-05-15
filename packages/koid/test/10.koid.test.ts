@@ -1,12 +1,11 @@
-import assert from 'assert/strict'
-import { relative } from 'path'
+import assert from 'node:assert/strict'
 
-import { Config, KoidFactory, retrieveFromId } from '../src/index'
+import { fileShortPath } from '@waiting/shared-core'
+
+import { Config, KoidFactory, retrieveFromId } from '../src/index.js'
 
 
-const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')
-
-describe(filename, () => {
+describe(fileShortPath(import.meta.url), () => {
 
   describe('should works', () => {
     it('next w/o passing config', () => {

@@ -1,17 +1,12 @@
-import assert from 'assert/strict'
+import assert from 'node:assert/strict'
 
-import {
-  basename,
-  join,
-} from '@waiting/shared-core'
+import { fileShortPath } from '@waiting/shared-core'
 
-import { Config, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index'
-import { isValidBigintStr, isValidHexString, validEpoch } from '../src/lib/util'
+import { Config, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index.js'
+import { isValidBigintStr, isValidHexString, validEpoch } from '../src/lib/util.js'
 
 
-const filename = basename(__filename)
-
-describe(filename, () => {
+describe(fileShortPath(import.meta.url), () => {
   describe('should retrieveFromId() works', () => {
     it('normal', () => {
       const config1: Config = {

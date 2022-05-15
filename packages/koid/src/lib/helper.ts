@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
-import { Config, ConfigDc, ConfigNode, Options } from './types'
-import { validEpoch } from './util'
+import { Config, ConfigDc, ConfigNode, Options } from './types.js'
+import { validEpoch } from './util.js'
 
 
 export function parseConfig(config?: Config): Options {

@@ -1,15 +1,14 @@
-import assert from 'assert/strict'
-import { relative } from 'path'
+import assert from 'node:assert/strict'
 
-import { KoidFactory } from '../src/index'
+import { fileShortPath } from '@waiting/shared-core'
 
-import { config1, config2, config4, testArr } from './config.test'
-import { IdsEqualIgnoreMs } from './util'
+import { KoidFactory } from '../src/index.js'
+
+import { config1, config2, config4, testArr } from './config.test.js'
+import { IdsEqualIgnoreMs } from './util.js'
 
 
-const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')
-
-describe(filename, () => {
+describe(fileShortPath(import.meta.url), () => {
 
   describe('should works', () => {
     it('normal', () => {

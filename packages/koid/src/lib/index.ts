@@ -1,6 +1,6 @@
-import { parseConfig } from './helper'
-import { Koid } from './koid'
-import type { Config, Options } from './types'
+import { parseConfig } from './helper.js'
+import { Koid } from './koid.js'
+import type { Config, Options } from './types.js'
 
 
 export function KoidFactory(config?: Config): Koid {
@@ -11,13 +11,13 @@ export function KoidFactory(config?: Config): Koid {
 
 export { Config }
 // Note: only export type of Koid, therefor use `import type { Koid } from 'koid'`
-export type { Koid } from './koid'
+export type { Koid } from './koid.js'
 export {
   ConfigDc, ConfigNode,
   KoidMsg, IdInfo,
-} from './types'
+} from './types.js'
 export {
   genConfigRandom, waitTillNextMillisecond,
-} from './helper'
-export { retrieveFromId } from './util'
+} from './helper.js'
+export { retrieveFromId } from './util.js'
 
