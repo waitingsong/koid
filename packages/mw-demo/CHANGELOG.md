@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.0.0](https://github.com/waitingsong/npm-mono-base/compare/v8.0.1...v9.0.0) (2022-05-15)
+
+
+### Bug Fixes
+
+* **boilerplate:** define enum without const ([37ffd10](https://github.com/waitingsong/npm-mono-base/commit/37ffd10749d0aaa7c3d0ddf8e3c41c7a9bfedc3b))
+* **boilerplate:** devDeps version ([2e29b42](https://github.com/waitingsong/npm-mono-base/commit/2e29b42d3eb679cdbced3a0a3d65a9172bd2da34))
+
+
+
+
+
 # [8.0.0](https://github.com/waitingsong/npm-mono-base/compare/v7.0.6...v8.0.0) (2022-05-12)
 
 **Note:** Version bump only for package @mw-components/demo
