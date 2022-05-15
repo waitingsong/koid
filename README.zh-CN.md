@@ -198,7 +198,9 @@ npm run bootstrap
 
 [`koid`]: https://github.com/waitingsong/koid/tree/master/packages/koid
 [main-svg]: https://img.shields.io/npm/v/koid.svg?maxAge=86400
+[main-ch]: https://github.com/waitingsong/koid/tree/master/packages/koid/CHANGELOG.md
 
 [`@mw-components/koid`]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid
 [mw-svg]: https://img.shields.io/npm/v/@mw-components/koid.svg?cacheSeconds=86400
+[mw-ch]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid/CHANGELOG.md
 

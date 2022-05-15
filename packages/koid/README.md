@@ -180,10 +180,10 @@ npm run bootstrap
 
 ## Packages
 
-| Package      | Version                | Dependencies                 | DevDependencies                |
-| ------------ | ---------------------- | ---------------------------- | ------------------------------ |
-| [`koid`]     | [![main-svg]][main-ch] | [![main-d-svg]][main-d-link] | [![main-dd-svg]][main-dd-link] |
-| [`egg-koid`] | [![egg-svg]][egg-ch]   | [![egg-d-svg]][egg-d-link]   | [![egg-dd-svg]][egg-dd-link]   |
+| Package      | Version                | 
+| ------------ | ---------------------- | 
+| [`koid`]     | [![main-svg]][main-ch] | 
+| [`@mw-components/koid`] | [![mw-svg]][mw-ch]   | 
 
 
 ## License
@@ -198,16 +198,8 @@ npm run bootstrap
 [`koid`]: https://github.com/waitingsong/koid/tree/master/packages/koid
 [main-svg]: https://img.shields.io/npm/v/koid.svg?maxAge=86400
 [main-ch]: https://github.com/waitingsong/koid/tree/master/packages/koid/CHANGELOG.md
-[main-d-svg]: https://david-dm.org/waitingsong/koid.svg?path=packages/koid
-[main-d-link]: https://david-dm.org/waitingsong/koid.svg?path=packages/koid
-[main-dd-svg]: https://david-dm.org/waitingsong/koid/dev-status.svg?path=packages/koid
-[main-dd-link]: https://david-dm.org/waitingsong/koid?path=packages/koid#info=devDependencies
 
-[`egg-koid`]: https://github.com/waitingsong/koid/tree/master/packages/egg-koid
-[egg-svg]: https://img.shields.io/npm/v/egg-koid.svg?cacheSeconds=86400
-[egg-ch]: https://github.com/waitingsong/koid/tree/master/packages/egg-koid/CHANGELOG.md
-[egg-d-svg]: https://david-dm.org/waitingsong/koid.svg?path=packages/egg-koid
-[egg-d-link]: https://david-dm.org/waitingsong/koid.svg?path=packages/egg-koid
-[egg-dd-svg]: https://david-dm.org/waitingsong/koid/dev-status.svg?path=packages/egg-koid
-[egg-dd-link]: https://david-dm.org/waitingsong/koid?path=packages/egg-koid#info=devDependencies
+[`@mw-components/koid`]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid
+[mw-svg]: https://img.shields.io/npm/v/@mw-components/koid.svg?cacheSeconds=86400
+[mw-ch]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid/CHANGELOG.md
 
