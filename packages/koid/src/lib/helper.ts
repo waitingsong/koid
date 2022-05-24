@@ -5,7 +5,7 @@ import { validEpoch } from './util.js'
 
 
 export function parseConfig(config?: Config): Options {
-  /* istanbul ignore else */
+  /* c8 ignore else */
   if (typeof config === 'undefined') {
     const dc = genConfigRandom()
     return parseConfigDc(dc)
@@ -85,14 +85,14 @@ function parseConfigNode(config: ConfigNode): Options {
 
 
 export function waitTillNextMillisecond(time: number, maxLoopTimes = 10240000): number {
-  /* istanbul ignore next */
+  /* c8 ignore next */
   if (maxLoopTimes <= 0) {
     return 0
   }
 
   for (let i = 0; i < Math.abs(maxLoopTimes); i += 1) {
     let now = Date.now()
-    /* istanbul ignore next */
+    /* c8 ignore next */
     if (now > time && i > 0) {
       return i
     }
