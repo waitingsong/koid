@@ -18,7 +18,6 @@ if (name.slice(0, 1) === '@') {
 name = parseName(name)
 console.log({ name })
 
-const targetDir = dirname(pkg.main)
 const deps = pkg.dependencies
 const peerDeps = pkg.peerDependencies
 
@@ -78,7 +77,30 @@ external = [...new Set(external)]
 const config = []
 const input = 'dist/index.js'
 
-if (pkg.main) {
+if (pkg.exports) {
+  Object.entries(pkg.exports).forEach(([key, row]) => {
+    if (typeof row !== 'object') { return }
+    if (! row.import && ! row.require) { return }
+
+    config.push(
+      {
+        external: external.concat(nodeModule),
+        input: row.import,
+        output: [
+          {
+            file: row.require,
+            banner,
+            format: 'cjs',
+            globals,
+            sourcemap: true,
+            sourcemapExcludeSources: true,
+          },
+        ],
+      },
+    )
+  })
+}
+else if (pkg.main) {
   config.push(
     {
       external: external.concat(nodeModule),
@@ -98,6 +120,7 @@ if (pkg.main) {
     },
   )
 }
+
 
 /*
 if (production) {
