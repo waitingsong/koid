@@ -18,8 +18,10 @@ export function parseConfig(config?: Config): Options {
   if (typeof config.node === 'number') {
     const configNode: ConfigNode = {
       node: (config as ConfigNode).node,
-      epoch: config.epoch,
       noWait: !! config.noWait,
+    }
+    if (typeof config.epoch === 'number') {
+      configNode.epoch = config.epoch
     }
     return parseConfigNode(configNode)
   }
@@ -28,8 +30,11 @@ export function parseConfig(config?: Config): Options {
     const configDc: ConfigDc = {
       dataCenter: conf.dataCenter,
       worker: conf.worker,
-      epoch: conf.epoch,
+      // epoch: conf.epoch,
       noWait: !! config.noWait,
+    }
+    if (typeof config.epoch === 'number') {
+      configDc.epoch = config.epoch
     }
     return parseConfigDc(configDc)
   }
