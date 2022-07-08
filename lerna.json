@@ -1,5 +1,5 @@
 {
-  "version": "9.0.0",
+  "version": "9.0.1",
   "packages": [
     "packages/*"
   ],
@@ -28,8 +28,7 @@
         "cross-env",
         "egg"
       ],
-      "npmClientArgs": [
-      ]
+      "npmClientArgs": []
     },
     "version": {
       "conventionalCommits": true,
