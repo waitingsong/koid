@@ -1,5 +1,3 @@
-// @ts-ignore
-import { PowerPartial } from '@midwayjs/core'
 
 import {
   Config,
@@ -18,10 +16,11 @@ export {
 } from 'koid'
 
 
+// @ts-ignore
 declare module '@midwayjs/core/dist/interface' {
   interface MidwayConfig {
-    [ConfigKey.config]: PowerPartial<Config>
-    [ConfigKey.middlewareConfig]: PowerPartial<MiddlewareConfig>
+    [ConfigKey.config]: Partial<Config>
+    [ConfigKey.middlewareConfig]: Partial<MiddlewareConfig>
   }
 }
 

@@ -1,6 +1,6 @@
 import 'tsconfig-paths/register'
 
-import { join } from 'path'
+import { join } from 'node:path'
 
 import { Configuration } from '@midwayjs/decorator'
 
