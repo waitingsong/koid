@@ -2,12 +2,14 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "declaration": false,
+    "declarationMap": false,
     "module": "commonjs",
     "noImplicitAny": false,
     "noImplicitThis": false,
+    "noPropertyAccessFromIndexSignature": false,
     "noUnusedLocals": false,
     "sourceMap": false,
-    "target": "ESNEXT"
+    "target": "ESNext"
   },
   "include": [
     "**/*.ts"
