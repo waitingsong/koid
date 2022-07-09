@@ -43,6 +43,7 @@ export const mochaHooks = async () => {
       const { url } = testConfig.httpRequest.get('/')
       testConfig.host = url
 
+      testConfig.container = app.getApplicationContext()
       // const names = app.getMiddleware().getNames()
       // assert(names.includes(ConfigKey.middlewareName) === mwConfig.enableMiddleware)
 
