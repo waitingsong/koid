@@ -28,7 +28,9 @@
         "cross-env",
         "egg"
       ],
-      "npmClientArgs": []
+      "npmClientArgs": [
+        "--no-audit"
+      ]
     },
     "version": {
       "conventionalCommits": true,
