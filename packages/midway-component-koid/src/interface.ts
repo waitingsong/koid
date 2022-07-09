@@ -1,10 +1,10 @@
 
-export {
-  JsonObject,
-  JsonResp,
-  JsonType,
-  NpmPkg,
-} from '@waiting/shared-types'
+// export {
+//   JsonObject,
+//   JsonResp,
+//   JsonType,
+//   NpmPkg,
+// } from '@waiting/shared-types'
 
 export {
   IMidwayApplication,
