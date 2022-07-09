@@ -79,7 +79,31 @@ describe(fileShortPath(import.meta.url), () => {
   })
 
 
+  describe('should koid.nextHex works', () => {
+    it('normal', () => {
+      const inst = KoidFactory()
+      const hex = inst.nextHex
+      assert(hex.length === 16)
+    })
+  })
+
   describe('should koid.retrieveFromId() works', () => {
+  })
+
+  describe('should koid.retrieveFromId() works', () => {
+    it('normal', () => {
+      const inst = KoidFactory()
+      const hex = inst.nextHex
+
+      const info = inst.retrieveFromId(hex)
+      assert(info)
+      assert(info.dataCenter > 0)
+      assert(info.hex === hex)
+      assert(info.sequence >= 0)
+      assert(info.timestamp > 0)
+      assert(info.worker > 0)
+    })
+
     it('normal', () => {
       const config1: Config = {
         dataCenter: 0,
