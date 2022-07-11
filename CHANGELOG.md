@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.1.0](/compare/v9.0.1...v9.1.0) (2022-07-11)
+
+
+### Bug Fixes
+
+* **boilerplate:** define enum without const 37ffd10
+* **boilerplate:** devDeps version 2e29b42
+
+
+### Features
+
+* **midway-component-koid:** remove types exports from src/interface.ts a927f5b
+
+
+
+
+
 ## [9.0.1](/compare/v9.0.0...v9.0.1) (2022-07-08)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.1.0](git//github.com/waitingsong/koid/compare/v9.0.1...v9.1.0) (2022-07-11)
+
+
+### Features
+
+* **midway-component-koid:** remove types exports from src/interface.ts ([a927f5b](git//github.com/waitingsong/koid/commits/a927f5b60dad5adf35377079b83767439c115ebd))
+
+
+
+
+
 ## [9.0.1](git//github.com/waitingsong/koid/compare/v9.0.0...v9.0.1) (2022-07-08)
 
 **Note:** Version bump only for package @mw-components/koid
