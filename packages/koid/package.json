@@ -15,10 +15,10 @@
   ],
   "type": "module",
   "bin": {},
-  "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
@@ -35,7 +35,6 @@
   "license": "MIT",
   "devDependencies": {
     "@waiting/shared-core": "^20.1.0",
-    "@waiting/shared-types": "^20.1.0",
     "cross-env": "7"
   },
   "engines": {
