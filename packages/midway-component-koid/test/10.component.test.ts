@@ -40,11 +40,12 @@ describe(filename, () => {
 
       const info = svc.retrieveFromId(hex)
       assert(info)
-      assert(info.dataCenter > 0)
+      console.log({ info })
+      assert(info.dataCenter >= 0)
       assert(info.hex === hex)
       assert(info.sequence >= 0)
       assert(info.timestamp > 0)
-      assert(info.worker > 0)
+      assert(info.worker >= 0)
     })
 
   })
