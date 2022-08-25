@@ -32,10 +32,6 @@
   "devDependencies": {
     "cross-env": "7"
   },
-  "peerDependencies": {
-    "@midwayjs/core": ">=3",
-    "@midwayjs/decorator": ">=3"
-  },
   "engines": {
     "node": ">=16.13.0"
   },
