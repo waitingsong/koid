@@ -41,7 +41,7 @@ export function parseConfig(config?: Config): Options {
 }
 
 /**
- * Generate random id
+ * Generate ConfigDc with random data center and worker
  */
 export function genConfigRandom(epoch = 0): ConfigDc {
   const id = Math.floor(Math.random() * 2 ** 10) & 0x3FF
