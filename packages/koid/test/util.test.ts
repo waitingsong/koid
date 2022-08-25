@@ -7,7 +7,7 @@ import { isValidBigintStr, isValidHexString, validEpoch } from '../src/lib/util.
 
 
 describe(fileShortPath(import.meta.url), () => {
-  describe('should retrieveFromId() works', () => {
+  describe('should retrieveFromId() work', () => {
     it('normal', () => {
       const config1: Config = {
         dataCenter: 0,
@@ -95,7 +95,7 @@ describe(fileShortPath(import.meta.url), () => {
   })
 
 
-  describe('should isValidBigintStr() works', () => {
+  describe('should isValidBigintStr() work', () => {
     it('normal', () => {
       const arr = [
         '77745618944',
@@ -130,7 +130,7 @@ describe(fileShortPath(import.meta.url), () => {
   })
 
 
-  describe('should isValidHexString() works', () => {
+  describe('should isValidHexString() work', () => {
     it('ex', () => {
       const arr = [
         '0755455236955799552',
@@ -143,7 +143,7 @@ describe(fileShortPath(import.meta.url), () => {
   })
 
 
-  describe('should validEpoch() works', () => {
+  describe('should validEpoch() work', () => {
     it('normal', () => {
       try {
         validEpoch(Date.now())

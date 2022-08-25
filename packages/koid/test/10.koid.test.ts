@@ -7,7 +7,7 @@ import { Config, KoidFactory, retrieveFromId } from '../src/index.js'
 
 describe(fileShortPath(import.meta.url), () => {
 
-  describe('should works', () => {
+  describe('should work', () => {
     it('next w/o passing config', () => {
       const inst = KoidFactory()
       const buf = inst.next
@@ -79,7 +79,7 @@ describe(fileShortPath(import.meta.url), () => {
   })
 
 
-  describe('should koid.nextHex works', () => {
+  describe('should koid.nextHex work', () => {
     it('normal', () => {
       const inst = KoidFactory()
       const hex = inst.nextHex
@@ -87,10 +87,7 @@ describe(fileShortPath(import.meta.url), () => {
     })
   })
 
-  describe('should koid.retrieveFromId() works', () => {
-  })
-
-  describe('should koid.retrieveFromId() works', () => {
+  describe('should koid.retrieveFromId() work', () => {
     it('normal', () => {
       const inst = KoidFactory()
       const hex = inst.nextHex

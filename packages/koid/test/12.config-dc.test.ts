@@ -10,7 +10,7 @@ import { IdsEqualIgnoreMs } from './util.js'
 
 describe(fileShortPath(import.meta.url), () => {
 
-  describe('should works', () => {
+  describe('should work', () => {
     it('normal', () => {
       const dataCenter = 0
       const worker = 0

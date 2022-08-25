@@ -8,7 +8,7 @@ import { Koid } from '../src/lib/koid.js'
 
 describe(fileShortPath(import.meta.url), () => {
 
-  describe('should works', () => {
+  describe('should work', () => {
     it('Clock backwards no wait', () => {
       const dataCenter = 2
       const worker = 3
