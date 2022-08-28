@@ -1,14 +1,21 @@
 import { MiddlewareConfig as MWConfig } from '@waiting/shared-types'
+import type { Config as _Config } from 'koid'
 
 
 export type {
-  Config,
   IdInfo,
   Koid,
   KoidFactory,
-  // retrieveFromId,
 } from 'koid'
 
+
+export type Config = _Config & {
+  /**
+   * Enable route for `/koid/id` and `/koid/hex`
+   * @default false
+   */
+  enableRoute?: boolean,
+}
 
 export interface MiddlewareOptions {
   debug: boolean

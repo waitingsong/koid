@@ -8,6 +8,7 @@ import {
 
 export { AutoConfiguration as Configuration } from './configuration'
 export * from './lib/index'
+export * from './app/koid.controller'
 export {
   ConfigDc,
   ConfigNode,

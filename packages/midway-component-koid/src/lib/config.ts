@@ -7,7 +7,11 @@ import {
 } from './types'
 
 
-export const initialConfig: Readonly<Config> = genConfigRandom()
+const _config: Readonly<Config> = genConfigRandom()
+export const initialConfig: Readonly<Config> = {
+  enableRoute: false,
+  ..._config,
+}
 
 export const initMiddlewareOptions: MiddlewareOptions = {
   debug: false,

@@ -30,6 +30,7 @@
     "koid": "^9.1.2"
   },
   "devDependencies": {
+    "@mw-components/base": "^4.4.0",
     "cross-env": "7"
   },
   "engines": {
