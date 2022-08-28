@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.2.0](git//github.com/waitingsong/koid/compare/v9.1.2...v9.2.0) (2022-08-28)
+
+
+### Features
+
+* **midway-component-koid:** add Config['enableRoute'] for koid.component.ts ([2fbf8df](git//github.com/waitingsong/koid/commits/2fbf8df1b779d29446597c1c3e73dc93a6f18183))
+
+
+
+
+
 ## [9.1.2](git//github.com/waitingsong/koid/compare/v9.1.1...v9.1.2) (2022-08-25)
 
 **Note:** Version bump only for package @mw-components/koid

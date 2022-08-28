@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.2.0](/compare/v9.1.2...v9.2.0) (2022-08-28)
+
+
+### Features
+
+* **midway-component-koid:** add Config['enableRoute'] for koid.component.ts 2fbf8df
+
+
+
+
+
 ## [9.1.2](/compare/v9.1.1...v9.1.2) (2022-08-25)
 
 
