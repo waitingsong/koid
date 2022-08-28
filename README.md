@@ -150,32 +150,50 @@ It would give something like:
 5dc2cdd1f4fd3000 // hex string
 ```
 
+
+### Midway.js
+
+Update imports:
+```ts
+// file src/configuration.ts
+import * as koid from '@mw-components/koid'
+
+@Configuration({
+  importConfigs: [join(__dirname, 'config')],
+  imports: [
+    koid,
+  ],
+})
+export class ContainerConfiguration implements ILifeCycle {
+}
+```
+
+Inject component:
+```ts
+import { Inject } from '@midwayjs/decorator'
+
+export class RootClass {
+  @Inject() readonly koid: KoidComponent
+}
+```
+
+Enable route:
+```ts
+// file src/config/config.{prod|local|unittest}.ts
+// '2020-01-01T00:00:00Z'
+const epoch = 1577836800000
+const _koidConfig = genConfigRandom(epoch)
+export const koidConfig = {
+  ..._koidConfig,
+  enableRoute: true,
+}
+```
+
+then retrieve id from http api
+- `/koid/id`  return string
+- `/koid/hex` return hext string
+
 <br>
-
-## Initialization
-
-```sh
-npm run repo:init
-```
-
-
-## Update
-
-```sh
-npm run bootstrap
-```
-
-
-## Test
-
-- Use `npm run lint` to check code style.
-- Use `npm run test` to run unit test.
-
-
-## Note
-
-- Run `npm run clean` before `npm run build`, if any file under typescript outDir folder was deleted manually.
-- Default publish registry is `NPM`, configurated in file `lerna.json`
 
 
 ## Packages
