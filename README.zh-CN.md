@@ -157,7 +157,7 @@ It would give something like:
 Update imports:
 ```ts
 // file src/configuration.ts
-import * as koid from '@mw-components/koid'
+import * as koid from '@mwcp/koid'
 
 @Configuration({
   importConfigs: [join(__dirname, 'config')],
@@ -203,7 +203,7 @@ then retrieve id from http api
 | Package                 | Version                |
 | ----------------------- | ---------------------- |
 | [`koid`]                | [![main-svg]][main-ch] |
-| [`@mw-components/koid`] | [![mw-svg]][mw-ch]     |
+| [`@mwcp/koid`] | [![mw-svg]][mw-ch]     |
 
 
 ## License
@@ -219,7 +219,7 @@ then retrieve id from http api
 [main-svg]: https://img.shields.io/npm/v/koid.svg?maxAge=86400
 [main-ch]: https://github.com/waitingsong/koid/tree/master/packages/koid/CHANGELOG.md
 
-[`@mw-components/koid`]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid
-[mw-svg]: https://img.shields.io/npm/v/@mw-components/koid.svg?cacheSeconds=86400
+[`@mwcp/koid`]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid
+[mw-svg]: https://img.shields.io/npm/v/@mwcp/koid.svg?cacheSeconds=86400
 [mw-ch]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid/CHANGELOG.md
 
