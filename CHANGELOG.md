@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.3.0](/compare/v9.2.0...v9.3.0) (2022-08-31)
+
+
+### Bug Fixes
+
+* **boilerplate:** define enum without const 37ffd10
+* **boilerplate:** devDeps version 2e29b42
+
+
+### Features
+
+* **mwcp:** use new npm scope "@mwcp" d40154f
+
+
+
+
+
 # [9.2.0](/compare/v9.1.2...v9.2.0) (2022-08-28)
 
 

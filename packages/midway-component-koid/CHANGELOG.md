@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.3.0](git//github.com/waitingsong/koid/compare/v9.2.0...v9.3.0) (2022-08-31)
+
+
+### Features
+
+* **mwcp:** use new npm scope "@mwcp" ([d40154f](git//github.com/waitingsong/koid/commits/d40154ff2038f7af1d5f0210495755ccc39d1780))
+
+
+
+
+
 # [9.2.0](git//github.com/waitingsong/koid/compare/v9.1.2...v9.2.0) (2022-08-28)
 
 
