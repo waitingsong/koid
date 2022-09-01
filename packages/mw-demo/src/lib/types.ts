@@ -1,8 +1,26 @@
 import { MiddlewareConfig as MWConfig } from '@waiting/shared-types'
 
 
+export enum ConfigKey {
+  namespace = 'demo',
+  config = 'demoConfig',
+  middlewareConfig = 'demoMiddlewareConfig',
+  componentName = 'demoComponent',
+  middlewareName = 'demoMiddleware'
+}
+
+export enum Msg {
+  hello = 'hello world',
+  AuthFailed = 'Authentication Failed',
+}
+
+
 export interface Config {
-  secret: string
+  /**
+   * Enable default http route, eg. /hello
+   * @default false
+   */
+  enableDefaultRoute?: boolean | undefined
 }
 
 export interface MiddlewareOptions {

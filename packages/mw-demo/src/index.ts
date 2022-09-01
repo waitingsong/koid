@@ -3,11 +3,12 @@ import {
   Config,
   ConfigKey,
   MiddlewareConfig,
-} from './lib/index'
+} from './lib/types'
 
 
 export { AutoConfiguration as Configuration } from './configuration'
 export * from './lib/index'
+export * from './app/index.controller'
 export {
   getComponentConfig,
   getMiddlewareConfig,
@@ -20,8 +21,5 @@ declare module '@midwayjs/core/dist/interface' {
     [ConfigKey.config]: Partial<Config>
     [ConfigKey.middlewareConfig]: Partial<MiddlewareConfig>
   }
-  // interface Context {
-  //   jwtState: JwtState
-  // }
 }
 

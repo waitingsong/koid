@@ -1,8 +1,8 @@
-import { Config, MiddlewareConfig } from '~/index'
+import { Config, MiddlewareConfig } from '~/lib/types'
 
 
 export const demoConfig: Config = {
-  secret: '',
+  enableDefaultRoute: true,
 }
 
 export const demoMiddlewareConfig: Readonly<Omit<MiddlewareConfig, 'match'>> = {
