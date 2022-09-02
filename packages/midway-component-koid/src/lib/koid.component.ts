@@ -5,12 +5,7 @@ import {
   Scope,
   ScopeEnum,
 } from '@midwayjs/decorator'
-import { KoidFactory, retrieveFromId } from 'koid'
-
-import type {
-  IdInfo,
-  Koid,
-} from '../index'
+import { IdInfo, Koid, KoidFactory, retrieveFromId } from 'koid'
 
 import {
   ConfigKey,
