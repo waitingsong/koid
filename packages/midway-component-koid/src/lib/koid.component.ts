@@ -7,11 +7,14 @@ import {
 } from '@midwayjs/decorator'
 import { KoidFactory, retrieveFromId } from 'koid'
 
-import { ConfigKey } from './config'
-import {
-  Config,
+import type {
   IdInfo,
   Koid,
+} from '../index'
+
+import {
+  ConfigKey,
+  Config,
 } from './types'
 
 
@@ -21,14 +24,11 @@ export class KoidComponent {
 
   @_Config(ConfigKey.config) readonly config: Config
 
-  enableRoute: boolean
-
   protected koid: Koid
 
   @Init()
   async init(): Promise<void> {
     this.koid = KoidFactory(this.config)
-    this.enableRoute = !! this.config.enableRoute
   }
 
   /**

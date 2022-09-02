@@ -6,7 +6,6 @@ import * as WEB from '@midwayjs/koa'
 import { createApp, close, createHttpRequest } from '@midwayjs/mock'
 
 import { testConfig } from '@/root.config'
-import { ConfigKey } from '~/index'
 import { Application } from '~/interface'
 
 
@@ -41,8 +40,10 @@ export const mochaHooks = async () => {
       testConfig.host = url
 
       testConfig.container = app.getApplicationContext()
-      // const names = app.getMiddleware().getNames()
-      // assert(names.includes(ConfigKey.middlewareName) === mwConfig.enableMiddleware)
+      // const svc = await testConfig.container.getAsync(TaskQueueService)
+
+      const names = app.getMiddleware().getNames()
+      console.info({ middlewares: names })
 
       // https://midwayjs.org/docs/testing
     },

@@ -30,7 +30,7 @@
     "koid": "^9.2.0"
   },
   "devDependencies": {
-    "@mw-components/base": "^4.4.0",
+    "@mwcp/share": "^1.1.0",
     "cross-env": "7"
   },
   "engines": {
@@ -44,7 +44,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "npm run tsc",
+    "build": "npm run tsc && tsc-alias",
     "clean": "npm run clean:lock & npm run clean:cache & rm -rf dist/*",
     "clean:cache": "rm -rf .eslintcache .vscode/.tsbuildinfo .vscode/.tsbuildinfo.*",
     "clean:lock": "rm package-lock.json -f",

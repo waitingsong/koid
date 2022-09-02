@@ -4,7 +4,7 @@ import { join } from 'node:path'
 
 import { Configuration } from '@midwayjs/decorator'
 
-import { ConfigKey } from './lib/config'
+import { ConfigKey } from './lib/types'
 
 
 @Configuration({
@@ -13,4 +13,5 @@ import { ConfigKey } from './lib/config'
 })
 export class AutoConfiguration {
 }
+
 
