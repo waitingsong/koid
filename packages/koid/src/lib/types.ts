@@ -58,6 +58,7 @@ export interface Options {
 }
 
 export enum KoidMsg {
+  hello = 'hello koid',
   SeqExceed = 'Sequence exceeded its maximum value',
   ClockBack = 'Clock moved backwards',
   NotValidEpoch = 'Not an valid epoch value, value should older than now',
