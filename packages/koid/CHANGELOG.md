@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.0.0](https://github.com/waitingsong/koid/compare/v9.3.0...v10.0.0) (2022-09-02)
+
+
+### Features
+
+* **koid:** def KoidMsg.hello ([bcf7719](https://github.com/waitingsong/koid/commit/bcf77199663718522e613c1f65d5ba07153d5079))
+
+
+
+
+
 # [9.2.0](https://github.com/waitingsong/koid/compare/v9.1.2...v9.2.0) (2022-08-28)
 
 **Note:** Version bump only for package koid

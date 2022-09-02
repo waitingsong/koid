@@ -1,7 +1,7 @@
 {
   "name": "@mwcp/koid",
   "author": "waiting",
-  "version": "9.3.0",
+  "version": "10.0.0",
   "description": "",
   "private": false,
   "keywords": [
@@ -27,7 +27,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "koid": "^9.2.0"
+    "koid": "^10.0.0"
   },
   "devDependencies": {
     "@mwcp/share": "^1.1.0",

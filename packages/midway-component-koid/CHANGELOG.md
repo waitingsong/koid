@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.0.0](git//github.com/waitingsong/koid/compare/v9.3.0...v10.0.0) (2022-09-02)
+
+
+### Features
+
+* **mwcp:** sync and rename property enableRoute of Config to enableDefaultRoute ([c52faa1](git//github.com/waitingsong/koid/commits/c52faa191954fe0ff6c03337b9f61b659b857df7))
+
+
+
+
+
 # [9.3.0](git//github.com/waitingsong/koid/compare/v9.2.0...v9.3.0) (2022-08-31)
 
 

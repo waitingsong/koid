@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.0.0](/compare/v9.3.0...v10.0.0) (2022-09-02)
+
+
+### Bug Fixes
+
+* **boilerplate:** define enum without const 37ffd10
+* **boilerplate:** devDeps version 2e29b42
+
+
+### Features
+
+* **koid:** def KoidMsg.hello bcf7719
+* **mwcp:** sync and rename property enableRoute of Config to enableDefaultRoute c52faa1
+
+
+
+
+
 # [9.3.0](/compare/v9.2.0...v9.3.0) (2022-08-31)
 
 
