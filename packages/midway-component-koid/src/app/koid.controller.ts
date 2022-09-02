@@ -6,7 +6,7 @@ import {
 } from '@midwayjs/decorator'
 import { KoidMsg as Msg } from 'koid'
 
-import { KoidComponent } from '../lib/index'
+import { KoidComponent } from '../lib/koid.component'
 import { Config, ConfigKey } from '../lib/types'
 
 
