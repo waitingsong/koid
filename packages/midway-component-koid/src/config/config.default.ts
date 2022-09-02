@@ -6,6 +6,10 @@ import {
 } from '../lib/config'
 
 
+export const koa = {
+  port: 7001,
+}
+
 export const koidConfig: Config = {
   ...initialConfig,
 }
