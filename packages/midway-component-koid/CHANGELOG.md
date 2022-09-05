@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.0.0](git//github.com/waitingsong/koid/compare/v10.0.0...v11.0.0) (2022-09-05)
+
+
+### Features
+
+* **mwcp:** config.default.ts genConfigRandom(epoch) use default epoch value 1577836800000 ([c570277](git//github.com/waitingsong/koid/commits/c570277d5332fcce7245aa7edd3bd88cdb0b1dc0))
+
+
+
+
+
 # [10.0.0](git//github.com/waitingsong/koid/compare/v9.3.0...v10.0.0) (2022-09-02)
 
 

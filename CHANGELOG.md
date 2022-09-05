@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.0.0](/compare/v10.0.0...v11.0.0) (2022-09-05)
+
+
+### Features
+
+* **mwcp:** config.default.ts genConfigRandom(epoch) use default epoch value 1577836800000 c570277
+
+
+
+
+
 # [10.0.0](/compare/v9.3.0...v10.0.0) (2022-09-02)
 
 
