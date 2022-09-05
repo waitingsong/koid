@@ -24,7 +24,10 @@ describe(filename, () => {
         .expect(200)
 
       const ret = resp.text as string
-      assert(ret.length === 19) // "6969675467472781312"
+      // epoch 0 -> "6969675467472781312"
+      // 354460608368902144
+      // 354460755983171584
+      assert(ret.length === 18, ret)
     })
 
     it('Should work /koid/hex', async () => {

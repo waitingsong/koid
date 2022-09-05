@@ -7,7 +7,9 @@ import {
 } from './types'
 
 
-const _config: Readonly<Config> = genConfigRandom()
+// '2020-01-01T00:00:00Z'
+const epoch = 1577836800000
+const _config: Readonly<Config> = genConfigRandom(epoch)
 export const initialConfig: Readonly<Config> = {
   enableDefaultRoute: false,
   ..._config,
