@@ -1,6 +1,6 @@
 import * as koa from '@midwayjs/koa'
 // import * as prometheus from '@midwayjs/prometheus'
-// import * as validate from '@midwayjs/validate'
+import * as validate from '@midwayjs/validate'
 // import * as aliOss from '@mwcp/ali-oss'
 // import * as fetch from '@mwcp/fetch'
 // import * as jaeger from '@mwcp/jaeger'
@@ -12,7 +12,7 @@ import * as koa from '@midwayjs/koa'
 
 export const useComponents: IComponentInfo[] = [
   koa,
-  // validate,
+  validate,
   // jaeger,
   // prometheus,
   // jwt,
