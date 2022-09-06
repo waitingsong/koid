@@ -27,10 +27,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "koid": "^11.0.0"
+    "koid": "^11.0.0",
+    "@mwcp/share": "^1.1.0",
+    "@waiting/shared-core": "^20.6.3",
+    "tsconfig-paths": "4"
   },
   "devDependencies": {
-    "@mwcp/share": "^1.1.0",
     "cross-env": "7"
   },
   "engines": {
