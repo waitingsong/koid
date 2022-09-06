@@ -153,7 +153,7 @@ if (ratio3 > 1.2) {
 }
 
 echo` \n`
-await $`autocannon -c 100 -p 2 -d 60 http://127.0.0.1:7001/${api}`
+await $`autocannon -c 100 -p 2 -d 30 http://127.0.0.1:7001/${api}`
 echo` \n`
 
 
