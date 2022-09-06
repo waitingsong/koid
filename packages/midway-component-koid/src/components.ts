@@ -4,7 +4,7 @@ import * as validate from '@midwayjs/validate'
 // import * as aliOss from '@mwcp/ali-oss'
 // import * as fetch from '@mwcp/fetch'
 // import * as jaeger from '@mwcp/jaeger'
-// import * as jwt from '@mwcp/jwt'
+import * as jwt from '@mwcp/jwt'
 // import * as db from '@mwcp/kmore'
 // import * as koid from '@mwcp/koid'
 // import { customLogger } from './util/custom-logger'
@@ -15,7 +15,7 @@ export const useComponents: IComponentInfo[] = [
   validate,
   // jaeger,
   // prometheus,
-  // jwt,
+  jwt,
   // koid,
   // fetch,
   // db,
