@@ -45,7 +45,7 @@
     "egg": "2",
     "egg-bin": "4",
     "egg-core": "4",
-    "egg-mock": "4"
+    "egg-mock": "5"
   },
   "engines": {
     "node": ">=16.13.0"
