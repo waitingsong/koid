@@ -2,17 +2,18 @@
 
 name: ci-win
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }} && ${{ github.actor != 'dependabot[bot]' }}
+    # if:  github.actor != 'dependabot[bot]'
 
     strategy:
       matrix:
-        node: [16]
+        node: ['current']
         os: [windows-latest]
 
     steps:
@@ -30,8 +31,10 @@ jobs:
         with:
           path: |
             node_modules
+            node_modules/.cache/nx
             package-lock.json
             packages/*/.eslintcache
+            packages/*/.tsbuildinfo
             packages/*/.vscode
             packages/*/dist
             packages/*/package-lock.json
