@@ -37,7 +37,7 @@
     "@mwcp/kmore": "^36.2.1",
     "@mwcp/share": "^2.0.0",
     "@waiting/base64": "^4.2.9",
-    "@waiting/shared-core": "^20.6.3",
+    "@waiting/shared-core": "^20.11.0",
     "koid": "^11.0.0",
     "tsconfig-paths": "4"
   },
