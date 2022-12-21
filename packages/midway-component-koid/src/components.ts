@@ -1,11 +1,7 @@
 import * as koa from '@midwayjs/koa'
-import * as validate from '@midwayjs/validate'
 
 
-export const useComponents: IComponentInfo[] = [
-  koa,
-  validate,
-]
+export const useComponents: IComponentInfo[] = [koa]
 
 export const useDefaultRoutes: (string | RegExp)[] = []
 

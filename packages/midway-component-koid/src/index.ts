@@ -9,7 +9,6 @@ import {
 export { AutoConfiguration as Configuration } from './configuration'
 export * from './lib/index'
 export * from './app/index.controller'
-export * from './middleware/index.middleware'
 
 export {
   ConfigDc,
