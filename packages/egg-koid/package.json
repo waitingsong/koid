@@ -43,7 +43,7 @@
     "autod-egg": "1",
     "cross-env": "7",
     "egg": "2",
-    "egg-bin": "4",
+    "egg-bin": "5",
     "egg-core": "4",
     "egg-mock": "4"
   },
