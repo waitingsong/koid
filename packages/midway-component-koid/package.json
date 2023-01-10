@@ -27,11 +27,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@waiting/shared-core": "^20.11.0",
+    "@waiting/shared-core": "^20.11.2",
     "koid": "^11.0.1"
   },
   "devDependencies": {
-    "@mwcp/share": "^2.3.2",
+    "@mwcp/share": "^3 || ^4",
     "cross-env": "7"
   },
   "engines": {
