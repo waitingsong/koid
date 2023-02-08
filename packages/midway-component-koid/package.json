@@ -27,7 +27,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@waiting/shared-core": "^20.11.4",
+    "@waiting/shared-core": "^20.12.0",
     "koid": "^11.0.1"
   },
   "devDependencies": {
