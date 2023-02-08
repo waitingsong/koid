@@ -3,7 +3,7 @@ import {
   Controller,
   Get,
   Inject,
-} from '@midwayjs/decorator'
+} from '@midwayjs/core'
 import { KoidMsg as Msg } from 'koid'
 
 import { KoidComponent } from '../lib/koid.component'

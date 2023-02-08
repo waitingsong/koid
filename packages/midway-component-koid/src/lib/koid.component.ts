@@ -4,7 +4,7 @@ import {
   Provide,
   Scope,
   ScopeEnum,
-} from '@midwayjs/decorator'
+} from '@midwayjs/core'
 import { IdInfo, Koid, KoidFactory, retrieveFromId } from 'koid'
 
 import {
