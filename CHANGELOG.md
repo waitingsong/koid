@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.1.1](https://github.com/waitingsong/koid/compare/v11.1.0...v11.1.1) (2023-03-23)
+
+
+### Bug Fixes
+
+* **boilerplate:** define enum without const ([37ffd10](https://github.com/waitingsong/koid/commit/37ffd10749d0aaa7c3d0ddf8e3c41c7a9bfedc3b))
+* **boilerplate:** devDeps version ([2e29b42](https://github.com/waitingsong/koid/commit/2e29b42d3eb679cdbced3a0a3d65a9172bd2da34))
+
+
+
+
+
 # [11.1.0](https://github.com/waitingsong/koid/compare/v11.0.3...v11.1.0) (2023-02-08)
 
 
