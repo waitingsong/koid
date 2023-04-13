@@ -1,10 +1,15 @@
 import {
+  Autoload,
   Config as _Config,
   Init,
   Provide,
   Scope,
   ScopeEnum,
 } from '@midwayjs/core'
+import {
+  Span,
+  TraceInit,
+} from '@mwcp/otel'
 import { IdInfo, Koid, KoidFactory, retrieveFromId } from 'koid'
 
 import {
@@ -13,6 +18,7 @@ import {
 } from './types'
 
 
+@Autoload()
 @Provide()
 @Scope(ScopeEnum.Singleton)
 export class KoidComponent {
@@ -23,7 +29,15 @@ export class KoidComponent {
 
   @Init()
   async init(): Promise<void> {
-    this.koid = KoidFactory(this.config)
+    await this._init(this.config)
+  }
+
+  @TraceInit('INIT KoidComponent._init()')
+  protected async _init(config: Config, span?: Span): Promise<void> {
+    if (span) {
+      span.setAttribute('config', JSON.stringify(config))
+    }
+    this.koid = KoidFactory(config)
   }
 
   /**
