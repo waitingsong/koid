@@ -3,7 +3,11 @@
   "packages": [
     "packages/*"
   ],
-  "ignore": [],
+  "ignore": [
+    "demo",
+    "@mwcp/demo",
+    "egg-koid"
+  ],
   "command": {
     "publish": {
       "ignoreChanges": [
