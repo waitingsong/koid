@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/waitingsong/koid/issues"
   },
-  "homepage": "https://github.com/waitingsong/koid#readme",
+  "homepage": "https://github.com/waitingsong/koid/tree/main/packages/midway-component-koid#readme",
   "repository": {
     "type": "git",
     "url": "git//github.com/waitingsong/koid.git"
