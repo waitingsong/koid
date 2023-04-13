@@ -1,13 +1,9 @@
 {
-  "version": "11.1.1",
+  "version": "0.0.0",
   "packages": [
     "packages/*"
   ],
-  "ignore": [
-    "demo",
-    "@mw-components/demo",
-    "egg-koid"
-  ],
+  "ignore": [],
   "command": {
     "publish": {
       "ignoreChanges": [

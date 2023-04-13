@@ -108,15 +108,10 @@ jobs:
       - name: Benchmark demo
         timeout-minutes: 10
         run: |
-          .scripts/benchmark/start-benchmark.mjs --qps=2800 --api=koid/hello --p=midway-component-koid
+          .scripts/benchmark/start-benchmark.mjs --qps=2800 --api=demo/hello --p=mw-demo
         env:
           CI: true
           OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4317
-
-      - name: Benchmark koid/id
-        timeout-minutes: 10
-        run: |
-          .scripts/benchmark/start-benchmark.mjs --qps=2800 --api=koid/id --p=midway-component-koid
 
     services:
       postgres:
