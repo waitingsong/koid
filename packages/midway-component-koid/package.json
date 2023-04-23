@@ -27,7 +27,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@mwcp/otel": "6 - 9",
+    "@mwcp/otel": "10 - 12",
     "@waiting/shared-core": "^21.1.0",
     "koid": "^12.0.0"
   },

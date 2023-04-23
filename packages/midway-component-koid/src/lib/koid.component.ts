@@ -32,7 +32,7 @@ export class KoidComponent {
     await this._init(this.config)
   }
 
-  @TraceInit('INIT KoidComponent._init()')
+  @TraceInit({ namespace: ConfigKey.componentName })
   protected async _init(config: Config, span?: Span): Promise<void> {
     if (span) {
       span.setAttribute('config', JSON.stringify(config))
