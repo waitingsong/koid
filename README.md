@@ -15,7 +15,10 @@ based on [flake-idgen](https://github.com/T-PWK/flake-idgen)
 
 ## Install
 
+## 安装全局依赖
 ```sh
+npm i -g c8 lerna rollup tsx
+``````sh
 npm i koid
 ```
 
@@ -226,4 +229,6 @@ then retrieve id from http api
 [`@mwcp/koid`]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid
 [mw-svg]: https://img.shields.io/npm/v/@mwcp/koid.svg?cacheSeconds=86400
 [mw-ch]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid/CHANGELOG.md
+
+
 
