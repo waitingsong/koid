@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.2](https://github.com/waitingsong/koid/compare/v12.0.1...v12.0.2) (2023-08-21)
+
+
+### Bug Fixes
+
+* **koid:** lint ([ed80b71](https://github.com/waitingsong/koid/commit/ed80b71634870db5a6c1a36908f948a2daa133fe))
+
+
+
+
+
 # [12.0.0](https://github.com/waitingsong/koid/compare/v11.1.2...v12.0.0) (2023-04-13)
 
 **Note:** Version bump only for package koid

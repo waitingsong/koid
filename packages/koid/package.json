@@ -1,7 +1,7 @@
 {
   "name": "koid",
   "author": "waiting",
-  "version": "12.0.0",
+  "version": "12.0.2",
   "description": "k-ordered, conflict-free ids generator in a distributed environment",
   "keywords": [
     "id",
@@ -32,8 +32,6 @@
     "url": "https://github.com/waitingsong/koid.git"
   },
   "license": "MIT",
-  "devDependencies": {
-  },
   "engines": {
     "node": ">=16.13.0"
   },
