@@ -9,15 +9,18 @@ export function KoidFactory(config?: Config): Koid {
   return inst
 }
 
-export { Config }
+export type { Config }
 // Note: only export type of Koid, therefor use `import type { Koid } from 'koid'`
 export type { Koid } from './koid.js'
-export {
-  ConfigDc, ConfigNode,
-  KoidMsg, IdInfo,
+export type {
+  ConfigDc,
+  ConfigNode,
+  IdInfo,
 } from './types.js'
+export { KoidMsg } from './types.js'
 export {
-  genConfigRandom, waitTillNextMillisecond,
+  genConfigRandom,
+  waitTillNextMillisecond,
 } from './helper.js'
 export { retrieveFromId } from './util.js'
 
