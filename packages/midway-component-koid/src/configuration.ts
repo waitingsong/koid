@@ -13,6 +13,7 @@ import { ConfigKey } from './lib/types'
   importConfigs: [join(__dirname, 'config')],
   imports: useComponents,
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AutoConfiguration implements ILifeCycle {
   // @App() readonly app: Application
   // async onReady(): Promise<void> {
