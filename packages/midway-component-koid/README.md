@@ -159,7 +159,6 @@ Update imports:
 import * as koid from '@mwcp/koid'
 
 @Configuration({
-  importConfigs: [join(__dirname, 'config')],
   imports: [
     koid,
   ],

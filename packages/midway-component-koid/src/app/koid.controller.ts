@@ -4,13 +4,13 @@ import {
   Get,
   Inject,
 } from '@midwayjs/core'
-import { KoidMsg as Msg } from 'koid'
 
-import { KoidComponent } from '../lib/koid.component'
-import { Config, ConfigKey } from '../lib/types'
+import { KoidComponent } from '##/lib/koid.component.js'
+import { Config, ConfigKey, Msg } from '##/lib/types.js'
 
 
-@Controller(`/${ConfigKey.namespace}`)
+@Controller(`/_${ConfigKey.namespace}`)
+// @Controller(`/${ConfigKey.namespace}`)
 export class KoidController {
 
   @Inject() readonly koid: KoidComponent

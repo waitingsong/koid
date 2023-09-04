@@ -10,9 +10,11 @@ export enum ConfigKey {
   middlewareName = 'koidMiddleware'
 }
 
-// export enum Msg {
-//   hello = 'hello koid',
-// }
+export enum Msg {
+  hello = 'hello world',
+  AuthFailed = 'Authentication Failed',
+}
+
 
 export type Config = _Config & {
   /**

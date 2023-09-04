@@ -1,3 +1,3 @@
 
-export * from './koid.controller'
+export * from './koid.controller.js'
 

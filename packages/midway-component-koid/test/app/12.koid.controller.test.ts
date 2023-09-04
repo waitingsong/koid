@@ -1,13 +1,14 @@
+
 import assert from 'node:assert/strict'
-import { relative } from 'node:path'
 
-import { testConfig } from '@/root.config'
-import { KoidComponent } from '~/index'
+import { fileShortPath } from '@waiting/shared-core'
+
+import { KoidComponent } from '##/index.js'
+import { ConfigKey } from '##/lib/types.js'
+import { testConfig } from '#@/root.config.js'
 
 
-const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')
-
-describe(filename, () => {
+describe(fileShortPath(import.meta.url), function() {
   describe('enabled', () => {
     beforeEach(async () => {
       const { container } = testConfig
@@ -15,30 +16,32 @@ describe(filename, () => {
       svc.config.enableDefaultRoute = true
     })
 
-    it('Should work /koid/id', async () => {
+    it(`Should work /_${ConfigKey.namespace}/id`, async () => {
       const { httpRequest } = testConfig
-      const path = '/koid/id'
+      const path = `/_${ConfigKey.namespace}/id`
 
       const resp = await httpRequest
         .get(path)
         .expect(200)
 
       const ret = resp.text as string
+      assert(! ret.includes(path), ret)
       // epoch 0 -> "6969675467472781312"
       // 354460608368902144
       // 354460755983171584
       assert(ret.length === 18, ret)
     })
 
-    it('Should work /koid/hex', async () => {
+    it(`Should work /_${ConfigKey.namespace}/hex`, async () => {
       const { httpRequest } = testConfig
-      const path = '/koid/hex'
+      const path = `/_${ConfigKey.namespace}/hex`
 
       const resp = await httpRequest
         .get(path)
         .expect(200)
 
       const ret = resp.text as string
+      assert(! ret.includes(path), ret)
       assert(ret.length === 16) // "60b942f2c5784000"
     })
   })
@@ -50,27 +53,29 @@ describe(filename, () => {
       svc.config.enableDefaultRoute = false
     })
 
-    it('Should work /koid/id', async () => {
+    it(`Should work /_${ConfigKey.namespace}/id`, async () => {
       const { httpRequest } = testConfig
-      const path = '/koid/id'
+      const path = `/_${ConfigKey.namespace}/id`
 
       const resp = await httpRequest
         .get(path)
         .expect(500)
 
       const ret = resp.text as string
+      assert(! ret.includes(path), ret)
       assert(ret.includes('not enabled'))
     })
 
-    it('Should work /koid/hex', async () => {
+    it(`Should work /_${ConfigKey.namespace}/hex`, async () => {
       const { httpRequest } = testConfig
-      const path = '/koid/hex'
+      const path = `/_${ConfigKey.namespace}/hex`
 
       const resp = await httpRequest
         .get(path)
         .expect(500)
 
       const ret = resp.text as string
+      assert(! ret.includes(path), ret)
       assert(ret.includes('not enabled'))
     })
   })

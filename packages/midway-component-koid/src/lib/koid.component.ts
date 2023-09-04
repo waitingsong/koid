@@ -15,7 +15,7 @@ import { IdInfo, Koid, KoidFactory, retrieveFromId } from 'koid'
 import {
   ConfigKey,
   Config,
-} from './types'
+} from './types.js'
 
 
 @Autoload()

@@ -4,7 +4,7 @@ import {
   Config,
   MiddlewareConfig,
   MiddlewareOptions,
-} from './types'
+} from './types.js'
 
 
 // '2020-01-01T00:00:00Z'

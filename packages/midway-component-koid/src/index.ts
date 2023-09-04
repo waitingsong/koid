@@ -3,12 +3,12 @@ import {
   Config,
   ConfigKey,
   MiddlewareConfig,
-} from './lib/types'
+} from './lib/types.js'
 
 
-export { AutoConfiguration as Configuration } from './configuration'
-export * from './lib/index'
-export * from './app/index.controller'
+export { AutoConfiguration as Configuration } from './configuration.js'
+export * from './lib/index.js'
+export * from './app/index.controller.js'
 
 export {
   ConfigDc,
@@ -18,6 +18,7 @@ export {
 } from 'koid'
 
 
+// @ts-ignore
 declare module '@midwayjs/core/dist/interface' {
   interface MidwayConfig {
     [ConfigKey.config]: Partial<Config>

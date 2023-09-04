@@ -1,13 +1,13 @@
+
 import assert from 'node:assert/strict'
-import { relative } from 'node:path'
 
-import { testConfig } from '@/root.config'
-import { KoidComponent } from '~/index'
+import { fileShortPath } from '@waiting/shared-core'
+
+import { KoidComponent } from '##/index.js'
+import { testConfig } from '#@/root.config.js'
 
 
-const filename = relative(process.cwd(), __filename).replace(/\\/ug, '/')
-
-describe(filename, () => {
+describe(fileShortPath(import.meta.url), function() {
   describe('Should work', () => {
     it('idGenerator', async () => {
       const { container } = testConfig
