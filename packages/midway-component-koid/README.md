@@ -153,6 +153,8 @@ It would give something like:
 
 ### Midway.js
 
+Note: ESM build only, requires `@midwayjs >= 3.12` and set `"type": "module"` in `packages.json`
+
 Update imports:
 ```ts
 // file src/configuration.ts
