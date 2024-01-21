@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.0.0](https://github.com/waitingsong/koid/compare/v13.0.2...v14.0.0) (2024-01-21)
+
+
+### Bug Fixes
+
+* **boilerplate:** package.json db:gen ([e1b4a74](https://github.com/waitingsong/koid/commit/e1b4a744f58ce710add2edc9f5878f96b69d1009))
+
+
+
+
+
 ## [13.0.2](https://github.com/waitingsong/koid/compare/v13.0.1...v13.0.2) (2023-09-18)
 
 

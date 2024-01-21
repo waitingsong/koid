@@ -1,7 +1,7 @@
 {
   "name": "@mwcp/koid",
   "author": "waiting",
-  "version": "13.0.2",
+  "version": "14.0.0",
   "description": "",
   "private": false,
   "keywords": [
@@ -39,7 +39,7 @@
   "dependencies": {
     "@mwcp/otel": "20 - 22",
     "@waiting/shared-core": "^23.0.0",
-    "koid": "^13.0.0"
+    "koid": "^14.0.0"
   },
   "devDependencies": {
     "@mwcp/share": "20 - 22"

@@ -1,7 +1,7 @@
 {
   "name": "koid",
   "author": "waiting",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "description": "k-ordered, conflict-free ids generator in a distributed environment",
   "keywords": [
     "id",
