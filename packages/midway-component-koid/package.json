@@ -42,7 +42,9 @@
     "koid": "^14.0.0"
   },
   "devDependencies": {
-    "@mwcp/share": "20 - 22"
+    "@midwayjs/validate": "^3.14.0",
+    "@mwcp/share": "20 - 22",
+    "swagger-ui-dist": "^5.11.0"
   },
   "engines": {
     "node": ">=18.12.0",
