@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.1.0](git//github.com/waitingsong/koid/compare/v14.0.0...v14.1.0) (2024-01-26)
+
+
+### Features
+
+* **mwcp:** change enableDefaultRoute to true ([3d8aa37](git//github.com/waitingsong/koid/commits/3d8aa37f044e9bccc8ec72669a7fc576e7bf4d56))
+* **mwcp:** deleteRouter if enableDefaultRoute false ([ac823a7](git//github.com/waitingsong/koid/commits/ac823a76bc5f93abba4f2e74bb0a3b1edf9b513b))
+
+
+
+
+
 # [14.0.0](git//github.com/waitingsong/koid/compare/v13.0.2...v14.0.0) (2024-01-21)
 
 **Note:** Version bump only for package @mwcp/koid
