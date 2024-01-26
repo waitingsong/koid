@@ -2,6 +2,7 @@
 // import assert from 'node:assert'
 
 import {
+  Config as _Config,
   Configuration,
   ILifeCycle,
   ILogger,
@@ -9,18 +10,18 @@ import {
 } from '@midwayjs/core'
 import { IMidwayContainer } from '@mwcp/share'
 
-import * as DefulatConfig from './config/config.default.js'
+import * as DefaultConfig from './config/config.default.js'
 // import * as LocalConfig from './config/config.local.js'
 import * as UnittestConfig from './config/config.unittest.js'
 import { useComponents } from './imports.js'
-import { ConfigKey } from './lib/types.js'
+import { ConfigKey, Config } from './lib/types.js'
 
 
 @Configuration({
   namespace: ConfigKey.namespace,
   importConfigs: [
     {
-      default: DefulatConfig,
+      default: DefaultConfig,
       // local: LocalConfig,
       unittest: UnittestConfig,
     },
@@ -31,9 +32,11 @@ export class AutoConfiguration implements ILifeCycle {
 
   @Logger() protected readonly logger: ILogger
 
+  @_Config(ConfigKey.config) protected readonly config: Config
+
   async onReady(container: IMidwayContainer): Promise<void> {
     void container
-
+    this.logger.info(`[${ConfigKey.componentName}]: ${JSON.stringify(this.config)}`)
     this.logger.info(`[${ConfigKey.componentName}] onReady`)
   }
 
