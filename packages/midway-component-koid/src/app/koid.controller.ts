@@ -19,24 +19,24 @@ export class KoidController {
 
   @Get('/hello')
   hello(): string {
-    this.valiateRoute()
+    this.validateRoute()
     return Msg.hello
   }
 
 
   @Get('/id')
   id(): string {
-    this.valiateRoute()
+    this.validateRoute()
     return this.koid.idGenerator.toString()
   }
 
   @Get('/hex')
   hex(): string {
-    this.valiateRoute()
+    this.validateRoute()
     return this.koid.nextHex
   }
 
-  valiateRoute(): void {
+  validateRoute(): void {
     if (! this.config.enableDefaultRoute) {
       throw new Error('Koid route is not enabled')
     }
