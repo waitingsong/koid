@@ -6,9 +6,11 @@ import {
   Configuration,
   ILifeCycle,
   ILogger,
+  Inject,
   Logger,
+  MidwayWebRouterService,
 } from '@midwayjs/core'
-import { IMidwayContainer } from '@mwcp/share'
+import { IMidwayContainer, deleteRouter } from '@mwcp/share'
 
 import * as DefaultConfig from './config/config.default.js'
 // import * as LocalConfig from './config/config.local.js'
@@ -34,8 +36,15 @@ export class AutoConfiguration implements ILifeCycle {
 
   @_Config(ConfigKey.config) protected readonly config: Config
 
+  @Inject() protected readonly webRouterService: MidwayWebRouterService
+
   async onReady(container: IMidwayContainer): Promise<void> {
     void container
+
+    if (! this.config.enableDefaultRoute) {
+      await deleteRouter(`/_${ConfigKey.namespace}`, this.webRouterService)
+    }
+
     this.logger.info(`[${ConfigKey.componentName}]: ${JSON.stringify(this.config)}`)
     this.logger.info(`[${ConfigKey.componentName}] onReady`)
   }
