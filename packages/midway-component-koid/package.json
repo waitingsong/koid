@@ -1,7 +1,7 @@
 {
   "name": "@mwcp/koid",
   "author": "waiting",
-  "version": "14.1.0",
+  "version": "14.2.0",
   "description": "",
   "private": false,
   "keywords": [
@@ -40,8 +40,6 @@
     "@mwcp/otel": "20 - 22",
     "@mwcp/share": "20 - 22",
     "koid": "^14.0.0"
-  },
-  "devDependencies": {
   },
   "engines": {
     "node": ">=18.12.0",
