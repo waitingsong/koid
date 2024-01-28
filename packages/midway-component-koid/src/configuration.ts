@@ -13,7 +13,7 @@ import {
 import { IMidwayContainer, deleteRouter } from '@mwcp/share'
 
 import * as DefaultConfig from './config/config.default.js'
-// import * as LocalConfig from './config/config.local.js'
+import * as LocalConfig from './config/config.local.js'
 import * as UnittestConfig from './config/config.unittest.js'
 import { useComponents } from './imports.js'
 import { ConfigKey, Config } from './lib/types.js'
@@ -24,7 +24,7 @@ import { ConfigKey, Config } from './lib/types.js'
   importConfigs: [
     {
       default: DefaultConfig,
-      // local: LocalConfig,
+      local: LocalConfig,
       unittest: UnittestConfig,
     },
   ],
@@ -38,12 +38,14 @@ export class AutoConfiguration implements ILifeCycle {
 
   @Inject() protected readonly webRouterService: MidwayWebRouterService
 
-  async onReady(container: IMidwayContainer): Promise<void> {
-    void container
-
+  async onConfigLoad(): Promise<void> {
     if (! this.config.enableDefaultRoute) {
       await deleteRouter(`/_${ConfigKey.namespace}`, this.webRouterService)
     }
+  }
+
+  async onReady(container: IMidwayContainer): Promise<void> {
+    void container
 
     this.logger.info(`[${ConfigKey.componentName}]: ${JSON.stringify(this.config)}`)
     this.logger.info(`[${ConfigKey.componentName}] onReady`)

@@ -11,8 +11,8 @@ import {
 const epoch = 1577836800000
 const _config: Readonly<Config> = genConfigRandom(epoch)
 export const initialConfig: Readonly<Config> = {
-  enableDefaultRoute: true,
   ..._config,
+  enableDefaultRoute: true,
 }
 
 export const initMiddlewareOptions: MiddlewareOptions = {
