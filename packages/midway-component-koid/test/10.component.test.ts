@@ -7,7 +7,7 @@ import { KoidComponent } from '##/index.js'
 import { testConfig } from '#@/root.config.js'
 
 
-describe(fileShortPath(import.meta.url), function() {
+describe(fileShortPath(import.meta.url), function () {
   describe('Should work', () => {
     it('idGenerator', async () => {
       const { container } = testConfig

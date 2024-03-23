@@ -7,7 +7,7 @@ export enum ConfigKey {
   config = 'koidConfig',
   middlewareConfig = 'koidMiddlewareConfig',
   componentName = 'koidComponent',
-  middlewareName = 'koidMiddleware'
+  middlewareName = 'koidMiddleware',
 }
 
 export enum Msg {

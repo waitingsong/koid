@@ -8,7 +8,7 @@ import { ConfigKey } from '##/lib/types.js'
 import { testConfig } from '#@/root.config.js'
 
 
-describe(fileShortPath(import.meta.url), function() {
+describe(fileShortPath(import.meta.url), function () {
   describe('enabled', () => {
     beforeEach(async () => {
       const { container } = testConfig
@@ -24,7 +24,7 @@ describe(fileShortPath(import.meta.url), function() {
         .get(path)
         .expect(200)
 
-      const ret = resp.text as string
+      const ret = resp.text
       assert(! ret.includes(path), ret)
       // epoch 0 -> "6969675467472781312"
       // 354460608368902144
@@ -40,7 +40,7 @@ describe(fileShortPath(import.meta.url), function() {
         .get(path)
         .expect(200)
 
-      const ret = resp.text as string
+      const ret = resp.text
       assert(! ret.includes(path), ret)
       assert(ret.length === 16) // "60b942f2c5784000"
     })
@@ -61,7 +61,7 @@ describe(fileShortPath(import.meta.url), function() {
         .get(path)
         .expect(500)
 
-      const ret = resp.text as string
+      const ret = resp.text
       assert(! ret.includes(path), ret)
       assert(ret.includes('not enabled'))
     })
@@ -74,7 +74,7 @@ describe(fileShortPath(import.meta.url), function() {
         .get(path)
         .expect(500)
 
-      const ret = resp.text as string
+      const ret = resp.text
       assert(! ret.includes(path), ret)
       assert(ret.includes('not enabled'))
     })
