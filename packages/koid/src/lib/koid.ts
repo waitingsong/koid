@@ -80,7 +80,7 @@ export class Koid {
     // Generates id in the same millisecond as the previous id
     if (deltaTime < this.lastTime) {
       if (noWait) {
-        const msg = KoidMsg.ClockBack + `. Refusing to generate id for ${this.lastTime - deltaTime} milliseconds`
+        const msg = KoidMsg.ClockBack + `. Refusing to generate id for ${(this.lastTime - deltaTime).toString()} milliseconds`
         throw new Error(msg)
       }
       else {

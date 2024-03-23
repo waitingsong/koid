@@ -17,7 +17,7 @@ export function parseConfig(config?: Config): Options {
 
   if (typeof config.node === 'number') {
     const configNode: ConfigNode = {
-      node: (config as ConfigNode).node,
+      node: config.node,
       noWait: !! config.noWait,
     }
     if (typeof config.epoch === 'number') {
@@ -26,7 +26,7 @@ export function parseConfig(config?: Config): Options {
     return parseConfigNode(configNode)
   }
   else {
-    const conf = config as ConfigDc
+    const conf = config
     const configDc: ConfigDc = {
       dataCenter: conf.dataCenter,
       worker: conf.worker,

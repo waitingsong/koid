@@ -65,7 +65,7 @@ export enum KoidMsg {
   NotValidBigintId = 'Not an valid bigint id. Should gross then 0 and less equal then 9223372036854775807n',
   NotValidBigintString = 'Not an valid bigint string',
   NotValidHexString = 'Not an valid hex string',
-  NotValidIdFormat = 'Not an valid id value'
+  NotValidIdFormat = 'Not an valid id value',
 }
 
 

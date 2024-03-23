@@ -20,8 +20,10 @@ export function retrieveFromId(id: bigint | string | Readonly<Buffer>, epoch = 0
   switch (typeof id) {
     case 'bigint':
       return retrieveFromBigint(id, epoch)
+
     case 'string':
       return retrieveFromStr(id, epoch)
+
     default:
       return retrieveFromBuffer(id, epoch)
   }

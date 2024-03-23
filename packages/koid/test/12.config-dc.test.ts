@@ -30,7 +30,7 @@ describe(fileShortPath(import.meta.url), () => {
 
     it('generate one', () => {
       const tconfig = config1
-      const tc0 = tconfig[0] as testArr
+      const tc0 = tconfig[0]!
       assert(tc0)
 
       const dataCenter = 0
@@ -61,7 +61,7 @@ describe(fileShortPath(import.meta.url), () => {
 
     it('generate two', () => {
       const tconfig = config2
-      const tc0 = tconfig[0] as testArr
+      const tc0 = tconfig[0]!
       assert(tc0)
 
       const dataCenter = tc0.dataCenter
@@ -83,7 +83,7 @@ describe(fileShortPath(import.meta.url), () => {
         assert(config.dataCenter === dataCenter)
         assert(config.worker === worker)
 
-        const tci = tconfig[index] as testArr
+        const tci = tconfig[index]!
         assert(tci)
         try {
           const idHex = buf.toString('hex')
@@ -100,7 +100,7 @@ describe(fileShortPath(import.meta.url), () => {
 
     it('generate four', () => {
       const tconfig = config4
-      const tc0 = tconfig[0] as testArr
+      const tc0 = tconfig[0]!
       assert(tc0)
 
       const dataCenter = tc0.dataCenter
@@ -124,7 +124,7 @@ describe(fileShortPath(import.meta.url), () => {
 
         IdsEqualIgnoreMs(buf, tc0.idStr)
 
-        const tci = tconfig[index] as testArr
+        const tci = tconfig[index]!
         assert(tci)
         try {
           const idHex = buf.toString('hex')
