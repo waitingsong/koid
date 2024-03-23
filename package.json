@@ -12,31 +12,31 @@
     "@midwayjs/validate": "^3.15.0",
     "@types/koa": "2",
     "@types/mocha": "10",
-    "@types/node": "20.11",
-    "@waiting/eslint-config": "^9.1.1",
+    "@types/node": "20",
+    "@waiting/eslint-config": "^10.16.0",
     "@waiting/shared-core": "^23.2.0",
     "@waiting/shared-types": "^23.0.0",
     "autocannon": "7",
-    "c8": "^9.1.0",
+    "c8": "9",
     "coveralls": "3",
     "cross-env": "7",
     "debug": "^4.3.4",
     "eslint": "8",
-    "madge": "^6.1.0",
+    "madge": "6",
     "mocha": "10",
     "mocha-lcov-reporter": "1",
     "mwtsc": "^1.7.2",
     "nx": "18",
-    "swagger-ui-dist": "^5.11.0",
+    "swagger-ui-dist": "^5.12.0",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.8",
     "tsconfig-paths": "4",
     "tsx": "4",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "zx": "7"
   },
   "engines": {
-    "node": ">=18.12.0"
+    "node": ">=20.11.0"
   },
   "workspaces": [
     "packages/*"
