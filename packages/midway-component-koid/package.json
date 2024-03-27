@@ -38,7 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "@mwcp/otel": "22",
-    "@mwcp/share": "22",
+    "@mwcp/share": "23",
     "koid": "^14.2.2"
   },
   "engines": {
