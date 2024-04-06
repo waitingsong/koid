@@ -17,7 +17,7 @@ based on [flake-idgen](https://github.com/T-PWK/flake-idgen)
 
 ## 安装全局依赖
 ```sh
-npm i -g c8 lerna rollup tsx
+npm i -g c8 lerna madge rollup tsx zx
 ``````sh
 npm i koid
 ```
