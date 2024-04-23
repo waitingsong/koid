@@ -10,7 +10,6 @@ import { Config, ConfigKey, Msg } from '##/lib/types.js'
 
 
 @Controller(`/_${ConfigKey.namespace}`)
-// @Controller(`/${ConfigKey.namespace}`)
 export class KoidController {
 
   @Inject() readonly koid: KoidComponent
