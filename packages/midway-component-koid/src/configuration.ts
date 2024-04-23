@@ -10,6 +10,7 @@ import {
   Logger,
   MidwayWebRouterService,
 } from '@midwayjs/core'
+import { TraceInit } from '@mwcp/otel'
 import { IMidwayContainer, deleteRouter } from '@mwcp/share'
 
 import * as DefaultConfig from './config/config.default.js'
@@ -44,6 +45,7 @@ export class AutoConfiguration implements ILifeCycle {
     }
   }
 
+  @TraceInit({ namespace: ConfigKey.namespace })
   async onReady(container: IMidwayContainer): Promise<void> {
     void container
 
