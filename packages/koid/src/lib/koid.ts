@@ -96,7 +96,6 @@ export class Koid {
       // to generate ids in the current millisecond
 
       // sequence counter exceeded its max value (4095)
-      /* istanbul ignore else */
       if (this.seq === 0) {
         if (noWait) {
           throw new Error(KoidMsg.SeqExceed)

@@ -13,10 +13,10 @@ export const maxBigintId = BigInt('9223372036854775807')
  * like '50dddcbfb5c00001' or '0x50dddcbfb5c00001' or "6755455236955799552"
  */
 export function retrieveFromId(id: bigint | string | Readonly<Buffer>, epoch = 0): IdInfo {
-  /* istanbul ignore else */
   if (! id) {
     throw new TypeError(KoidMsg.NotValidIdFormat)
   }
+
   switch (typeof id) {
     case 'bigint':
       return retrieveFromBigint(id, epoch)
@@ -69,16 +69,14 @@ export function isValidHexString(id: string): Buffer | false {
 
   // '50dddcbfb5c00001' or '0x50dddcbfb5c00001', '0000000000400000'
 
-  /* istanbul ignore else */
   if (hex.startsWith('0x')) {
     hex = hex.slice(2)
   }
-  /* istanbul ignore else */
+
   if (hex.length % 2 !== 0) {
     hex = '0' + hex
   }
 
-  /* istanbul ignore else */
   if (! /^[\da-f]{6,16}/u.test(hex)) {
     return false
   }
@@ -97,7 +95,6 @@ export function isValidHexString(id: string): Buffer | false {
  */
 function retrieveFromHex(id: string, epoch: number): IdInfo {
   const buf = isValidHexString(id)
-  /* istanbul ignore else */
   if (! buf) {
     throw new TypeError(KoidMsg.NotValidHexString + `: "${id}"`)
   }
