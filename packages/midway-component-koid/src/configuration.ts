@@ -2,7 +2,6 @@
 // import assert from 'node:assert'
 
 import {
-  Config as _Config,
   Configuration,
   ILifeCycle,
   ILogger,
@@ -11,7 +10,7 @@ import {
   MidwayWebRouterService,
 } from '@midwayjs/core'
 import { TraceInit } from '@mwcp/otel'
-import { IMidwayContainer, deleteRouter } from '@mwcp/share'
+import { IMidwayContainer, MConfig, deleteRouter } from '@mwcp/share'
 
 import * as DefaultConfig from './config/config.default.js'
 import * as LocalConfig from './config/config.local.js'
@@ -35,7 +34,7 @@ export class AutoConfiguration implements ILifeCycle {
 
   @Logger() protected readonly logger: ILogger
 
-  @_Config(ConfigKey.config) protected readonly config: Config
+  @MConfig(ConfigKey.config) protected readonly config: Config
 
   @Inject() protected readonly webRouterService: MidwayWebRouterService
 
