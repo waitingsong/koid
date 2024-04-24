@@ -3,10 +3,7 @@ import {
   Init,
   Singleton,
 } from '@midwayjs/core'
-import {
-  Span,
-  TraceInit,
-} from '@mwcp/otel'
+import { TraceInit } from '@mwcp/otel'
 import { MConfig } from '@mwcp/share'
 import { IdInfo, Koid, KoidFactory, retrieveFromId } from 'koid'
 
