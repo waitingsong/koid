@@ -47,11 +47,15 @@ export class KoidComponent {
 
   // #region protected
 
-  @TraceInit({ namespace: ConfigKey.componentName })
-  protected async _init(config: Config, span?: Span): Promise<void> {
-    if (span) {
-      span.setAttribute('config', JSON.stringify(config))
-    }
+  @TraceInit<KoidComponent['_init']>({
+    namespace: ConfigKey.componentName,
+    after: ([config], decoratorCtx) => {
+      if (decoratorCtx.traceSpan) {
+        decoratorCtx.traceSpan.setAttribute('koid-config', JSON.stringify(config))
+      }
+    },
+  })
+  protected async _init(config: Config): Promise<void> {
     this.koid = KoidFactory(config)
   }
 
