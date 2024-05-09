@@ -19,7 +19,7 @@ describe(fileShortPath(import.meta.url), () => {
       }
       const koid = KoidFactory(config)
       try {
-        testLoopClock(koid, 100)
+        testLoopClock(koid, 200)
       }
       catch (ex) {
         assert(ex && (ex as Error).message.includes(KoidMsg.ClockBack))
@@ -49,7 +49,7 @@ describe(fileShortPath(import.meta.url), () => {
       }
       const koid = KoidFactory(config)
       try {
-        testLoopMock(koid, 20000)
+        testLoopMock(koid, 40000)
       }
       catch (ex) {
         assert(ex && (ex as Error).message.includes(KoidMsg.SeqExceed))
@@ -87,7 +87,7 @@ function testLoopMock(generator: Koid, howMany: number): void {
         console.info('clock')
         continue
       }
-      console.info('error loop:', i)
+      console.error('testLoopMock() error loop:', i)
       // assert(i === 4096)
       throw ex
     }
@@ -97,6 +97,7 @@ function testLoopMock(generator: Koid, howMany: number): void {
 
 function testLoopClock(generator: Koid, howMany: number): void {
   const { epoch } = generator.config
+
   for (let i = 0; i < howMany; i++) {
     if (i > 1) {
       // @ts-expect-error
@@ -109,6 +110,7 @@ function testLoopClock(generator: Koid, howMany: number): void {
       if (ex && (ex as Error).message.includes(KoidMsg.SeqExceed)) {
         continue
       }
+      console.error('testLoopClock() error loop:', i)
       throw ex
     }
   }
