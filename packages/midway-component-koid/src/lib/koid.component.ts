@@ -46,10 +46,11 @@ export class KoidComponent {
 
   @TraceInit<KoidComponent['_init']>({
     namespace: ConfigKey.componentName,
-    after: ([config], decoratorCtx) => {
-      if (decoratorCtx.traceSpan) {
-        decoratorCtx.traceSpan.setAttribute('koid-config', JSON.stringify(config))
+    after: (_, [config]) => {
+      const attrs = {
+        [ConfigKey.config]: JSON.stringify(config),
       }
+      return { attrs }
     },
   })
   protected async _init(config: Config): Promise<void> {
