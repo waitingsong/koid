@@ -46,7 +46,7 @@ export class KoidComponent {
 
   @TraceInit<KoidComponent['_init']>({
     namespace: ConfigKey.componentName,
-    after: (_, [config]) => {
+    after: ([config]) => {
       const attrs = {
         [ConfigKey.config]: JSON.stringify(config),
       }
