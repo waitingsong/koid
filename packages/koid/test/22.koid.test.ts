@@ -15,11 +15,11 @@ describe(fileShortPath(import.meta.url), () => {
       const info = inst.retrieveFromId(hex)
       assert(info)
       console.log({ info })
-      assert(info.dataCenter >= 0)
-      assert(info.hex === hex)
-      assert(info.sequence >= 0)
-      assert(info.timestamp > 0)
-      assert(info.worker > 0)
+      assert(info.dataCenter >= 0, info.dataCenter.toString())
+      assert(info.hex === hex, info.hex)
+      assert(info.sequence >= 0, info.sequence.toString())
+      assert(info.timestamp > 0, info.timestamp.toString())
+      assert(info.worker > 0, info.worker.toString())
     })
 
     it('normal', () => {
