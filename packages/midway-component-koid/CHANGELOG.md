@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [16.0.0](git//github.com/waitingsong/koid/compare/v15.1.0...v16.0.0) (2024-07-24)
+
+**Note:** Version bump only for package @mwcp/koid
+
+
+
+
+
 # [15.1.0](git//github.com/waitingsong/koid/compare/v15.0.0...v15.1.0) (2024-06-03)
 
 **Note:** Version bump only for package @mwcp/koid
