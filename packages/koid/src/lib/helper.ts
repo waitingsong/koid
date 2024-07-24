@@ -1,6 +1,6 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
-import { Config, ConfigDc, ConfigNode, Options } from './types.js'
+import type { Config, ConfigDc, ConfigNode, Options } from './types.js'
 import { validEpoch } from './util.js'
 
 

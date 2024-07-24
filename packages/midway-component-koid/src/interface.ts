@@ -6,13 +6,13 @@
 //   NpmPkg,
 // } from '@waiting/shared-types'
 
-export {
+export type {
   IMidwayApplication,
   IMidwayContainer,
   IMiddleware,
   NextFunction,
 } from '@midwayjs/core'
-export {
+export type {
   Application, Context,
 } from '@midwayjs/koa'
 

@@ -1,4 +1,4 @@
-import { Config } from '##/lib/types.js'
+import type { Config } from '##/lib/types.js'
 
 
 export const keys = 123456

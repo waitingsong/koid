@@ -2,7 +2,8 @@ import assert from 'node:assert/strict'
 
 import { fileShortPath } from '@waiting/shared-core'
 
-import { Config, KoidFactory, retrieveFromId } from '../src/index.js'
+import type { Config } from '../src/index.js'
+import { KoidFactory, retrieveFromId } from '../src/index.js'
 
 
 describe(fileShortPath(import.meta.url), () => {

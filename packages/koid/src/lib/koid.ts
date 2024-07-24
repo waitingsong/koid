@@ -1,7 +1,8 @@
 /* eslint-disable no-mixed-operators */
 /* eslint-disable no-bitwise */
 import { waitTillNextMillisecond } from './helper.js'
-import { IdInfo, KoidMsg, Options } from './types.js'
+import type { IdInfo, Options } from './types.js'
+import { KoidMsg } from './types.js'
 import { POW10, POW26, retrieveFromId } from './util.js'
 
 

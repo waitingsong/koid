@@ -2,8 +2,9 @@ import assert from 'node:assert/strict'
 
 import { fileShortPath } from '@waiting/shared-core'
 
-import { Config, KoidFactory, KoidMsg } from '../src/index.js'
-import { Koid } from '../src/lib/koid.js'
+import type { Config } from '../src/index.js'
+import { KoidFactory, KoidMsg } from '../src/index.js'
+import type { Koid } from '../src/lib/koid.js'
 
 
 describe(fileShortPath(import.meta.url), () => {

@@ -3,10 +3,10 @@ export * from './config.js'
 export { KoidComponent } from './koid.component.js'
 
 export {
-  Config as KoidConfig,
+  type Config as KoidConfig,
   ConfigKey as KoidConfigKey,
-  MiddlewareConfig as KoidMiddlewareConfig,
-  MiddlewareOptions as KoidMiddlewareOptions,
+  type MiddlewareConfig as KoidMiddlewareConfig,
+  type MiddlewareOptions as KoidMiddlewareOptions,
 } from './types.js'
 
 export type {

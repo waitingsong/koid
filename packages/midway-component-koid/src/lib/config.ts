@@ -1,6 +1,6 @@
 import { genConfigRandom } from 'koid'
 
-import {
+import type {
   Config,
   MiddlewareConfig,
   MiddlewareOptions,

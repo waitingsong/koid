@@ -2,7 +2,8 @@ import assert from 'node:assert/strict'
 
 import { fileShortPath } from '@waiting/shared-core'
 
-import { Config, IdInfo, KoidFactory, KoidMsg, retrieveFromId } from '../src/index.js'
+import type { Config, IdInfo } from '../src/index.js'
+import { KoidFactory, KoidMsg, retrieveFromId } from '../src/index.js'
 import { isValidBigintStr, isValidHexString, validEpoch } from '../src/lib/util.js'
 
 

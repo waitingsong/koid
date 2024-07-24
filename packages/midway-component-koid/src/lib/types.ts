@@ -1,5 +1,5 @@
-import { MiddlewareConfig as MWConfig } from '@waiting/shared-types'
-import { Config as _Config } from 'koid'
+import type { MiddlewareConfig as MWConfig } from '@waiting/shared-types'
+import type { Config as _Config } from 'koid'
 
 
 export enum ConfigKey {

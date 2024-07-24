@@ -1,5 +1,5 @@
 
-import {
+import type {
   Config,
   ConfigKey,
   MiddlewareConfig,
@@ -11,8 +11,8 @@ export * from './lib/index.js'
 export * from './app/index.controller.js'
 
 export {
-  ConfigDc,
-  ConfigNode,
+  type ConfigDc,
+  type ConfigNode,
   KoidMsg,
   genConfigRandom,
 } from 'koid'
