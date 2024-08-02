@@ -12,7 +12,7 @@
     "@midwayjs/validate": "^3.16.4",
     "@types/koa": "2",
     "@types/mocha": "10",
-    "@types/node": "20",
+    "@types/node": "22",
     "@waiting/eslint-config": "^11.1.0",
     "@waiting/shared-core": "^23.20.2",
     "@waiting/shared-types": "^23.20.2",
