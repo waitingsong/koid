@@ -36,12 +36,12 @@ describe(fileShortPath(import.meta.url), () => {
         const infoInt = retrieveFromId(int)
         const infoStr = retrieveFromId(intStr)
         const infoHex = retrieveFromId(hex)
-        const infoHexPreifx = retrieveFromId('0x' + hex)
+        const infoHexPrefix = retrieveFromId('0x' + hex)
 
         console.info({
           id, int, hex, time, infoBuf,
         });
-        [infoBuf, infoInt, infoHex, infoStr, infoHexPreifx].forEach((info) => {
+        [infoBuf, infoInt, infoHex, infoStr, infoHexPrefix].forEach((info) => {
           assert(info.dataCenter === config.dataCenter, new Date(info.timestamp).toString())
           assert(info.worker === config.worker)
           assert(info.timestamp === time || info.timestamp === time + 1)
