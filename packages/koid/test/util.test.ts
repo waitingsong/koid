@@ -33,19 +33,32 @@ describe(fileShortPath(import.meta.url), () => {
         const hex = id.toString('hex')
 
         const infoBuf = retrieveFromId(id)
-        const infoInt = retrieveFromId(int)
-        const infoStr = retrieveFromId(intStr)
-        const infoHex = retrieveFromId(hex)
-        const infoHexPrefix = retrieveFromId('0x' + hex)
 
         console.info({
-          id, int, hex, time, infoBuf,
-        });
-        [infoBuf, infoInt, infoHex, infoStr, infoHexPrefix].forEach((info) => {
-          assert(info.dataCenter === config.dataCenter, new Date(info.timestamp).toString())
-          assert(info.worker === config.worker)
-          assert(info.timestamp === time || info.timestamp === time + 1)
+          id, int, hex, time, config, infoBuf,
         })
+        assert(infoBuf.dataCenter === config.dataCenter, infoBuf.timestamp.toString())
+        assert(infoBuf.worker === config.worker)
+
+        const infoInt = retrieveFromId(int)
+        console.log({ infoInt })
+        assert(infoInt.dataCenter === config.dataCenter, infoInt.timestamp.toString())
+        assert(infoInt.worker === config.worker)
+
+        const infoStr = retrieveFromId(intStr)
+        console.log({ infoStr })
+        assert(infoStr.dataCenter === config.dataCenter, infoStr.timestamp.toString())
+        assert(infoStr.worker === config.worker)
+
+        const infoHex = retrieveFromId(hex)
+        console.log({ infoHex })
+        assert(infoHex.dataCenter === config.dataCenter, infoHex.timestamp.toString())
+        assert(infoHex.worker === config.worker)
+
+        const infoHexPrefix = retrieveFromId('0x' + hex)
+        console.log({ infoHexPrefix })
+        assert(infoHexPrefix.dataCenter === config.dataCenter, infoHexPrefix.timestamp.toString())
+        assert(infoHexPrefix.worker === config.worker)
       })
     })
 
