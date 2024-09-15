@@ -1,7 +1,7 @@
 {
   "name": "@mwcp/koid",
   "author": "waiting",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "description": "",
   "private": false,
   "keywords": [
@@ -39,7 +39,7 @@
   "license": "MIT",
   "dependencies": {
     "@mwcp/otel": "^38.2.0",
-    "koid": "^17.0.0"
+    "koid": "^18.0.0"
   },
   "engines": {
     "node": ">=18.12.0",
