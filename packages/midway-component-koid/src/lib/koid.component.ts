@@ -8,8 +8,8 @@ import { MConfig } from '@mwcp/share'
 import { IdInfo, Koid, KoidFactory, retrieveFromId } from 'koid'
 
 import {
-  ConfigKey,
   Config,
+  ConfigKey,
 } from './types.js'
 
 

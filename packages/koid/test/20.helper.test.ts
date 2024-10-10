@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { fileShortPath } from '@waiting/shared-core'
 
 import type { Config } from '../src/index.js'
-import { genConfigRandom, KoidMsg } from '../src/index.js'
+import { KoidMsg, genConfigRandom } from '../src/index.js'
 import { parseConfig, waitTillNextMillisecond } from '../src/lib/helper.js'
 
 

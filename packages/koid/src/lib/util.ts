@@ -122,9 +122,9 @@ function retrieveFromBuffer(id: Readonly<Buffer>, epoch: number): IdInfo {
   const p0 = id.readUInt32BE()
   const p4 = id.readUInt8(4)
   const p5 = id.readUInt8(5)
-  // eslint-disable-next-line no-mixed-operators
+
   const timestamp = p0 * POW10 + (p4 << 2) + (p5 >> 6) + epoch
-  // eslint-disable-next-line no-mixed-operators
+
   const dataCenter = (p5 & 0x3F) >> 1 & 0x1F
 
   const p6 = id.readUInt8(6)

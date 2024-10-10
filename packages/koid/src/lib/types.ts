@@ -1,5 +1,3 @@
-/* eslint-disable no-mixed-operators */
-/* eslint-disable no-bitwise */
 
 export type Config = ConfigDc | ConfigNode
 

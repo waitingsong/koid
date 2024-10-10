@@ -1,4 +1,4 @@
-/* eslint-disable no-mixed-operators */
+
 /* eslint-disable no-bitwise */
 import { waitTillNextMillisecond } from './helper.js'
 import type { IdInfo, Options } from './types.js'
@@ -114,7 +114,7 @@ export class Koid {
       this.seq = 0
     }
 
-    return ret >= 1 ? ret : 1
+    return Math.max(ret, 1)
   }
 
 }

@@ -4,9 +4,9 @@ export { KoidComponent } from './koid.component.js'
 
 export {
   type Config as KoidConfig,
-  ConfigKey as KoidConfigKey,
   type MiddlewareConfig as KoidMiddlewareConfig,
   type MiddlewareOptions as KoidMiddlewareOptions,
+  ConfigKey as KoidConfigKey,
 } from './types.js'
 
 export type {

@@ -1,4 +1,4 @@
-/* eslint-disable import/max-dependencies */
+
 // import assert from 'node:assert'
 
 import {
@@ -16,7 +16,7 @@ import * as DefaultConfig from './config/config.default.js'
 import * as LocalConfig from './config/config.local.js'
 import * as UnittestConfig from './config/config.unittest.js'
 import { useComponents } from './imports.js'
-import { ConfigKey, Config } from './lib/types.js'
+import { Config, ConfigKey } from './lib/types.js'
 
 
 @Configuration({

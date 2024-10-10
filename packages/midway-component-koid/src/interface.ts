@@ -7,9 +7,9 @@
 // } from '@waiting/shared-types'
 
 export type {
+  IMiddleware,
   IMidwayApplication,
   IMidwayContainer,
-  IMiddleware,
   NextFunction,
 } from '@midwayjs/core'
 export type {
