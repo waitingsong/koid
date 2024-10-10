@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict'
+import assert from 'node:assert'
 
 import { fileShortPath } from '@waiting/shared-core'
 
@@ -81,6 +81,7 @@ function testLoopMock(generator: Koid, howMany: number): void {
     try {
       // @ts-expect-error
       generator.lastTime = Date.now() - epoch
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       generator.next
     }
     catch (ex) {
@@ -105,6 +106,7 @@ function testLoopClock(generator: Koid, howMany: number): void {
       generator.epoch = epoch + 1000000
     }
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       generator.next
     }
     catch (ex) {
