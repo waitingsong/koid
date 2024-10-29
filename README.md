@@ -222,11 +222,11 @@ then retrieve id from http api
 
 
 [`koid`]: https://github.com/waitingsong/koid/tree/master/packages/koid
-[main-svg]: https://img.shields.io/npm/v/koid.svg?maxAge=86400
+[main-svg]: https://img.shields.io/npm/v/koid.svg?maxAge=300
 [main-ch]: https://github.com/waitingsong/koid/tree/master/packages/koid/CHANGELOG.md
 
 [`@mwcp/koid`]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid
-[mw-svg]: https://img.shields.io/npm/v/@mwcp/koid.svg?cacheSeconds=86400
+[mw-svg]: https://img.shields.io/npm/v/@mwcp/koid.svg?cacheSeconds=300
 [mw-ch]: https://github.com/waitingsong/koid/tree/master/packages/midway-component-koid/CHANGELOG.md
 
 
